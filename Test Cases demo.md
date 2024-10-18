@@ -3,7 +3,8 @@
 ## 1. User Registration
 
 - **Positive test**: Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.  
-- **Negative test**: Enter a username with fewer than 2 characters or more than 20 characters – expect an error message.  
+- **Negative test**: Enter a username with fewer than 2 characters or more than 20 characters – expect an error message.
+- **Negative test**: Enter a password with fewer than 8 characters – expect an error message. 
 - **Negative test**: Enter a password that doesn't contain an uppercase letter, a digit, or a special character – expect an error message.  
 - **Negative test**: Enter an invalid email syntax (e.g., missing “@” or domain) – expect an error message.
 
@@ -20,15 +21,18 @@
 - **Negative test**: Create a post without a photo but with valid text – verify whether the post will be accepted without a photo.  
 - **Positive test**: Verify if the user can set the post to be public (visible to everyone) or only visible to connections.  
 - **Positive test**: Verify if the user can change the visibility of an existing post.
+- **Positive test**: Create a post with text, picture, and location simultaneously. Verify that all elements are displayed correctly in the post.
+- **Negative test**: Try to upload a media file (picture, song, video) that exceeds the allowed file size limit. Expect an error message indicating the size restriction.
 
 ## 4. Anonymous Users
 
-- **Positive test**: Verify if anonymous users can see the main menu.  
+- **Positive test**: Verify if anonymous users can see the main menu(а public feed of posts should be available to browse.).  
 - **Negative test**: Attempt to like a photo as an anonymous user – expect a restriction or redirection to the login page.  
 - **Positive test**: Check if anonymous users can like comments and whether they are visible.  
 - **Positive test**: Verify if anonymous users can like posts.  
 - **Positive test**: Verify if anonymous users can register and log in.  
 - **Positive test**: Verify if anonymous users can search for profiles and view the public feed.
+- **P/N**: Anonymous users must be able to register and login??
 
 ## 5. Authorized Users
 
@@ -38,6 +42,8 @@
 - **Positive test**: Verify if authorized users can view other users’ public information (name, profile picture).  
 - **Positive test**: Verify if they can browse the public posts of a selected user in chronological order.  
 - **Negative test**: Verify if the personalized news feed is correctly generated, based on either chronological order or interactions (likes, comments).
+- **P/N**: Verify that the system only loads the latest N comments initially and does not slow down.
+- **P/N**: Expand the comments in batches, ensuring the system maintains performance while loading older comments incrementally.
 
 ## 6. Search Function
 
