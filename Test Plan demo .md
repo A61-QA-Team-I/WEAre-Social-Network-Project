@@ -71,7 +71,7 @@ What will NOT be tested:
 
 ## Roles and Responsibilities
 
-The testing team consists of **Iwan Velchev**, **Armine Stoykova**, and **Gabriel Georgiev**. All three testers will have equal responsibilities and will share the tasks equally. The division of work will be as follows:
+The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel Georgiev**. All three testers will have equal responsibilities and will share the tasks equally. The division of work will be as follows:
 
 - **Manual Testing**: All three testers will divide manual testing tasks equally, ensuring all core functionalities are covered, including registration, login, post creation, comments, and profile management.
 - **API Testing**: Each tester will take a portion of the API testing using **Postman** and ensure all CRUD operations for users and posts are covered.
