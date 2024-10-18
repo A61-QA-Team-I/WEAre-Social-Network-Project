@@ -85,7 +85,7 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 
 ### 1. User Registration (Manual Testing)
 
-- **Positive test**: Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.
+-  Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.
 -  Enter a username with fewer than 2 characters or more than 20 characters – expect an error message.
 -  Enter a password with fewer than 8 characters – expect an error message.
 -  Enter a password that doesn't contain an uppercase letter, a digit, or a special character – expect an error message.
