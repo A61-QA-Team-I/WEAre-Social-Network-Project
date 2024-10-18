@@ -1,5 +1,5 @@
 # Test Plan for Social Network Application
-# <span style="color:blue;">Test Plan for Social Network Application</span>
+
 
 ## Overview
 
