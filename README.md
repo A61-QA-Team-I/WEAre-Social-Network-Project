@@ -1,2 +1,2 @@
-# -Demo-Social-Network-Project
+# Demo-Social-Network-Project
 Test demo repo
