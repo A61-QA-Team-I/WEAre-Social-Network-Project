@@ -65,7 +65,7 @@
 
 - **Positive test**: Verify if administrators can edit and delete posts.  
 - **Positive test**: Verify if administrators can edit and delete comments.  
-- **Positive test**: Verify if administrators can modify users' personal information.
+- **Positive test/Negative**: Verify if administrators can modify users' personal information.
 
 ## 10. Optional Features
 
