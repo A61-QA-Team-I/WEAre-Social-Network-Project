@@ -166,48 +166,42 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 
 ## REST API Functionality Overview
 
-## 1. Users
+### 1. Users
 
-### · CRUD Operations 
+#### · CRUD Operations 
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for managing users.
-- Example endpoints:
   - `POST`: Register a new user.!!
   - `GET`: Retrieve a user's informatio.!!
   - `PUT`: Update user information!!
   - `DELETE}`: Delete a user from the system.!!
 
-### · Add/Approve Friend 
+#### · Add/Approve Friend 
 - Functionality to **send a friend request** and **approve friend requests**.
-- Example endpoints:
   - `POST `: Send a friend request to another user.!!
   - `PUT `: Approve a pending friend request.!!
 
-### · Get News Feed 
+####· Get News Feed 
 - Fetch a user's personalized news feed, containing posts from their connections.!!
-- Example endpoint:
   - `GET`: Retrieve the latest posts from the user's connections, ordered chronologically.!!
 
 ---
 
-## 2. Posts
+### 2. Posts
 
-### · CRUD Operations  
+#### · CRUD Operations  
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for posts.
-- Example endpoints:
   - `POST`: Create a new post.!!
   - `GET`: Retrieve a specific post.!!
   - `PUT`: Update an existing post.!!
   - `DELETE`: Delete a post.!!
 
-### · Comment Posts 
+#### · Comment Posts 
 - Functionality to **add comments** to posts and **retrieve** existing comments.
-- Example endpoints:
   - `POST`: Add a comment to a specific post.
   - `GET `: Retrieve all comments on a post.
 
-### · Like/Unlike Posts/Comments 
+#### · Like/Unlike Posts/Comments 
 - Functionality to **like/unlike** both posts and comments.
-- Example endpoints:
   - `POST`: Like a post.!!
   - `POST`: Unlike a post.!!
   - `POST`: Like a comment.!!
