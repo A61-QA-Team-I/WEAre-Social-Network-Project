@@ -164,7 +164,7 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 
 ---
 
-# REST API Functionality Overview
+## REST API Functionality Overview
 
 ## 1. Users
 
