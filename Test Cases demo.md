@@ -131,5 +131,95 @@
 
 ---
 
+## Exception Handling and Propagation
+
+To ensure that the API handles errors correctly, it is crucial to verify that exceptions are properly caught, logged, and meaningful error messages are returned to the client. This section outlines the test cases to validate exception handling and propagation across the API.
+
+---
+
+#### Validation Errors
+
+- **Positive Test**:
+  - Send a `POST` request to `/api/users` with missing or invalid fields (e.g., missing email or invalid password format).
+  - **Expected Result**: 
+    - `400 Bad Request` is returned with a detailed error message specifying which fields are invalid.
+    - The response should include a message such as: 
+      ```json
+      {
+        "error": "Invalid request",
+        "details": {
+          "email": "Email is required",
+          "password": "Password must contain at least 8 characters"
+        }
+      }
+      ```
+
+---
+
+#### Resource Not Found
+
+- **Positive Test**:
+  - Send a `GET` request to `/api/users/{id}` or `/api/posts/{id}` with a non-existent ID.
+  - **Expected Result**:
+    - `404 Not Found` is returned with a meaningful message such as:
+      ```json
+      {
+        "error": "User not found"
+      }
+      ```
+
+---
+
+#### Unauthorized Access
+
+- **Positive Test**:
+  - Send a request to a protected endpoint (e.g., `/api/users/{id}`) without authentication or with invalid credentials.
+  - **Expected Result**:
+    - `401 Unauthorized` is returned if the user is not authenticated, with a message like:
+      ```json
+      {
+        "error": "Authentication required"
+      }
+      ```
+
+---
+
+#### Forbidden Action
+
+- **Positive Test**:
+  - Try to perform an action (e.g., delete a user or post) without sufficient permissions.
+  - **Expected Result**:
+    - `403 Forbidden` is returned, indicating the user does not have the rights to perform the action:
+      ```json
+      {
+        "error": "You do not have permission to perform this action"
+      }
+      ```
+
+---
+
+#### Internal Server Errors
+
+- **Positive Test**:
+  - Simulate an unexpected error (e.g., database connection failure) and send a request to any endpoint.
+  - **Expected Result**:
+    - `500 Internal Server Error` is returned, with a message explaining that an unexpected error occurred:
+      ```json
+      {
+        "error": "An unexpected error occurred. Please try again later."
+      }
+      ```
+
+---
+
+#### Exception Logging
+
+- **Positive Test**:
+  - Cause an error in the system (e.g., invalid data or unauthorized access).
+  - **Expected Result**:
+    - Verify that the exception is logged in the system's error logs with the correct level of detail (stack trace, request data, and timestamp).
+
+---
+
 - **API test**: Verify if a GET request to the API returns all users.  
 - **API test**: Verify if an unauthenticated request can be made to the server.
