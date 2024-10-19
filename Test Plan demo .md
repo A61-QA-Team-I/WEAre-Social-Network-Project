@@ -180,7 +180,7 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
   - `POST `: Send a friend request to another user.!!
   - `PUT `: Approve a pending friend request.!!
 
-####· Get News Feed 
+#### · Get News Feed 
 - Fetch a user's personalized news feed, containing posts from their connections.!!
   - `GET`: Retrieve the latest posts from the user's connections, ordered chronologically.!!
 
