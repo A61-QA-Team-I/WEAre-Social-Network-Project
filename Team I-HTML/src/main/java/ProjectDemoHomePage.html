@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Plan for Social Network Application</title>
+    <style>
+        body {
+             background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+            background-size: cover; /* Прави така, че изображението да покрива цялата страница */
+            background-position: center; /* Центрира изображението */
+            background-repeat: no-repeat; /* Избягва повтарянето на изображението */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+       .container {
+            display: flex;
+            justify-content: flex-start; /* Подреждане на контейнерите наляво */
+            gap: 10px; /* Намаляване на разстоянието между контейнерите */
+            flex-wrap: wrap; /* Подреждане вертикално при малки екрани */
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit; /* Запазване на цвета на текста */
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Кръгло изображение */
+            object-fit: cover;
+            margin-bottom: 10px; /* Разстояние между снимката и текста */
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Медийни заявки за мобилна поддръжка */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Вертикално подреждане на по-малък екран */
+                align-items: center; /* Центриране на контейнерите */
+            }
+        }
+        .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+}
+
+.footer img {
+    max-width: 150px;
+    he
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <a href="Vanko3/IvanVelchev.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/Vanko.png" alt="member 1" class="small-square">
+            <div class="square-text">Ivan Velchev</div>
+        </div>
+    </a>
+
+    <a href="Armine/Armine.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy.png" alt="member 2" class="small-square">
+            <div class="square-text">Armine Stoykova</div>
+        </div>
+    </a>
+
+    <a href="Gabriel/Gabriel.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy 2.png" alt="member 3" class="small-square">
+            <div class="square-text">Gabriel Georgiev</div>
+        </div>
+    </a>
+</div>
+
+<h1>Test Plan for Social Network Application</h1>
+
+<section>
+    <h2>Overview</h2>
+    <p>This test plan is created to test the social network application, with three main objectives:</p>
+    <ul>
+        <li>Manual testing of core functionalities such as user registration, login, post creation, comments, and user interactions.</li>
+        <li>API testing using Postman to validate the backend services.</li>
+        <li>Automated testing using Selenium WebDriver and Java to streamline repeatable tests of the user interface.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Scope of Testing</h2>
+    <p>The tests will cover the following key functionalities:</p>
+    <ul>
+        <li><strong>Manual Testing:</strong> User registration, login, post creation, likes, comments, profile management, and user interactions.</li>
+        <li><strong>API Testing:</strong> CRUD operations (create, read, update, delete) for users and posts using Postman.</li>
+        <li><strong>Automation:</strong> Core scenarios such as registration, login, and post creation using Selenium WebDriver and Java.</li>
+        <li><strong>Cross-browser Testing:</strong> Testing on Google Chrome, Mozilla Firefox, and Safari.</li>
+        <li><strong>Cross-platform Testing:</strong> Testing on macOS and Windows.</li>
+        <li><strong>Performance Testing:</strong> Load testing to ensure system performance under high traffic.</li>
+    </ul>
+    <p><strong>What will NOT be tested:</strong></p>
+    <ul>
+        <li>Third-party integrations</li>
+        <li>Detailed UI/UX design validation</li>
+        <li>Performance on unsupported browsers or devices</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Objectives of Testing</h2>
+    <ul>
+        <li>Ensure stability and proper functionality of the application across all supported browsers and operating systems.</li>
+        <li>Validate that APIs and the user interface work correctly and return expected results.</li>
+        <li>Automation will help to speed up and enhance the efficiency of testing core functionalities.</li>
+        <li>Manual Testing will cover detailed checks of functionalities that are difficult to automate.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Testing Strategy</h2>
+    <ul>
+        <li>Manual Testing of key functionalities: user registration, login, post creation, comments, likes, and user interactions.</li>
+        <li>API Testing with Postman to validate backend requests and responses.</li>
+        <li>Automation with Selenium WebDriver to test key scenarios such as registration, login, and post creation.</li>
+        <li>Cross-browser Testing to ensure compatibility across all supported browsers.</li>
+        <li>Performance Testing to verify system stability under heavy load.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Entry Criteria</h2>
+    <ul>
+        <li>All test environments should be fully set up and accessible.</li>
+        <li>All test data for the different test scenarios should be available and validated.</li>
+        <li>All necessary tools (Postman, Selenium, browsers, etc.) should be installed and configured.</li>
+        <li>Test cases should be reviewed and approved by the team.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Exit Criteria</h2>
+    <ul>
+        <li>All planned test cases have been executed.</li>
+        <li>All critical and high-severity defects have been resolved and verified.</li>
+        <li>No open critical defects exist.</li>
+        <li>Test coverage has reached at least 90% for all core functionalities.</li>
+        <li>Automation scripts should pass without major failures.</li>
+        <li>Performance tests should demonstrate stable behavior under the expected load.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Roles and Responsibilities</h2>
+    <p>The testing team consists of Ivan Velchev, Armine Stoykova, and Gabriel Georgiev. The division of tasks is as follows:</p>
+    <ul>
+        <li><strong>Manual Testing:</strong> All testers will share manual testing tasks equally.</li>
+        <li><strong>API Testing:</strong> Each tester will take a portion of the API testing using Postman.</li>
+        <li><strong>Automation:</strong> Test automation tasks will be divided among the three testers.</li>
+        <li><strong>Cross-browser Testing:</strong> Each tester will test on different browsers.</li>
+        <li><strong>Test Management:</strong> All testers will be responsible for reporting bugs and updating progress in Jira/Trello.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Test Scenarios</h2>
+    <p>Key manual testing scenarios include:</p>
+    <ul>
+        <li><strong>User Registration:</strong> Validate registration with valid and invalid inputs.</li>
+        <li><strong>User Login:</strong> Validate login with valid and invalid credentials.</li>
+        <li><strong>Post Creation:</strong> Test post creation with valid and invalid inputs.</li>
+        <li><strong>Anonymous Users:</strong> Validate actions that anonymous users can or cannot perform.</li>
+        <li><strong>Authorized Users:</strong> Validate functionalities available to logged-in users.</li>
+        <li><strong>Search Function:</strong> Validate search capabilities for authorized and unauthorized users.</li>
+        <li><strong>Profile Management:</strong> Test user profile updates and settings.</li>
+        <li><strong>Interactions with Other Users:</strong> Validate user connections, likes, and comments.</li>
+        <li><strong>Administrator Rights:</strong> Test administrative functionalities for posts and users.</li>
+        <li><strong>Optional Features:</strong> Validate optional features like ID verification.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>REST API Functionality Overview</h2>
+
+    <h3>1. Users</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Register a new user.</li>
+        <li><strong>GET:</strong> Retrieve a user's information.</li>
+        <li><strong>PUT:</strong> Update user information.</li>
+        <li><strong>DELETE:</strong> Delete a user from the system.</li>
+    </ul>
+
+    <p><strong>Add/Approve Friend:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Send a friend request to another user.</li>
+        <li><strong>PUT:</strong> Approve a pending friend request.</li>
+    </ul>
+
+    <p><strong>Get News Feed:</strong></p>
+    <ul>
+        <li><strong>GET:</strong> Retrieve the latest posts from the user's connections, ordered chronologically.</li>
+    </ul>
+
+    <h3>2. Posts</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Create a new post.</li>
+        <li><strong>GET:</strong> Retrieve a specific post.</li>
+        <li><strong>PUT:</strong> Update an existing post.</li>
+        <li><strong>DELETE:</strong> Delete a post.</li>
+    </ul>
+
+    <p><strong>Comment Posts:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Add a comment to a specific post.</li>
+        <li><strong>GET:</strong> Retrieve all comments on a post.</li>
+    </ul>
+
+    <p><strong>Like/Unlike Posts/Comments:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Like a post.</li>
+        <li><strong>POST:</strong> Unlike a post.</li>
+        <li><strong>POST:</strong> Like a comment.</li>
+        <li><strong>POST:</strong> Unlike a comment.</li>
+    </ul>
+
+    <h3>Exception Handling and Propagation</h3>
+    <p>To ensure that the API handles errors correctly, it is crucial to verify that exceptions are properly caught, logged, and meaningful error messages are returned to the client.</p>
+
+    <p><strong>Validation Errors:</strong></p>
+    <ul>
+        <li>Send a POST request to <code>/api/users</code> with missing or invalid fields (e.g., missing email or invalid password format).</li>
+    </ul>
+
+    <p><strong>Resource Not Found:</strong></p>
+    <ul>
+        <li>Send a GET request to <code>/api/users/{id}</code> or <code>/api/posts/{id}</code> with a non-existent ID.</li>
+    </ul>
+
+    <p><strong>Unauthorized Access:</strong></p>
+    <ul>
+        <li>Send a request to a protected endpoint (e.g., <code>/api/users/{id}</code>) without authentication or with invalid credentials.</li>
+    </ul>
+
+    <p><strong>Forbidden Action:</strong></p>
+    <ul>
+        <li>Try to perform an action (e.g., delete a user or post) without sufficient permissions.</li>
+    </ul>
+
+    <p><strong>Internal Server Errors:</strong></p>
+    <ul>
+        <li>Simulate an unexpected error (e.g., database connection failure) and send a request to any endpoint.</li>
+    </ul>
+
+    <p><strong>Exception Logging:</strong></p>
+    <ul>
+        <li>Cause an error in the system (e.g., invalid data or unauthorized access). Verify that the exception is logged in the system's error logs with the correct level of detail (stack trace, request data, and timestamp).</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Test Schedule</h2>
+    <table class="task-table">
+        <thead>
+        <tr>
+            <th>Task</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Responsible</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Environment Setup</td>
+            <td>October 18</td>
+            <td>October 25</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>Manual Testing (Postman)</td>
+            <td>October 18</td>
+            <td>October 27</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>Automation (Selenium)</td>
+            <td>October 28</td>
+            <td>November 15</td>
+            <td>All Testers</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Tools and Technologies</h2>
+    <ul>
+        <li>Postman: For API testing.</li>
+        <li>Selenium WebDriver with Java: For automating user interface tests.</li>
+        <li>JMeter: For performance and load testing.</li>
+        <li>Jira/Trello: For bug tracking and task management.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Success Criteria</h2>
+    <ul>
+        <li>All key functionalities must pass tests on all supported browsers and platforms.</li>
+        <li>No critical bugs or issues should impede the main functionality of the application.</li>
+        <li>API tests must validate correct responses and status codes.</li>
+        <li>Automated tests must execute without errors and cover key scenarios.</li>
+        <li>The system should perform stably under heavy load.</li>
+    </ul>
+</section>
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>

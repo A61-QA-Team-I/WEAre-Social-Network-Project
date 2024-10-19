@@ -1,0 +1,247 @@
+body {
+    font-family: Arial, sans-serif;
+        background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        margin: 0;
+        padding: 0;
+        min-height: 100vh;
+        padding-right: 100px;
+
+
+    }
+
+.custom-heading {
+    font-family: 'Montserrat', Helvetica, Arial, sans-serif;
+    font-weight: 700;
+    margin-top: 20px;
+    text-align: center;
+    color: #333;
+    padding: 0 10px;
+    max-width: 100%;
+    box-sizing: border-box;
+}
+
+.circle-container {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    margin-left : 100px;
+}
+
+.circle-link {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 2px solid #a9a9a9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: transform 0.3s;
+    text-align: center;
+    background-color: transparent;
+}
+
+.circle-link:hover {
+    transform: scale(1.1);
+}
+
+.circle-content {
+     position: absolute;
+     width: 100%;
+     height: 100%;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     padding: 0;
+     margin: 0;
+     box-sizing: border-box;
+     background-color: transparent;
+ }
+
+.square-container {
+    position: absolute;
+       top: 50px;
+       left: 30px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: transparent;
+
+    border-radius: 8px;
+
+    max-width: 200px;
+}
+
+.small-square {
+    width: 50px;
+    height: 50px;
+    border-radius: 8px;
+    object-fit: cover;
+    border: 2px solid green;
+    margin-right: 10px;
+    background-color: transparent;
+}
+
+.square-text {
+    font-size: 14px;
+    color: #333;
+    text-align: left;
+    max-width: 150px;
+    word-wrap: break-word;
+    background-color: transparent;
+}
+
+.contact-form-wrapper {
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    margin-top: 20px;
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+    box-sizing: border-box;
+
+}
+
+h2 {
+    display: none;
+}
+
+.contact-form {
+    position: absolute;
+    top: 400px;
+    left: 20px;
+    width: 300px;
+    padding: 10px;
+    background-color: rgba(255, 255, 255, 0.75);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+
+.contact-form label {
+    margin-bottom: 8px;
+    font-size: 13px;
+    color: #335;
+}
+
+.contact-form input[type="text"],
+.contact-form input[type="email"],
+.contact-form textarea {
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.radio-group {
+    margin-bottom: 30px;
+}
+
+.contact-form button {
+    padding: 10px;
+    font-size: 16px;
+    color: white;
+    background-color: #4CAF50;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #45a049;
+}
+
+
+
+
+.container {
+    width: 60%;
+    max-width: 500px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: rgba(255, 255, 255, 0.0);
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.0);
+    position: relative;
+    top: 110px;
+    left:310px;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-weight: 400;
+
+
+
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    table-layout: fixed;
+    font-family: 'Montserrat', sans-serif;
+    color: #333;
+    font-weight: 400;
+
+
+
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 12px;
+    text-align: left;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+        font-family: 'Montserrat', sans-serif;
+            color: #333;
+                font-weight: 400;
+
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+
+
+
+.footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+}
+
+.footer img {
+    max-width: 150px;
+    height: auto;
+}
+
