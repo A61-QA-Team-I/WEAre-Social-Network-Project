@@ -209,6 +209,51 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 
 ---
 
+## Exception Handling and Propagation
+
+To ensure that the API handles errors correctly, it is crucial to verify that exceptions are properly caught, logged, and meaningful error messages are returned to the client. This section outlines the test cases to validate exception handling and propagation across the API.
+
+---
+
+#### Validation Errors
+
+- **Positive Test**:
+  - Send a `POST` request to `/api/users` with missing or invalid fields (e.g., missing email or invalid password format).
+    
+---
+
+#### Resource Not Found
+
+  - Send a `GET` request to `/api/users/{id}` or `/api/posts/{id}` with a non-existent ID.
+ 
+---
+
+#### Unauthorized Access
+
+  - Send a request to a protected endpoint (e.g., `/api/users/{id}`) without authentication or with invalid credentials.
+    
+
+---
+
+#### Forbidden Action
+
+  - Try to perform an action (e.g., delete a user or post) without sufficient permissions.
+    
+---
+
+#### Internal Server Errors
+
+  - Simulate an unexpected error (e.g., database connection failure) and send a request to any endpoint.
+   
+---
+
+#### Exception Logging
+
+  - Cause an error in the system (e.g., invalid data or unauthorized access).
+    - Verify that the exception is logged in the system's error logs with the correct level of detail (stack trace, request data, and timestamp).
+
+---
+
 ## Test Schedule
 
 | Task                     | Start Date      | End Date        | Responsible       |
