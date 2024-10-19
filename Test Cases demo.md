@@ -84,7 +84,7 @@
 
 ## 1. Users
 
-### · CRUD Operations
+###  CRUD Operations
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for managing users.
 - Example endpoints:
   - `POST /api/users`: Register a new user.
@@ -92,13 +92,13 @@
   - `PUT /api/users/{id}`: Update user information.
   - `DELETE /api/users/{id}`: Delete a user from the system.
 
-### · Add/Approve Friend 
+###  Add/Approve Friend 
 - Functionality to **send a friend request** and **approve friend requests**.
 - Example endpoints:
   - `POST /api/users/{id}/friends`: Send a friend request to another user.
   - `PUT /api/users/{id}/friends/{friendId}/approve`: Approve a pending friend request.
 
-### · Get News Feed 
+###  Get News Feed 
 - Fetch a user's personalized news feed, containing posts from their connections.
 - Example endpoint:
   - `GET /api/users/{id}/feed`: Retrieve the latest posts from the user's connections, ordered chronologically.
@@ -107,7 +107,7 @@
 
 ## 2. Posts
 
-### · CRUD Operations 
+###  CRUD Operations 
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for posts.
 - Example endpoints:
   - `POST /api/posts`: Create a new post.
@@ -115,13 +115,13 @@
   - `PUT /api/posts/{id}`: Update an existing post.
   - `DELETE /api/posts/{id}`: Delete a post.
 
-### · Comment Posts 
+###  Comment Posts 
 - Functionality to **add comments** to posts and **retrieve** existing comments.
 - Example endpoints:
   - `POST /api/posts/{id}/comments`: Add a comment to a specific post.
   - `GET /api/posts/{id}/comments`: Retrieve all comments on a post.
 
-### · Like/Unlike Posts/Comments 
+###  Like/Unlike Posts/Comments 
 - Functionality to **like/unlike** both posts and comments.
 - Example endpoints:
   - `POST /api/posts/{id}/like`: Like a post.
