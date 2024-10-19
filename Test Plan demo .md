@@ -217,7 +217,6 @@ To ensure that the API handles errors correctly, it is crucial to verify that ex
 
 #### Validation Errors
 
-- **Positive Test**:
   - Send a `POST` request to `/api/users` with missing or invalid fields (e.g., missing email or invalid password format).
     
 ---
@@ -232,7 +231,6 @@ To ensure that the API handles errors correctly, it is crucial to verify that ex
 
   - Send a request to a protected endpoint (e.g., `/api/users/{id}`) without authentication or with invalid credentials.
     
-
 ---
 
 #### Forbidden Action
