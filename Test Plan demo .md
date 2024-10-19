@@ -171,21 +171,21 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 ### · CRUD Operations 
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for managing users.
 - Example endpoints:
-  - `POST /api/users`: Register a new user.!!
-  - `GET /api/users/{id}`: Retrieve a user's informatio.!!
-  - `PUT /api/users/{id}`: Update user information!!
-  - `DELETE /api/users/{id}`: Delete a user from the system.!!
+  - `POST`: Register a new user.!!
+  - `GET`: Retrieve a user's informatio.!!
+  - `PUT`: Update user information!!
+  - `DELETE}`: Delete a user from the system.!!
 
 ### · Add/Approve Friend 
 - Functionality to **send a friend request** and **approve friend requests**.
 - Example endpoints:
-  - `POST /api/users/{id}/friends`: Send a friend request to another user.!!
-  - `PUT /api/users/{id}/friends/{friendId}/approve`: Approve a pending friend request.!!
+  - `POST `: Send a friend request to another user.!!
+  - `PUT `: Approve a pending friend request.!!
 
 ### · Get News Feed 
 - Fetch a user's personalized news feed, containing posts from their connections.!!
 - Example endpoint:
-  - `GET /api/users/{id}/feed`: Retrieve the latest posts from the user's connections, ordered chronologically.!!
+  - `GET`: Retrieve the latest posts from the user's connections, ordered chronologically.!!
 
 ---
 
@@ -194,24 +194,24 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova** and **Gabriel
 ### · CRUD Operations  
 - **Create**, **Retrieve**, **Update**, and **Delete** operations for posts.
 - Example endpoints:
-  - `POST /api/posts`: Create a new post.!!
-  - `GET /api/posts/{id}`: Retrieve a specific post.!!
-  - `PUT /api/posts/{id}`: Update an existing post.!!
-  - `DELETE /api/posts/{id}`: Delete a post.!!
+  - `POST`: Create a new post.!!
+  - `GET`: Retrieve a specific post.!!
+  - `PUT`: Update an existing post.!!
+  - `DELETE`: Delete a post.!!
 
 ### · Comment Posts 
 - Functionality to **add comments** to posts and **retrieve** existing comments.
 - Example endpoints:
-  - `POST /api/posts/{id}/comments`: Add a comment to a specific post.
-  - `GET /api/posts/{id}/comments`: Retrieve all comments on a post.
+  - `POST`: Add a comment to a specific post.
+  - `GET `: Retrieve all comments on a post.
 
 ### · Like/Unlike Posts/Comments 
 - Functionality to **like/unlike** both posts and comments.
 - Example endpoints:
-  - `POST /api/posts/{id}/like`: Like a post.!!
-  - `POST /api/posts/{id}/unlike`: Unlike a post.!!
-  - `POST /api/comments/{id}/like`: Like a comment.!!
-  - `POST /api/comments/{id}/unlike`: Unlike a comment.!!
+  - `POST`: Like a post.!!
+  - `POST`: Unlike a post.!!
+  - `POST`: Like a comment.!!
+  - `POST`: Unlike a comment.!!
 
 ---
 
