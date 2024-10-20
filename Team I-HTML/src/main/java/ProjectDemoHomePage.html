@@ -211,11 +211,12 @@
         <li><strong>Cross-platform Testing:</strong> Testing on macOS and Windows.</li>
         <li><strong>Performance Testing:</strong> Load testing to ensure system performance under high traffic.</li>
     </ul>
+
     <p><strong>What will NOT be tested:</strong></p>
     <ul>
-        <li>Third-party integrations</li>
-        <li>Detailed UI/UX design validation</li>
-        <li>Performance on unsupported browsers or devices</li>
+        <li>Third-party integrations: The plan will not cover performance testing of external APIs or services integrated with the application.</li>
+        <li>Detailed UI/UX design validation: Pixel-perfect UI comparisons or deep aesthetic checks for design consistency will not be performed.</li>
+        <li>Performance on unsupported browsers or devices: The application will not be tested on browsers or devices outside of Chrome, Firefox, Safari, macOS, and Windows.</li>
     </ul>
 </section>
 
@@ -264,30 +265,105 @@
 
 <section>
     <h2>Roles and Responsibilities</h2>
-    <p>The testing team consists of Ivan Velchev, Armine Stoykova, and Gabriel Georgiev. The division of tasks is as follows:</p>
+    <p>The testing team consists of Ivan Velchev, Armine Stoykova, and Gabriel Georgiev. All three testers will have equal responsibilities and will share the tasks equally. The division of work will be as follows:</p>
     <ul>
-        <li><strong>Manual Testing:</strong> All testers will share manual testing tasks equally.</li>
-        <li><strong>API Testing:</strong> Each tester will take a portion of the API testing using Postman.</li>
-        <li><strong>Automation:</strong> Test automation tasks will be divided among the three testers.</li>
-        <li><strong>Cross-browser Testing:</strong> Each tester will test on different browsers.</li>
-        <li><strong>Test Management:</strong> All testers will be responsible for reporting bugs and updating progress in Jira/Trello.</li>
+        <li><strong>Manual Testing:</strong> All three testers will divide manual testing tasks equally, ensuring all core functionalities are covered, including registration, login, post creation, comments, and profile management.</li>
+        <li><strong>API Testing:</strong> Each tester will take a portion of the API testing using Postman and ensure all CRUD operations for users and posts are covered.</li>
+        <li><strong>Automation:</strong> The automation work will be divided among the three testers, where each tester will automate different parts of the test scenarios (e.g., registration, login, post creation) using Selenium WebDriver and Java.</li>
+        <li><strong>Cross-browser Testing:</strong> Each tester will test across different browsers to ensure coverage on Google Chrome, Mozilla Firefox, and Safari.</li>
+        <li><strong>Test Management:</strong> All testers will be responsible for reporting bugs and updating the progress in Jira/Trello.</li>
     </ul>
 </section>
 
 <section>
     <h2>Test Scenarios</h2>
-    <p>Key manual testing scenarios include:</p>
+
+    <h3>1. User Registration (Manual Testing)</h3>
     <ul>
-        <li><strong>User Registration:</strong> Validate registration with valid and invalid inputs.</li>
-        <li><strong>User Login:</strong> Validate login with valid and invalid credentials.</li>
-        <li><strong>Post Creation:</strong> Test post creation with valid and invalid inputs.</li>
-        <li><strong>Anonymous Users:</strong> Validate actions that anonymous users can or cannot perform.</li>
-        <li><strong>Authorized Users:</strong> Validate functionalities available to logged-in users.</li>
-        <li><strong>Search Function:</strong> Validate search capabilities for authorized and unauthorized users.</li>
-        <li><strong>Profile Management:</strong> Test user profile updates and settings.</li>
-        <li><strong>Interactions with Other Users:</strong> Validate user connections, likes, and comments.</li>
-        <li><strong>Administrator Rights:</strong> Test administrative functionalities for posts and users.</li>
-        <li><strong>Optional Features:</strong> Validate optional features like ID verification.</li>
+        <li>Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.</li>
+        <li>Enter a username with fewer than 2 characters or more than 20 characters – expect an error message.</li>
+        <li>Enter a password with fewer than 8 characters – expect an error message.</li>
+        <li>Enter a password that doesn't contain an uppercase letter, a digit, or a special character – expect an error message.</li>
+        <li>Enter an invalid email – expect an error message.</li>
+    </ul>
+
+    <h3>2. User Login (Manual Testing)</h3>
+    <ul>
+        <li>Log in with valid credentials (email and password) – expect a successful login.</li>
+        <li>Log in with a valid email and invalid password – expect an error message.</li>
+        <li>Log in with a valid password and invalid email – expect an error message.</li>
+    </ul>
+
+    <h3>3. Post Creation (Manual Testing)</h3>
+    <ul>
+        <li>Create a post with valid text and photo, and ensure it appears in the news feed. Check the ability to comment and like.</li>
+        <li>Create a post with invalid text input (e.g., empty or incorrect format) – expect an error message.</li>
+        <li>Create a post without a photo but with valid text – verify whether the post will be accepted without a photo.</li>
+        <li>Verify if the user can set the post to be public (visible to everyone) or only visible to connections.</li>
+        <li>Verify if the user can change the visibility of an existing post.</li>
+        <li>Create a post with text, picture, and location simultaneously. Verify that all elements are displayed correctly in the post.</li>
+        <li>Try to upload a media file (picture, song, video) that exceeds the allowed file size limit. Expect an error message indicating the size restriction.</li>
+    </ul>
+
+    <h3>4. Anonymous Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if anonymous users can see the main menu (a public feed of posts should be available to browse).</li>
+        <li>Attempt to like a photo as an anonymous user – expect a restriction or redirection to the login page.</li>
+        <li>Check if anonymous users can like comments and whether they are visible.</li>
+        <li>Verify if anonymous users can like posts.</li>
+        <li>Verify if anonymous users can register and log in.</li>
+        <li>Verify if anonymous users can search for profiles and view the public feed.</li>
+        <li>Verify if anonymous users must be able to register and log in.</li>
+    </ul>
+
+    <h3>5. Authorized Users (Manual Testing)</h3>
+    <ul>
+        <li>Check the main menu visibility for authorized users.</li>
+        <li>Verify if they can like photos, comments, and posts.</li>
+        <li>Verify if authorized users can search profiles and view the public feed.</li>
+        <li>Verify if authorized users can view other users’ public information (name, profile picture).</li>
+        <li>Verify if they can browse the public posts of a selected user in chronological order.</li>
+        <li>Verify if the personalized news feed is correctly generated, based on either chronological order or interactions (likes, comments).</li>
+        <li>Verify that the system only loads the latest N comments initially and does not slow down.</li>
+        <li>Expand the comments in batches, ensuring the system maintains performance while loading older comments incrementally.</li>
+    </ul>
+
+    <h3>6. Search Function (Manual Testing)</h3>
+    <ul>
+        <li>Try searching for a profile by name.</li>
+        <li>Try searching for a profile by email.</li>
+        <li>Check what unauthorized users can see in the search results.</li>
+        <li>Check what authorized users can see in the search results.</li>
+        <li>Verify if search results are sorted chronologically or by another criterion.</li>
+    </ul>
+
+    <h3>7. Profile Management for Authorized Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if users can log in and log out successfully.</li>
+        <li>Verify if users can update personal information (name, profile picture, visibility settings).</li>
+        <li>Verify if users can change the visibility status of their photos (public or only visible to connections).</li>
+        <li>Verify if users can change their password, email, and additional details (age, nationality).</li>
+    </ul>
+
+    <h3>8. Interactions with Other Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if users can send connection requests to others.</li>
+        <li>Verify if users can remove a connection.</li>
+        <li>Verify that connection requests are not automatically accepted upon sending.</li>
+        <li>Verify that disconnections happen automatically without requiring approval from the other user.</li>
+    </ul>
+
+    <h3>9. Administrator Rights (Manual Testing)</h3>
+    <ul>
+        <li>Verify if administrators can edit and delete posts.</li>
+        <li>Verify if administrators can edit and delete comments.</li>
+        <li>Verify if administrators can modify users' personal information.</li>
+    </ul>
+
+    <h3>10. Optional Features (Manual Testing)</h3>
+    <ul>
+        <li>Verify if a user can log in without verifying their email after registration – expect a restriction.</li>
+        <li>Verify if the user can upload an ID card photo and a selfie for verification, and if the platform can be used while awaiting admin approval.</li>
     </ul>
 </section>
 
