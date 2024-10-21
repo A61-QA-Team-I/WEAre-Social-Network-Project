@@ -252,6 +252,51 @@ To ensure that the API handles errors correctly, it is crucial to verify that ex
 
 ---
 
+## REST ASSURED Functionality Overview
+
+### 1. Users
+
+#### · CRUD Operations
+- **Create**, **Retrieve**, **Update**, and **Delete** operations for managing users.
+  - `POST`: Register a new user.!!
+  - `GET`: Retrieve a user's informatio.!!
+  - `PUT`: Update user information!!
+  - `DELETE}`: Delete a user from the system.!!
+
+#### · Add/Approve Friend
+- Functionality to **send a friend request** and **approve friend requests**.
+  - `POST `: Send a friend request to another user.!!
+  - `PUT `: Approve a pending friend request.!!
+
+#### · Get News Feed
+- Fetch a user's personalized news feed, containing posts from their connections.!!
+  - `GET`: Retrieve the latest posts from the user's connections, ordered chronologically.!!
+
+---
+
+### 2. Posts
+
+#### · CRUD Operations
+- **Create**, **Retrieve**, **Update**, and **Delete** operations for posts.
+  - `POST`: Create a new post.!!
+  - `GET`: Retrieve a specific post.!!
+  - `PUT`: Update an existing post.!!
+  - `DELETE`: Delete a post.!!
+
+#### · Comment Posts
+- Functionality to **add comments** to posts and **retrieve** existing comments.
+  - `POST`: Add a comment to a specific post.
+  - `GET `: Retrieve all comments on a post.
+
+#### · Like/Unlike Posts/Comments
+- Functionality to **like/unlike** both posts and comments.
+  - `POST`: Like a post.!!
+  - `POST`: Unlike a post.!!
+  - `POST`: Like a comment.!!
+  - `POST`: Unlike a comment.!!
+
+---
+
 ## Test Schedule
 
 | Task                     | Start Date      | End Date        | Responsible       |
