@@ -276,7 +276,7 @@
 </section>
 
 <section>
-    <h2>Test Scenarios</h2>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md" target="_blank" style="text-decoration:none; color: blue;">Test Scenarios</a></h2>
 
     <h3>1. User Registration (Manual Testing)</h3>
     <ul>
@@ -368,7 +368,7 @@
 </section>
 
 <section>
-    <h2>REST API Functionality Overview</h2>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST API Functionality Overview</a></h2>
 
     <h3>1. Users</h3>
     <p><strong>CRUD Operations:</strong></p>
@@ -413,7 +413,7 @@
         <li><strong>POST:</strong> Unlike a comment.</li>
     </ul>
 
-    <h3>Exception Handling and Propagation</h3>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#exception-handling-and-propagation" target="_blank" style="text-decoration:none; color: blue;">Exception Handling and Propagation</a></h2>
     <p>To ensure that the API handles errors correctly, it is crucial to verify that exceptions are properly caught, logged, and meaningful error messages are returned to the client.</p>
 
     <p><strong>Validation Errors:</strong></p>
@@ -448,6 +448,54 @@
 </section>
 
 <section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST ASSURED Functionality Overview</a></h2>
+
+    <h3>1. Users</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Register a new user.</li>
+        <li><strong>GET:</strong> Retrieve a user's information.</li>
+        <li><strong>PUT:</strong> Update user information.</li>
+        <li><strong>DELETE:</strong> Delete a user from the system.</li>
+    </ul>
+
+    <p><strong>Add/Approve Friend:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Send a friend request to another user.</li>
+        <li><strong>PUT:</strong> Approve a pending friend request.</li>
+    </ul>
+
+    <p><strong>Get News Feed:</strong></p>
+    <ul>
+        <li><strong>GET:</strong> Retrieve the latest posts from the user's connections, ordered chronologically.</li>
+    </ul>
+
+    <h3>2. Posts</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Create a new post.</li>
+        <li><strong>GET:</strong> Retrieve a specific post.</li>
+        <li><strong>PUT:</strong> Update an existing post.</li>
+        <li><strong>DELETE:</strong> Delete a post.</li>
+    </ul>
+
+    <p><strong>Comment Posts:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Add a comment to a specific post.</li>
+        <li><strong>GET:</strong> Retrieve all comments on a post.</li>
+    </ul>
+
+    <p><strong>Like/Unlike Posts/Comments:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Like a post.</li>
+        <li><strong>POST:</strong> Unlike a post.</li>
+        <li><strong>POST:</strong> Like a comment.</li>
+        <li><strong>POST:</strong> Unlike a comment.</li>
+    </ul>
+
+</section>
+
+<section>
     <h2>Test Schedule</h2>
     <table class="task-table">
         <thead>
@@ -466,26 +514,26 @@
             <td>All Testers</td>
         </tr>
         <tr>
-            <td>Manual Testing (Trello)</td>
-            <td>October 18</td>
-            <td>October 27</td>
+            <td>Manual Testing (Jira)</td>
+            <td>October 25</td>
+            <td>October 30</td>
             <td>All Testers</td>
         </tr>
         <tr>
             <td>Manual Testing (Postman)</td>
-            <td>October 18</td>
-            <td>October 27</td>
+            <td>October 30</td>
+            <td>November 05</td>
             <td>All Testers</td>
         </tr>
         <tr>
             <td>REST Assured (IntelliJ)</td>
-            <td>October 18</td>
-            <td>October 27</td>
+            <td>November 05</td>
+            <td>November 10</td>
             <td>All Testers</td>
         </tr>
         <tr>
             <td>Automation (Selenium)</td>
-            <td>October 28</td>
+            <td>November 10</td>
             <td>November 15</td>
             <td>All Testers</td>
         </tr>
@@ -496,100 +544,25 @@
 <section>
     <h2>Tools and Technologies</h2>
     <ul>
-        <li>Postman: For API testing.</li>
-        <li>Selenium WebDriver with Java: For automating user interface tests.</li>
+        <li><a href="https://www.postman.com/" target="_blank" style="text-decoration:none; color: blue;">Postman: For API testing.</a></li>
+        <li><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/tree/main/WebDriver_SicialProject" target="_blank" style="text-decoration:none; color: blue;">Selenium WebDriver with Java: For automating user interface tests.</a></li>
         <li>JMeter: For performance and load testing.</li>
-        <li>Jira/Trello: For bug tracking and task management.</li>
+        <li><a href="https://www.atlassian.com/software/jira" target="_blank" style="text-decoration:none; color: blue;">Jira/Trello: For bug tracking and task management.</a></li>
     </ul>
 </section>
 
 <section>
     <h2>Success Criteria</h2>
     <ul>
-        <li>All key functionalities must pass tests on all supported browsers and platforms.</li>
-        <li>No critical bugs or issues should impede the main functionality of the application.</li>
-        <li>API tests must validate correct responses and status codes.</li>
-        <li>Automated tests must execute without errors and cover key scenarios.</li>
-        <li>The system should perform stably under heavy load.</li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">All key functionalities must pass tests on all supported browsers and platforms.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">No critical bugs or issues should impede the main functionality of the application.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">API tests must validate correct responses and status codes.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">Automated tests must execute without errors and cover key scenarios.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">The system should perform stably under heavy load.</a></li>
+
     </ul>
 </section>
 
-
-
-<section>
-    <h2>Demo</h2>
-    <ul>
-        <li>All key functionalities must pass tests on all supported browsers and platforms.</li>
-        <li>No critical bugs or issues should impede the main functionality of the application.</li>
-        <li>API tests must validate correct responses and status codes.</li>
-        <li>Automated tests must execute without errors and cover key scenarios.</li>
-        <li>The system should perform stably under heavy load.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Demo2</h2>
-    <ul>
-        <li>All key functionalities must pass tests on all supported browsers and platforms.</li>
-        <li>No critical bugs or issues should impede the main functionality of the application.</li>
-        <li>API tests must validate correct responses and status codes.</li>
-        <li>Automated tests must execute without errors and cover key scenarios.</li>
-        <li>The system should perform stably under heavy load.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Gabriel</h2>
-    <ul>
-        <li>All key functionalities must pas</li>
-        <li>No critical bugs or issues should plication.</li>
-        <li>API tests must validate correcs codes.</li>
-        <li>Automated tests must cover key scenarios.</li>
-        <li>The system shouldeavy load.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Vanko1</h2>
-    <ul>
-        <li>All key functionalities must pas</li>
-        <li>No critical bugs or issues should plication.</li>
-        <li>API tests must validate correcs codes.</li>
-        <li>Automated tests must cover key scenarios.</li>
-        <li>The system shouldeavy load.</li>
-    </ul>
-</section>
-<section>
-    <h2>Stoykova</h2>
-    <ul>
-        <li>All key functionalities must pas</li>
-        <li>No critical bugs or issues should plication.</li>
-        <li>API tests must validate correcs codes.</li>
-        <li>Automated tests must cover key scenarios.</li>
-        <li>The system shouldeavy load.</li>
-    </ul>
-</section>
-<section>
-    <h2>Armine</h2>
-    <ul>
-        <li>All key functionalities must pas</li>
-        <li>No critical bugs or issues should plication.</li>
-        <li>API tests must validate correcs codes.</li>
-        <li>Automated tests must cover key scenarios.</li>
-        <li>The system shouldeavy load.</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Vanko25</h2>
-    <ul>
-        <li>All key functionalities must pas</li>
-        <li>No critical bugs or issues should plication.</li>
-        <li>API tests must validate correcs codes.</li>
-        <li>Automated tests must cover key scenarios.</li>
-        <li>The system shouldeavy load.</li>
-    </ul>
-</section>
 
 <footer>
     <p>&copy; A61 QA Team I   2024 Test Plan for Social Network Application. All rights reserved.</p>
@@ -598,7 +571,6 @@
     <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
         <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
     </a>
-    <h1> Testing </h1>
 </footer>
 </body>
 </html>
