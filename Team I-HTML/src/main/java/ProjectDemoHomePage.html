@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Plan for Social Network Application</title>
+    <style>
+        body {
+             background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+            background-size: cover; /* Прави така, че изображението да покрива цялата страница */
+            background-position: center; /* Центрира изображението */
+            background-repeat: no-repeat; /* Избягва повтарянето на изображението */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+       .container {
+            display: flex;
+            justify-content: flex-start; /* Подреждане на контейнерите наляво */
+            gap: 10px; /* Намаляване на разстоянието между контейнерите */
+            flex-wrap: wrap; /* Подреждане вертикално при малки екрани */
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit; /* Запазване на цвета на текста */
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Кръгло изображение */
+            object-fit: cover;
+            margin-bottom: 10px; /* Разстояние между снимката и текста */
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Медийни заявки за мобилна поддръжка */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Вертикално подреждане на по-малък екран */
+                align-items: center; /* Центриране на контейнерите */
+            }
+        }
+        .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+}
+
+.footer img {
+    max-width: 150px;
+    he
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <a href="Vanko3/IvanVelchev.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/Vanko.png" alt="member 1" class="small-square">
+            <div class="square-text">Ivan Velchev</div>
+        </div>
+    </a>
+
+    <a href="Armine/Armine.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy.png" alt="member 2" class="small-square">
+            <div class="square-text">Armine Stoykova</div>
+        </div>
+    </a>
+
+    <a href="Gabriel/Gabriel.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy 2.png" alt="member 3" class="small-square">
+            <div class="square-text">Gabriel Georgiev</div>
+        </div>
+    </a>
+</div>
+
+<h1>Test Plan for Social Network Application</h1>
+
+<section>
+    <h2>1. Overview</h2>
+
+    <p>This comprehensive test plan outlines the approach for thoroughly validating the social network application, ensuring its core functionalities are robust, reliable, and efficient. The plan employs a combination of manual, API, automated, and performance testing to deliver a high-quality product. Key areas of focus include:</p>
+
+    <ul>
+        <li><strong>Manual Testing</strong>: In-depth validation of all essential functionalities, including user registration, login, post creation, and user interactions. This approach will cover complex scenarios, edge cases, and negative testing that are less suited for automation.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Testing</strong>: Using Postman to rigorously test backend services, ensuring accurate and reliable data handling. This will involve verifying CRUD operations, error handling, security protocols, and overall API performance.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automation</strong>: Employing Selenium WebDriver and Java to streamline the testing of repetitive scenarios, such as user registration and post creation, across multiple browsers. Automation will enhance test efficiency and maintain a consistent level of quality.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance Testing</strong>: Leveraging JMeter to simulate high-traffic conditions and measure system stability and responsiveness. Stress testing will help identify potential bottlenecks and ensure the application can gracefully handle heavy loads.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Scope of Testing</h2>
+
+    <p>The tests will cover the following key functionalities:</p>
+
+    <ul>
+        <li><strong>Manual Testing</strong>: User registration, login, post creation, likes, comments, profile management, and user interactions.</li>     <img src="../images/outputВ.png" alt="Distribution of Testing Efforts" style="float: right; max-width: 45%; height: auto; margin-left: 20px;" />
+
+        <div style="height: 7px;"></div>
+        <li><strong>API Testing</strong>: CRUD operations (create, read, update, delete) for users and posts using <strong>Postman</strong>.</li>
+        <div style="height: 7px;"></div>
+        <li><strong>Automation</strong>: Core scenarios such as registration, login, and post creation using <strong>Selenium WebDriver and Java</strong>.</li>
+        <div style="height: 7px;"></div>
+        <li><strong>Cross-browser Testing</strong>: Testing on <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>.</li>
+        <div style="height: 7px;"></div>
+        <li><strong>Cross-platform Testing</strong>: Testing on <strong>macOS</strong> and <strong>Windows</strong>.</li>
+        <div style="height: 7px;"></div>
+        <li><strong>Performance Testing</strong>: Load testing to ensure system performance under high traffic.</li>
+    </ul>
+    <div style="height: 10px;"></div>
+    <p><strong>What will NOT be tested:</strong></p>
+    <ul>
+        <li><strong>Third-party integrations</strong>: The plan will not cover performance testing of external APIs or services integrated with the application.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Detailed UI/UX design validation</strong>: Pixel-perfect UI comparisons or deep aesthetic checks for design consistency will not be performed.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Performance on unsupported browsers or devices</strong>: The application will not be tested on browsers or devices outside of Chrome, Firefox, Safari, macOS, and Windows.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Objectives of Testing</h2>
+
+    <ol>
+        <li><strong>Manual Testing</strong> - This will involve detailed validation of the application’s core functionalities, including user registration, login, post creation, user interactions (likes, comments, and connections), and profile management. Manual testing will also cover boundary cases, negative testing, and scenarios that are challenging to automate. Additionally, it will focus on ensuring a smooth user experience and identifying any issues that may not be detected through automation.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Testing</strong> - Using Postman, we will test backend services to ensure accurate and efficient data handling. This includes validating CRUD operations (Create, Read, Update, Delete) for both users and posts. We will also test the APIs’ security, error handling, and performance under various conditions. The goal is to ensure that all API endpoints respond correctly with the expected status codes and data formats, even under edge cases or high loads.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automated Testing</strong> - Automation will be conducted using Selenium WebDriver and Java to increase the efficiency and reliability of regression testing. The focus will be on automating high-priority scenarios such as user registration, login, and post creation. Automation scripts will be designed to run across different browsers to ensure cross-browser compatibility. The use of page object models and data-driven testing techniques will make the scripts robust and maintainable.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance Testing</strong> - Utilizing JMeter, performance testing will be conducted to assess the application's behavior under high traffic and concurrent user loads. We will simulate real-world scenarios to identify potential bottlenecks and ensure that the system maintains acceptable response times and stability. Stress testing will also be performed to determine the maximum capacity of the application and its ability to recover gracefully from failures.</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Testing Strategy</h2>
+
+    <p>To ensure the quality and stability of the social network application, we have developed a comprehensive testing strategy that encompasses manual testing, automation, and API verification:</p>
+
+    <ol>
+        <li><strong>Manual Testing</strong>: Initially, we will perform thorough checks of core functionalities such as user registration, login, post creation, likes, comments, and profile management. The goal is to identify and document all critical and high-risk bugs in <strong>Jira</strong>. Our team will employ "exploratory testing" techniques to cover edge cases and unpredictable scenarios to ensure comprehensive coverage.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Testing with Postman</strong>: Once the initial manual testing and bug documentation are completed, we will use <strong>Postman</strong> to validate all key API endpoints. This will include not only basic CRUD operations (Create, Read, Update, Delete) but also the system's behavior for various response statuses (200 OK, 404 Not Found, 500 Internal Server Error, etc.). We will also test API security by checking for proper handling of unauthorized requests and error management.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automated Testing with Selenium WebDriver</strong>: After resolving major issues, we will begin automation using <strong>IntelliJ</strong> and <strong>Selenium WebDriver</strong> to streamline regression testing. The focus will be on automating critical user flows like registration, login, and post creation, ensuring there are no regressions with each update. We will implement the "page object model" design pattern and use data-driven testing techniques to make our scripts robust and easily maintainable across multiple browsers.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Cross-browser Testing</strong>: We will validate the application's performance on major browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>, to ensure a consistent user experience and prevent compatibility issues. These tests will be automated using Selenium Grid to cover various browser environments efficiently.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance Testing with JMeter</strong>: We will use <strong>JMeter</strong> to conduct load testing, simulating high user traffic and assessing system behavior under stress. The goal is to identify potential performance bottlenecks and ensure that the application remains stable under peak loads. Stress testing will be performed in different environments to measure the maximum performance capacity and evaluate the system's ability to recover gracefully from failures.</li>
+    </ol>
+</section>
+
+<section>
+    <h2>Risk Management and Mitigation Strategies</h2>
+
+    <p>As a team of three developers, we are well-prepared to tackle any risks and challenges that may arise during testing. We rely on effective communication and proactive planning to maintain a smooth workflow and successfully complete our tasks. Here is our approach to risk management:</p>
+
+    <h3>Potential Risks:</h3>
+    <ul>
+        <li><strong>Delays in Test Environment Setup</strong>: Issues with configuration or technical limitations may cause delays.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Resource Shortages</strong>: The absence of key tools, hardware, or time constraints could impact our work.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Requirement Changes</strong>: When system requirements change, we need to quickly adapt our test cases and strategies.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Dependencies on External Systems</strong>: Third-party dependencies could pose risks if those systems are not functioning properly.</li>
+    </ul>
+
+    <h3>Risk Mitigation Strategies:</h3>
+    <ol>
+        <li><strong>Daily Stand-Up Calls</strong>: We hold brief daily calls to share our progress, discuss current risks, and propose solutions. This keeps everyone informed and allows us to react quickly to potential problems.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Weekly Meetings</strong>: Once a week, we have an in-depth meeting to review achievements, discuss the project status, and identify both new and existing risks. We also plan mitigation strategies if things aren't going as expected.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Backup Test Environments</strong>: We maintain backup environments and virtual machines to ensure flexibility if issues arise with the primary setup.</li>
+        <div style="height: 3px;"></div>
+        <li><strong>Resource Planning</strong>: We allocate tasks and resources ahead of time, ensuring everyone knows their responsibilities. If needed, we can quickly reallocate resources to handle critical situations.</li>
+    </ol>
+
+    <p>As a team, we believe that successful testing relies on good organization, efficient communication, and swift problem-solving. Our approach enables us to work in sync and stay prepared for any challenges that may arise.</p>
+</section>
+
+<section>
+    <h2>Entry Criteria</h2>
+    <p>To begin the testing phase, the following prerequisites must be met to ensure smooth and effective test execution:</p>
+    <ul>
+        <li><strong>Fully Configured Test Environments</strong>: All testing environments, including staging servers and databases, must be properly set up, stable, and accessible to the testing team. The test infrastructure should utilize <strong>Docker Desktop</strong> for efficient container management and <strong>MariaDB</strong> as the database solution for reliable and fast data storage. This setup ensures that all functionalities are tested in an environment as close to production as possible.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Validated Test Data</strong>: Comprehensive and accurate test data for each scenario must be prepared and validated. This data should cover both standard use cases and edge cases to thoroughly assess the application’s behavior under various conditions.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Tool Installation and Configuration</strong>: All necessary testing tools, such as <strong>Postman</strong> for API validation, <strong>Selenium WebDriver</strong> for automated UI testing, and required browsers (Google Chrome, Mozilla Firefox, Safari), must be installed and correctly configured on the testers' machines. Additionally, <strong>Docker Desktop</strong> should be installed and ready to manage containerized services, and <strong>MariaDB</strong> must be set up and operational for all testing needs.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Reviewed and Approved Test Cases</strong>: Every test case must be meticulously documented, reviewed by the testing team, and approved to ensure complete coverage and accuracy. This step provides confidence that all key functionalities will be tested thoroughly.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Exit Criteria</h2>
+    <p>To consider the testing phase complete for the context of a course project, the following conditions must be met:</p>
+    <ul>
+        <li><strong>All Planned Test Cases Executed</strong>: All test scenarios outlined in the test plan must be fully executed and documented.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>All Found Defects Documented</strong>: Every discovered defect, regardless of severity, must be thoroughly documented, including the steps to reproduce and the expected behavior.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Reported Test Coverage</strong>: The extent of test coverage must be clearly reported, specifying which functionalities have been covered and what percentage of core scenarios have been tested.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automation Scripts Executed and Results Documented</strong>: Even if some scripts do not pass successfully, the results of automated testing must be presented, along with explanations for any failures.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance Tests Conducted and Analyzed</strong>: Performance testing must be carried out, and the results analyzed. Any weaknesses or bottlenecks observed should be documented and included in the analysis.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Roles and Responsibilities</h2>
+    <p>The testing team consists of <strong>Ivan Velchev</strong>, <strong>Armine Stoykova</strong>, and <strong>Gabriel Georgiev</strong>. Each member will share equal responsibilities, with tasks distributed to ensure that every tester gains experience and familiarity with all functionalities of the application. The work will be organized into three sprints in <strong>Jira</strong>, with an emphasis on flexibility and comprehensive understanding. The division of responsibilities is as follows:</p>
+    <ul>
+        <li><strong>Manual Testing</strong>: Each tester will participate in testing all core functionalities, including user registration, login, post creation, comments, and profile management. Tasks will be rotated among team members to ensure everyone develops a strong understanding of each part of the application and can effectively identify issues in any area.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Testing</strong>: API testing responsibilities using <strong>Postman</strong> will be shared equally among the team. Every tester will have the opportunity to validate various CRUD operations (Create, Read, Update, Delete) for both users and posts. This approach will ensure that all team members build skills in API testing and are prepared to handle different testing scenarios.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automation</strong>: Automation tasks will be divided so that each member works on automating different scenarios, such as user registration, login, and post creation, using <strong>Selenium WebDriver and Java</strong>. This distribution will provide exposure to a range of automated tests and enhance each tester’s proficiency in automation.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Cross-browser Testing</strong>: All testers will be responsible for testing the application across multiple browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>. This ensures that each member is familiar with cross-browser testing and can detect compatibility issues in different environments.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Sprint and Task Management in Jira</strong>: Tasks will be planned and managed over three sprints in <strong>Jira</strong>. The goal is for each team member to work on a variety of tasks and functionalities, ensuring thorough coverage of the application. Every tester will be responsible for reporting and documenting any bugs found, providing clear and detailed information in Jira, including steps to reproduce, screenshots, and other relevant details. This approach ensures that all testers are well-rounded and prepared for future projects.</li>
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#social-network-test-cases---detailed-test-plan" target="_blank" style="text-decoration:none; color: blue;">Test Scenarios</a></h2>
+
+    <ul>
+        <li>
+            <strong>User Registration (Manual Testing):</strong><br></span><img src="../images/demoT.png" alt="Testing Process Flowchart" style="float: right; max-width: 40%; height: auto; margin-left: 5px;" />
+            <span style="padding-left: 20px;">- Validate registration with a valid username, password, and email.</span><br>
+            <span style="padding-left: 20px;">- Check for error messages when the username length is incorrect or the email format is invalid.
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>User Login (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Test successful login using valid credentials.</span><br>
+            <span style="padding-left: 20px;">- Ensure error messages appear for incorrect email or password entries.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Post Creation (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Create a valid post with text and a photo to verify it appears in the news feed.</span><br>
+            <span style="padding-left: 20px;">- Confirm if posts without photos are accepted.</span><br>
+            <span style="padding-left: 20px;">- Verify that visibility settings work as expected and all elements display properly.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Anonymous Users (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Examine the visibility of the public menu and posts for anonymous users.</span><br>
+            <span style="padding-left: 20px;">- Verify restrictions or redirection when anonymous users attempt to like content.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Authorized Users (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Ensure authorized users can interact with posts, including liking, commenting, and searching for profiles.</span><br>
+
+            <span style="padding-left: 20px;">- Assess the personalized news feed generation and monitor performance when loading comments.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Search Function (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Test the search functionality by name and email.</span><br>
+            <span style="padding-left: 20px;">- Review what results are visible to both authorized and unauthorized users.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Profile Management for Authorized Users (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Check if users can update their personal information, like name, profile picture, and visibility settings.</span><br>
+            <span style="padding-left: 20px;">- Confirm that users can change their password and other profile details.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Interactions with Other Users (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Test sending and removing connection requests.</span><br>
+            <span style="padding-left: 20px;">- Make sure disconnections are handled correctly without requiring the other user's approval.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Administrator Rights (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Verify that administrators have the ability to edit and delete posts and comments.</span><br>
+            <span style="padding-left: 20px;">- Ensure that admins can modify user information as needed.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <li>
+            <strong>Optional Features (Manual Testing):</strong><br>
+            <span style="padding-left: 20px;">- Confirm that login is restricted for users who have not verified their email.</span><br>
+            <span style="padding-left: 20px;">- Test the ID verification process and whether access to certain features is restricted until admin approval.</span>
+            <div style="height: 10px;"></div>
+        </li>
+        <div style="height: 10px;"></div>
+        <div style="height: 10px;"></div>
+        <div style="height: 10px;"></div>
+        <div style="height: 10px;"></div>
+        <div style="height: 10px;"></div>
+        <img src="../images/output100.png" alt="Number of Test Scenarios by Category" style="max-width: 50%; height: auto;" />
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST API Functionality Overview</a></h2>
+
+    <ul>
+
+            <h3>Users</h3>
+            <span style="padding-left: 20px;">- Basic operations for managing user accounts, such as registration, profile updates, and account deletion.</span><br>
+            <span style="padding-left: 20px;">- Friend-related actions, including sending and approving friend requests.</span><br>
+            <span style="padding-left: 20px;">- Retrieving personalized content like user-specific news feeds.</span>
+
+
+            <div style="height: 10px;"></div>
+            <h3>Posts</h3>
+            <span style="padding-left: 20px;">- Creating, editing, and deleting user-generated posts.</span><br>
+            <span style="padding-left: 20px;">- Comment functionality to add or view interactions on posts.</span><br>
+            <span style="padding-left: 20px;">- Features to like or unlike posts and comments, supporting user engagement.</span>
+
+    </ul>
+</section>
+
+<section>
+
+    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#exception-handling-and-propagation" target="_blank" style="text-decoration:none; color: blue;">Exception Handling and Propagation</a></h2>
+    <p>To maintain the reliability of the API, it is essential to handle errors gracefully and ensure meaningful feedback is provided to users. The following outlines the areas of focus for testing exception handling:</p>
+
+    <ul>
+        <li><strong>Validation Errors:</strong></span><br> Ensure the API returns clear error messages when input data fails validation checks, such as missing or improperly formatted fields.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Resource Not Found:</strong></span><br> Verify that the API handles requests for non-existent resources appropriately, returning a suitable "not found" response.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Unauthorized Access:</strong></span><br> Check that access to protected endpoints is restricted without valid authentication and returns an appropriate error message.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Forbidden Action:</strong></span><br> Confirm that users are prevented from performing unauthorized actions, and the system responds with an appropriate "forbidden" message.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Internal Server Errors:</strong></span><br> Simulate unexpected system errors to ensure the API handles them gracefully and provides a general error response without exposing sensitive information.</li>
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST ASSURED Functionality Overview</a></h2>
+
+    <h3> Users</h3>
+    <ul>
+        <li><strong>CRUD Operations</strong>: Create, retrieve, update, and delete user accounts.</li>
+        <li><strong>Friend Management</strong>: Send and approve friend requests.</li>
+        <li><strong>News Feed</strong>: Get the latest posts from connections.</li>
+    </ul>
+
+    <h3> Posts</h3>
+    <ul>
+        <li><strong>CRUD Operations</strong>: Create, view, update, and delete posts.</li>
+        <li><strong>Comments</strong>: Add and view comments on posts.</li>
+        <li><strong>Like/Unlike</strong>: Like or unlike posts and comments.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Selenium WebDriver Functionality Overview</h2>
+
+    <ul>
+        <li><strong>User Flows:</strong><br> Automate key scenarios like user registration, login, and post creation.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Cross-Browser Testing:</strong><br> Verify functionality across multiple browsers, including Chrome, Firefox, and Safari.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>UI Interactions:</strong><br> Simulate user actions such as clicking buttons, liking posts, submitting forms, and navigating pages.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Data-Driven Testing:</strong><br> Execute tests using different sets of input data to ensure system reliability under various conditions.</li>
+    </ul>
+</section>
+
+
+    <h2>Test Schedule</h2>
+
+    <img src="../images/output copy.png" alt="Test Schedule" style="max-width: 70%; height: auto;" />
+
+</section>
+
+<section>
+    <h2>Tools and Technologies</h2>
+
+    <ul>
+        <li><strong>Postman</strong>: A powerful tool for <strong>API testing</strong> that allows us to validate RESTful services. Postman provides an easy-to-use interface for creating API requests, analyzing responses, and automating workflows for efficient testing.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Java</strong>: The primary programming language used for <strong>writing automation scripts</strong> with Selenium WebDriver. Java is highly compatible with Selenium and offers a robust environment for creating maintainable and efficient automated tests.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>IntelliJ IDEA</strong>: An integrated development environment (IDE) used for <strong>developing and running Java-based automation scripts</strong>. IntelliJ provides powerful features like code completion, debugging tools, and seamless integration with testing frameworks, enhancing productivity and efficiency.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Selenium WebDriver with Java</strong>: A robust framework for <strong>automated user interface testing</strong>. Selenium WebDriver is widely used for automating browser actions and verifying web application behavior across different browsers.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Selenium IDE</strong>: An easy-to-use tool for <strong>recording and playing back browser interactions</strong>. It is useful for creating initial scripts that can be exported to Selenium WebDriver for more complex automation.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>JMeter</strong>: A tool for <strong>performance and load testing</strong>. JMeter simulates real-world traffic scenarios, assesses system performance under load, and identifies potential bottlenecks to ensure stability.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Docker Desktop</strong>: Used to set up and run the <strong>API locally</strong> in isolated containers. Docker Desktop ensures a consistent setup across different machines, simplifying the deployment and testing of services.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Jira/Trello</strong>: Tools for <strong>bug tracking and task management</strong>. Jira is ideal for project management in Agile environments, while Trello provides a visual approach for organizing tasks and enhancing team collaboration.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Success Criteria</h2>
+
+    <ol>
+        <li><strong>Complete Test Execution</strong>: Ensure that all planned test cases, both manual and automated, are fully executed. Our goal is to cover all core functionalities, such as user registration, login, post creation, user interactions, and profile management.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Accurate Reporting</strong>: Document all discovered bugs, defects, or issues encountered during testing in detail. Reports should include clear steps to reproduce, observed vs. expected outcomes, severity levels, and any relevant screenshots or logs.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Validation</strong>: Verify that all API endpoints respond correctly with appropriate status codes (e.g., 200 for success, 401 for unauthorized) and handle data securely and efficiently. Document all API test results, highlighting discrepancies or performance issues.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automation Success</strong>: Automated tests using Selenium WebDriver should run without errors, covering critical scenarios (such as registration, login, and post creation). Report the results and efficiency of these automated tests, including any need for script maintenance.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance</strong>: Conduct performance testing using JMeter to assess the application's behavior under simulated high traffic. Report the system's stability, response times, and any identified bottlenecks or areas for improvement.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Testing Documentation</strong>: Provide a comprehensive overview of the testing strategy, tools used, and detailed findings. This should include a summary of what was tested, how it was tested, and the issues found and reported.</li>
+    </ol>
+</section>
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>
