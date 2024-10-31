@@ -1,0 +1,385 @@
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('https://i.pinimg.com/564x/26/1c/bd/261cbd55475863b2c63d83427924649b.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    padding-right: 100px;
+    color: black;
+
+}
+
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5);
+
+}
+
+.header {
+    position: relative;
+    margin-top: 50px;
+}
+
+.logo-container {
+    position: absolute;
+    top: 0;
+    right: -130px;
+    margin: 0px;
+}
+
+.logo-container img {
+    width: 200px;
+    height: auto;
+}
+
+.profile-container {
+    display: flex;
+        align-items: center;
+        position: absolute;
+        top: -20px;
+        left: 20px;
+}
+
+.profile-pic {
+    width: 85px;
+    height: 85px;
+    border-radius: 50%;
+    margin-right: 20px;
+    object-fit: cover;
+}
+
+.profile-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 26px;
+    color: black;
+}
+
+.footer img {
+    max-width: 190px;
+    height: auto;
+}
+
+
+
+.node_category {
+    background-color: rgba(0, 0, 0, 0.1);
+       border: 0.1px solid #ddd;
+       border-radius: 10px;
+       padding: 4px;
+       margin: 20px auto;
+       max-width: 450px;
+       width: 70%;
+       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+       position: absolute;
+
+
+}
+.node_category.Projects {
+    width: 10%;
+    height: 830px;
+    top: 130px;
+    right: 70px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.node_category.sports {
+    width: 15%;
+    height: 200px;
+    top: 210px;
+    right: 350px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.node_category.Interests {
+    width: 35%;
+    height: 200px;
+    top: 350px;
+    right: 1025px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+.node_category.skills {
+    width: 15%;
+    height: 300px;
+    top: 590px;
+    right: 770px;
+    overflow-y: auto;
+    background-color: rgba(0, 0, 0, 0.1);
+
+}
+
+
+.education {
+    top: 575px;
+    left: 30px;
+}
+
+.sports {
+    top:228px;
+    right: 201px;
+}
+
+.projects {
+    top: 770px;
+    left: 30px;
+}
+
+.skills {
+    top: 720px;
+    right: 500px;
+}
+
+.achievements {
+    top: 165px;
+    left: 30px;
+}
+
+.интереси {
+    top: 360px;
+    right: 1010px;
+
+}
+
+.проекти {
+    top: 275px;
+    right: 70px;
+
+}
+
+
+.node_category h3 {
+    font-family: "Poppins",sans-serif;
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.node_category ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.node_category li {
+    margin-bottom: 10px;
+}
+.node_category .link-item {
+    font-family: Arial, sans-serif;
+    color: #1a73e8;
+    text-decoration: none;
+}
+
+.node_category .link-item:hover {
+    text-decoration: underline;
+}
+
+.node_category span {
+    font-family: Arial, sans-serif;
+    color: #333;
+}
+
+
+
+
+
+.tennis-ball-container {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    position: absolute;
+        top: 140px;
+        left: 795px;
+}
+
+.tennis-ball {
+    width: 100%;
+    height: auto;
+}
+
+
+
+:root {
+    --container-width: 20%;
+    --container-height: 400px;
+    --background-color: rgba(255, 255, 204, 0.3);
+}
+
+.story-container {
+    position: absolute;
+    background-color: var(--background-color);
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    width: var(--container-width);
+    height: var(--container-height);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    overflow: hidden;
+    top: 550px;
+    left: 850px;
+        overflow-y: auto;
+
+}
+
+.story-content {
+    position: relative;
+    padding-bottom: 40px;
+}
+
+.story-title {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 28px;
+    color: #000;
+    margin-bottom: 15px;
+}
+
+.story-text {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    color: #000;
+        line-height: 1.5;
+
+}
+
+.story-button {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: #000;
+    background-color: #007bff;
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.story-button:hover {
+    background-color: #0056b3;
+}
+
+.story-subtitle {
+    position: absolute;
+    bottom: -40px;
+    left: 20px;
+    right: 20px;
+}
+
+.story-subtitle h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 22px;
+    color: #fff;
+    text-align: center;
+    margin: 0;
+}
+
+
+.social-links {
+    position: absolute;
+    top: 990px;
+    right: 1350px;
+    text-align: right;
+}
+
+.social-links-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: 15px;
+    align-items: center;
+}
+
+.social-links .col {
+    display: inline-block;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+    background-color: #f0f0f0;
+    color: #333;
+    text-align: center;
+    font-size: 1.2em;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.social-links .col svg {
+    width: 24px;
+    height: 24px;
+    vertical-align: middle;
+}
+
+.social-links .col:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.social-links .col.facebook {
+    background-color: #3b5998;
+    color: #fff;
+}
+
+.social-links .col.facebook:hover {
+    background-color: #2d4373;
+}
+
+.social-links .col.linkedin {
+    background-color: #0077b5;
+    color: #fff;
+}
+
+.social-links .col.linkedin:hover {
+    background-color: #005582;
+}
+
+.social-links .col.youtube {
+    background-color: #ff0000;
+    color: #fff;
+}
+
+.social-links .col.youtube:hover {
+    background-color: #cc0000;
+}
+
+.social-links a svg {
+    opacity: 1;
+}
+
+
+.back-to-home {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    text-align: center;
+}
+
+.back-button {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+}
+
+.back-button:hover {
+    background-color: #45a049;
+}

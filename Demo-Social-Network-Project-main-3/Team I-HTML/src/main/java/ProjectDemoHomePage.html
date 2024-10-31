@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Plan for Social Network Application</title>
+    <style>
+        body {
+             background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+            background-size: cover; /* Прави така, че изображението да покрива цялата страница */
+            background-position: center; /* Центрира изображението */
+            background-repeat: no-repeat; /* Избягва повтарянето на изображението */
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+       .container {
+            display: flex;
+            justify-content: flex-start; /* Подреждане на контейнерите наляво */
+            gap: 10px; /* Намаляване на разстоянието между контейнерите */
+            flex-wrap: wrap; /* Подреждане вертикално при малки екрани */
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit; /* Запазване на цвета на текста */
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%; /* Кръгло изображение */
+            object-fit: cover;
+            margin-bottom: 10px; /* Разстояние между снимката и текста */
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        /* Медийни заявки за мобилна поддръжка */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column; /* Вертикално подреждане на по-малък екран */
+                align-items: center; /* Центриране на контейнерите */
+            }
+        }
+        .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+}
+
+.footer img {
+    max-width: 150px;
+    he
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <a href="Vanko3/IvanVelchev.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/Vanko.png" alt="member 1" class="small-square">
+            <div class="square-text">Ivan Velchev</div>
+        </div>
+    </a>
+
+    <a href="Armine/Armine.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy.png" alt="member 2" class="small-square">
+            <div class="square-text">Armine Stoykova</div>
+        </div>
+    </a>
+
+    <a href="Gabriel/Gabriel.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/animal-2028258_1280 copy 2.png" alt="member 3" class="small-square">
+            <div class="square-text">Gabriel Georgiev</div>
+        </div>
+    </a>
+</div>
+
+<h1>Test Plan for Social Network Application</h1>
+
+<section>
+    <h2>Overview</h2>
+    <p>This test plan is created to test the social network application, with three main objectives:</p>
+    <ul>
+        <li>Manual testing of core functionalities such as user registration, login, post creation, comments, and user interactions.</li>
+        <li>API testing using Postman to validate the backend services.</li>
+        <li>Automated testing using Selenium WebDriver and Java to streamline repeatable tests of the user interface.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Scope of Testing</h2>
+    <p>The tests will cover the following key functionalities:</p>
+    <ul>
+        <li><strong>Manual Testing:</strong> User registration, login, post creation, likes, comments, profile management, and user interactions.</li>
+        <li><strong>API Testing:</strong> CRUD operations (create, read, update, delete) for users and posts using Postman.</li>
+        <li><strong>Automation:</strong> Core scenarios such as registration, login, and post creation using Selenium WebDriver and Java.</li>
+        <li><strong>Cross-browser Testing:</strong> Testing on Google Chrome, Mozilla Firefox, and Safari.</li>
+        <li><strong>Cross-platform Testing:</strong> Testing on macOS and Windows.</li>
+        <li><strong>Performance Testing:</strong> Load testing to ensure system performance under high traffic.</li>
+    </ul>
+
+    <p><strong>What will NOT be tested:</strong></p>
+    <ul>
+        <li>Third-party integrations: The plan will not cover performance testing of external APIs or services integrated with the application.</li>
+        <li>Detailed UI/UX design validation: Pixel-perfect UI comparisons or deep aesthetic checks for design consistency will not be performed.</li>
+        <li>Performance on unsupported browsers or devices: The application will not be tested on browsers or devices outside of Chrome, Firefox, Safari, macOS, and Windows.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Objectives of Testing</h2>
+    <ul>
+        <li>Ensure stability and proper functionality of the application across all supported browsers and operating systems.</li>
+        <li>Validate that APIs and the user interface work correctly and return expected results.</li>
+        <li>Automation will help to speed up and enhance the efficiency of testing core functionalities.</li>
+        <li>Manual Testing will cover detailed checks of functionalities that are difficult to automate.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Testing Strategy</h2>
+    <ul>
+        <li>Manual Testing of key functionalities: user registration, login, post creation, comments, likes, and user interactions.</li>
+        <li>API Testing with Postman to validate backend requests and responses.</li>
+        <li>Automation with Selenium WebDriver to test key scenarios such as registration, login, and post creation.</li>
+        <li>Cross-browser Testing to ensure compatibility across all supported browsers.</li>
+        <li>Performance Testing to verify system stability under heavy load.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Entry Criteria</h2>
+    <ul>
+        <li>All test environments should be fully set up and accessible.</li>
+        <li>All test data for the different test scenarios should be available and validated.</li>
+        <li>All necessary tools (Postman, Selenium, browsers, etc.) should be installed and configured.</li>
+        <li>Test cases should be reviewed and approved by the team.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Exit Criteria</h2>
+    <ul>
+        <li>All planned test cases have been executed.</li>
+        <li>All critical and high-severity defects have been resolved and verified.</li>
+        <li>No open critical defects exist.</li>
+        <li>Test coverage has reached at least 90% for all core functionalities.</li>
+        <li>Automation scripts should pass without major failures.</li>
+        <li>Performance tests should demonstrate stable behavior under the expected load.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Roles and Responsibilities</h2>
+    <p>The testing team consists of Ivan Velchev, Armine Stoykova, and Gabriel Georgiev. All three testers will have equal responsibilities and will share the tasks equally. The division of work will be as follows:</p>
+    <ul>
+        <li><strong>Manual Testing:</strong> All three testers will divide manual testing tasks equally, ensuring all core functionalities are covered, including registration, login, post creation, comments, and profile management.</li>
+        <li><strong>API Testing:</strong> Each tester will take a portion of the API testing using Postman and ensure all CRUD operations for users and posts are covered.</li>
+        <li><strong>Automation:</strong> The automation work will be divided among the three testers, where each tester will automate different parts of the test scenarios (e.g., registration, login, post creation) using Selenium WebDriver and Java.</li>
+        <li><strong>Cross-browser Testing:</strong> Each tester will test across different browsers to ensure coverage on Google Chrome, Mozilla Firefox, and Safari.</li>
+        <li><strong>Test Management:</strong> All testers will be responsible for reporting bugs and updating the progress in Jira/Trello.</li>
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md" target="_blank" style="text-decoration:none; color: blue;">Test Scenarios</a></h2>
+
+    <h3>1. User Registration (Manual Testing)</h3>
+    <ul>
+        <li>Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.</li>
+        <li>Enter a username with fewer than 2 characters or more than 20 characters – expect an error message.</li>
+        <li>Enter a password with fewer than 8 characters – expect an error message.</li>
+        <li>Enter a password that doesn't contain an uppercase letter, a digit, or a special character – expect an error message.</li>
+        <li>Enter an invalid email – expect an error message.</li>
+    </ul>
+
+    <h3>2. User Login (Manual Testing)</h3>
+    <ul>
+        <li>Log in with valid credentials (email and password) – expect a successful login.</li>
+        <li>Log in with a valid email and invalid password – expect an error message.</li>
+        <li>Log in with a valid password and invalid email – expect an error message.</li>
+    </ul>
+
+    <h3>3. Post Creation (Manual Testing)</h3>
+    <ul>
+        <li>Create a post with valid text and photo, and ensure it appears in the news feed. Check the ability to comment and like.</li>
+        <li>Create a post with invalid text input (e.g., empty or incorrect format) – expect an error message.</li>
+        <li>Create a post without a photo but with valid text – verify whether the post will be accepted without a photo.</li>
+        <li>Verify if the user can set the post to be public (visible to everyone) or only visible to connections.</li>
+        <li>Verify if the user can change the visibility of an existing post.</li>
+        <li>Create a post with text, picture, and location simultaneously. Verify that all elements are displayed correctly in the post.</li>
+        <li>Try to upload a media file (picture, song, video) that exceeds the allowed file size limit. Expect an error message indicating the size restriction.</li>
+    </ul>
+
+    <h3>4. Anonymous Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if anonymous users can see the main menu (a public feed of posts should be available to browse).</li>
+        <li>Attempt to like a photo as an anonymous user – expect a restriction or redirection to the login page.</li>
+        <li>Check if anonymous users can like comments and whether they are visible.</li>
+        <li>Verify if anonymous users can like posts.</li>
+        <li>Verify if anonymous users can register and log in.</li>
+        <li>Verify if anonymous users can search for profiles and view the public feed.</li>
+        <li>Verify if anonymous users must be able to register and log in.</li>
+    </ul>
+
+    <h3>5. Authorized Users (Manual Testing)</h3>
+    <ul>
+        <li>Check the main menu visibility for authorized users.</li>
+        <li>Verify if they can like photos, comments, and posts.</li>
+        <li>Verify if authorized users can search profiles and view the public feed.</li>
+        <li>Verify if authorized users can view other users’ public information (name, profile picture).</li>
+        <li>Verify if they can browse the public posts of a selected user in chronological order.</li>
+        <li>Verify if the personalized news feed is correctly generated, based on either chronological order or interactions (likes, comments).</li>
+        <li>Verify that the system only loads the latest N comments initially and does not slow down.</li>
+        <li>Expand the comments in batches, ensuring the system maintains performance while loading older comments incrementally.</li>
+    </ul>
+
+    <h3>6. Search Function (Manual Testing)</h3>
+    <ul>
+        <li>Try searching for a profile by name.</li>
+        <li>Try searching for a profile by email.</li>
+        <li>Check what unauthorized users can see in the search results.</li>
+        <li>Check what authorized users can see in the search results.</li>
+        <li>Verify if search results are sorted chronologically or by another criterion.</li>
+    </ul>
+
+    <h3>7. Profile Management for Authorized Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if users can log in and log out successfully.</li>
+        <li>Verify if users can update personal information (name, profile picture, visibility settings).</li>
+        <li>Verify if users can change the visibility status of their photos (public or only visible to connections).</li>
+        <li>Verify if users can change their password, email, and additional details (age, nationality).</li>
+    </ul>
+
+    <h3>8. Interactions with Other Users (Manual Testing)</h3>
+    <ul>
+        <li>Verify if users can send connection requests to others.</li>
+        <li>Verify if users can remove a connection.</li>
+        <li>Verify that connection requests are not automatically accepted upon sending.</li>
+        <li>Verify that disconnections happen automatically without requiring approval from the other user.</li>
+    </ul>
+
+    <h3>9. Administrator Rights (Manual Testing)</h3>
+    <ul>
+        <li>Verify if administrators can edit and delete posts.</li>
+        <li>Verify if administrators can edit and delete comments.</li>
+        <li>Verify if administrators can modify users' personal information.</li>
+    </ul>
+
+    <h3>10. Optional Features (Manual Testing)</h3>
+    <ul>
+        <li>Verify if a user can log in without verifying their email after registration – expect a restriction.</li>
+        <li>Verify if the user can upload an ID card photo and a selfie for verification, and if the platform can be used while awaiting admin approval.</li>
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST API Functionality Overview</a></h2>
+
+    <h3>1. Users</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Register a new user.</li>
+        <li><strong>GET:</strong> Retrieve a user's information.</li>
+        <li><strong>PUT:</strong> Update user information.</li>
+        <li><strong>DELETE:</strong> Delete a user from the system.</li>
+    </ul>
+
+    <p><strong>Add/Approve Friend:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Send a friend request to another user.</li>
+        <li><strong>PUT:</strong> Approve a pending friend request.</li>
+    </ul>
+
+    <p><strong>Get News Feed:</strong></p>
+    <ul>
+        <li><strong>GET:</strong> Retrieve the latest posts from the user's connections, ordered chronologically.</li>
+    </ul>
+
+    <h3>2. Posts</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Create a new post.</li>
+        <li><strong>GET:</strong> Retrieve a specific post.</li>
+        <li><strong>PUT:</strong> Update an existing post.</li>
+        <li><strong>DELETE:</strong> Delete a post.</li>
+    </ul>
+
+    <p><strong>Comment Posts:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Add a comment to a specific post.</li>
+        <li><strong>GET:</strong> Retrieve all comments on a post.</li>
+    </ul>
+
+    <p><strong>Like/Unlike Posts/Comments:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Like a post.</li>
+        <li><strong>POST:</strong> Unlike a post.</li>
+        <li><strong>POST:</strong> Like a comment.</li>
+        <li><strong>POST:</strong> Unlike a comment.</li>
+    </ul>
+
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#exception-handling-and-propagation" target="_blank" style="text-decoration:none; color: blue;">Exception Handling and Propagation</a></h2>
+    <p>To ensure that the API handles errors correctly, it is crucial to verify that exceptions are properly caught, logged, and meaningful error messages are returned to the client.</p>
+
+    <p><strong>Validation Errors:</strong></p>
+    <ul>
+        <li>Send a POST request to <code>/api/users</code> with missing or invalid fields (e.g., missing email or invalid password format).</li>
+    </ul>
+
+    <p><strong>Resource Not Found:</strong></p>
+    <ul>
+        <li>Send a GET request to <code>/api/users/{id}</code> or <code>/api/posts/{id}</code> with a non-existent ID.</li>
+    </ul>
+
+    <p><strong>Unauthorized Access:</strong></p>
+    <ul>
+        <li>Send a request to a protected endpoint (e.g., <code>/api/users/{id}</code>) without authentication or with invalid credentials.</li>
+    </ul>
+
+    <p><strong>Forbidden Action:</strong></p>
+    <ul>
+        <li>Try to perform an action (e.g., delete a user or post) without sufficient permissions.</li>
+    </ul>
+
+    <p><strong>Internal Server Errors:</strong></p>
+    <ul>
+        <li>Simulate an unexpected error (e.g., database connection failure) and send a request to any endpoint.</li>
+    </ul>
+
+    <p><strong>Exception Logging:</strong></p>
+    <ul>
+        <li>Cause an error in the system (e.g., invalid data or unauthorized access). Verify that the exception is logged in the system's error logs with the correct level of detail (stack trace, request data, and timestamp).</li>
+    </ul>
+</section>
+
+<section>
+    <h2><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/blob/main/Test%20Cases%20demo.md#rest-api-functionality-overview" target="_blank" style="text-decoration:none; color: blue;">REST ASSURED Functionality Overview</a></h2>
+
+    <h3>1. Users</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Register a new user.</li>
+        <li><strong>GET:</strong> Retrieve a user's information.</li>
+        <li><strong>PUT:</strong> Update user information.</li>
+        <li><strong>DELETE:</strong> Delete a user from the system.</li>
+    </ul>
+
+    <p><strong>Add/Approve Friend:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Send a friend request to another user.</li>
+        <li><strong>PUT:</strong> Approve a pending friend request.</li>
+    </ul>
+
+    <p><strong>Get News Feed:</strong></p>
+    <ul>
+        <li><strong>GET:</strong> Retrieve the latest posts from the user's connections, ordered chronologically.</li>
+    </ul>
+
+    <h3>2. Posts</h3>
+    <p><strong>CRUD Operations:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Create a new post.</li>
+        <li><strong>GET:</strong> Retrieve a specific post.</li>
+        <li><strong>PUT:</strong> Update an existing post.</li>
+        <li><strong>DELETE:</strong> Delete a post.</li>
+    </ul>
+
+    <p><strong>Comment Posts:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Add a comment to a specific post.</li>
+        <li><strong>GET:</strong> Retrieve all comments on a post.</li>
+    </ul>
+
+    <p><strong>Like/Unlike Posts/Comments:</strong></p>
+    <ul>
+        <li><strong>POST:</strong> Like a post.</li>
+        <li><strong>POST:</strong> Unlike a post.</li>
+        <li><strong>POST:</strong> Like a comment.</li>
+        <li><strong>POST:</strong> Unlike a comment.</li>
+    </ul>
+
+</section>
+
+<section>
+    <h2>Test Schedule</h2>
+    <table class="task-table">
+        <thead>
+        <tr>
+            <th>Task</th>
+            <th>Start Date</th>
+            <th>End Date</th>
+            <th>Responsible</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>Environment Setup</td>
+            <td>October 18</td>
+            <td>October 25</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>Manual Testing (Jira)</td>
+            <td>October 25</td>
+            <td>October 30</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>Manual Testing (Postman)</td>
+            <td>October 30</td>
+            <td>November 05</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>REST Assured (IntelliJ)</td>
+            <td>November 05</td>
+            <td>November 10</td>
+            <td>All Testers</td>
+        </tr>
+        <tr>
+            <td>Automation (Selenium)</td>
+            <td>November 10</td>
+            <td>November 15</td>
+            <td>All Testers</td>
+        </tr>
+        </tbody>
+    </table>
+</section>
+
+<section>
+    <h2>Tools and Technologies</h2>
+    <ul>
+        <li><a href="https://www.postman.com/" target="_blank" style="text-decoration:none; color: blue;">Postman: For API testing.</a></li>
+        <li><a href="https://github.com/A61-QA-Team-I/Demo-Social-Network-Project/tree/main/WebDriver_SicialProject" target="_blank" style="text-decoration:none; color: blue;">Selenium WebDriver with Java: For automating user interface tests.</a></li>
+        <li>JMeter: For performance and load testing.</li>
+        <li><a href="https://www.atlassian.com/software/jira" target="_blank" style="text-decoration:none; color: blue;">Jira/Trello: For bug tracking and task management.</a></li>
+    </ul>
+</section>
+
+<section>
+    <h2>Success Criteria</h2>
+    <ul>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">All key functionalities must pass tests on all supported browsers and platforms.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">No critical bugs or issues should impede the main functionality of the application.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">API tests must validate correct responses and status codes.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">Automated tests must execute without errors and cover key scenarios.</a></li>
+        <li><a href="https://example.com" target="_blank" style="text-decoration:none; color: blue;">The system should perform stably under heavy load.</a></li>
+
+    </ul>
+</section>
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>
