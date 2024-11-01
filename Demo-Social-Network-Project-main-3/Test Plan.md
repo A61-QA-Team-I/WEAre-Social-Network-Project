@@ -10,6 +10,7 @@ This comprehensive test plan outlines the approach for thoroughly validating the
 - **API Testing**: Using Postman to rigorously test backend services, ensuring accurate and reliable data handling. This will involve verifying CRUD operations, error handling, security protocols, and overall API performance.
 - **Automation**: Employing Selenium WebDriver and Java to streamline the testing of repetitive scenarios, such as user registration and post creation, across multiple browsers. Automation will enhance test efficiency and maintain a consistent level of quality.
 - **Performance Testing**: Leveraging JMeter to simulate high-traffic conditions and measure system stability and responsiveness. Stress testing will help identify potential bottlenecks and ensure the application can gracefully handle heavy loads.
+- **Security Testing**: Basic security checks to validate user data protection and prevent unauthorized access. These tests will help identify potential vulnerabilities and ensure compliance with data protection standards, providing users with confidence that their personal information is secure within the application.
 
 ---
 
@@ -23,7 +24,8 @@ The tests will cover the following key functionalities:
 - **Cross-browser Testing**: Testing on **Google Chrome**, **Mozilla Firefox**, and **Safari**.
 - **Cross-platform Testing**: Testing on **macOS** and **Windows**.
 - **Performance Testing**: Load testing to ensure system performance under high traffic.
-
+- **Security Testing**: Verification of basic security requirements, including protection of user data, prevention of unauthorized access, and validation of secure data handling.
+- **Error Handling and Validation**: Testing form validations, error messages, and response handling for invalid inputs to ensure robustness and user guidance
 
 What will NOT be tested:
 
@@ -46,6 +48,12 @@ What will NOT be tested:
 
 4. **Performance Testing** -  
    Utilizing JMeter, performance testing will be conducted to assess the application's behavior under high traffic and concurrent user loads. We will simulate real-world scenarios to identify potential bottlenecks and ensure that the system maintains acceptable response times and stability. Stress testing will also be performed to determine the maximum capacity of the application and its ability to recover gracefully from failures.
+   
+5. **Security Testing** -  
+   Basic security checks will be conducted to validate data protection and prevent unauthorized access. This includes verifying user authentication, session management, and data privacy to ensure the application meets standard security practices.
+   
+6. **User Experience (UX) Testing** -  
+   As part of manual testing, we will evaluate the user interface for intuitive design, ease of use, and consistency. UX testing will help identify any usability issues that could hinder the user experience and ensure that navigation and interactions are smooth and user-friendly.
 
 ---
 
@@ -154,6 +162,35 @@ The testing team consists of **Ivan Velchev**, **Armine Stoykova**, and **Gabrie
 
 
 - **Sprint and Task Management in Jira**: Tasks will be planned and managed over three sprints in **Jira**. The goal is for each team member to work on a variety of tasks and functionalities, ensuring thorough coverage of the application. Every tester will be responsible for reporting and documenting any bugs found, providing clear and detailed information in Jira, including steps to reproduce, screenshots, and other relevant details. This approach ensures that all testers are well-rounded and prepared for future projects.
+
+---
+
+## Test Environment
+
+The test environment is crucial for ensuring the expected behavior of the application under various conditions. Our testing will be conducted in the following environment:
+
+- **Operating Systems**: Testing will be performed on the latest versions of macOS (on two machines) and Windows (on one machine) to ensure compatibility across different platforms.
+
+- **Browsers**: We will conduct cross-browser testing on the latest versions of Google Chrome, Mozilla Firefox, and Safari to validate the consistency of the user interface and functionality.
+
+- **Containerization**: Docker Desktop will be used to create isolated containers for the application, ensuring consistency in the test environment across different machines.
+
+- **Testing Tools**: We will use Postman for API testing, Selenium WebDriver for automated UI testing, and JMeter for performance testing.
+
+### Machines Overview
+
+| **Machine 1**              | **Machine 2**                          | **Machine 3**                    |
+|----------------------------|----------------------------------------|----------------------------------|
+| **OS**: macOS              | **OS**:  macOS                         | **OS**: Windows 10/11            |
+| **Processor**: Apple M3 pro| **Processor**: Intel i7-12700H         | **Processor**: Intel i7          |
+| **RAM**: 16GB              | **RAM**: 32GB DDR5                     | **RAM**: 16GB                    |
+| **Storage**: N/A           | **Storage**: Up to 3TB SSD             | **Storage**: N/A                 |
+| **Browsers**:Chrome,Safari | **Browsers**: Firefox, Chrome          | **Browsers**: Chrome, Firefox    |
+
+### Testing Scenarios
+The tests will cover key functionalities, including user registration, login, post creation, and user interactions.
+
+This test environment is designed to provide maximum compatibility and facilitate extensive testing to ensure the stability and quality of the application.
 
 ---
 
@@ -316,19 +353,26 @@ To maintain the reliability of the API, it is essential to handle errors gracefu
 
 ## Success Criteria
 
-1. **Complete Test Execution**: Ensure that all planned test cases, both manual and automated, are fully executed. Our goal is to cover all core functionalities, such as user registration, login, post creation, user interactions, and profile management.
+### Manual Tests
 
+1. **Complete Test Execution**:  
+   Upon successful coverage of all planned manual test cases, we will ensure a thorough validation of the application's key functionalities. These functionalities include user registration, login, post creation, user interactions, and profile management. Each test case will be meticulously documented, providing a clear reference and foundation for subsequent evaluation.
 
-2. **Accurate Reporting**: Document all discovered bugs, defects, or issues encountered during testing in detail. Reports should include clear steps to reproduce, observed vs. expected outcomes, severity levels, and any relevant screenshots or logs.
+2. **Accurate Reporting**:  
+   All discovered bugs, defects, and issues encountered during manual testing will be documented in detail. Reports will include clear and structured steps to reproduce each issue, comparisons between observed and expected outcomes, and classification of the severity of problems. Additionally, each report will be enriched with relevant screenshots or logs to facilitate understanding and resolution of issues.
 
+### Automated Tests
 
-3. **API Validation**: Verify that all API endpoints respond correctly with appropriate status codes (e.g., 200 for success, 401 for unauthorized) and handle data securely and efficiently. Document all API test results, highlighting discrepancies or performance issues.
+3. **API Validation**:  
+   During the stringent verification of all API endpoints, we will ensure that they respond accurately and securely, providing the appropriate status codes (e.g., 200 for success, 401 for unauthorized access). Each API test result will be thoroughly documented, with emphasis on any discrepancies or performance issues to ensure the reliability of data flow between the frontend and backend.
 
+4. **Automation Success**:  
+   Automated tests executed with Selenium WebDriver will run without errors, covering critical user scenarios such as registration, login, and post creation. The results and efficiency of these automated tests will be reported, noting any cases that require script maintenance or adjustments.
 
-4. **Automation Success**: Automated tests using Selenium WebDriver should run without errors, covering critical scenarios (such as registration, login, and post creation). Report the results and efficiency of these automated tests, including any need for script maintenance.
+5. **Performance Assessment**:  
+   Conducting performance testing using JMeter will allow us to simulate high traffic conditions and evaluate the application's behavior under stress. We will meticulously document the system's stability, response times, and identify any potential issues or areas that require improvement to ensure the application can handle peak usage effectively.
 
+### Comprehensive Testing Documentation
 
-5. **Performance**: Conduct performance testing using JMeter to assess the application's behavior under simulated high traffic. Report the system's stability, response times, and any identified bottlenecks or areas for improvement.
-
-
-6. **Testing Documentation**: Provide a comprehensive overview of the testing strategy, tools used, and detailed findings. This should include a summary of what was tested, how it was tested, and the issues found and reported.
+   **Testing Documentation**:  
+   Upon completion of the entire testing strategy, we will provide a detailed overview of the testing approach, tools utilized, and test findings. This documentation will summarize the scope of testing and offer clarity and accountability for all identified and reported issues, facilitating transparency and continuous improvement of the testing process.
