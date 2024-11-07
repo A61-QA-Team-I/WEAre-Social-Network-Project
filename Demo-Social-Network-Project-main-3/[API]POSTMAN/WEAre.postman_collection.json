@@ -17,22 +17,19 @@
 							"script": {
 								"exec": [
 									"var names = [",
-									"    \"Alice\", \"Bob\", \"Charlie\", \"Diana\", \"Eve\", \"Frank\", \"Grace\", \"Hank\", ",
-									"    \"Ivy\", \"Jack\", \"Karen\", \"Leo\", \"Mona\", \"Nate\", \"Olivia\", \"Paul\", ",
+									"    \"Alice\", \"Vanko\", \"Charlie\", \"Diana\", \"Eve\", \"Frank\", \"Grace\", \"Hank\", ",
+									"    \"Ivy\", \"Jack\", \"Armine\", \"Leo\", \"Mona\", \"Nate\", \"Olivia\", \"Paul\", ",
 									"    \"Quinn\", \"Rachel\", \"Steve\", \"Tina\", \"Uma\", \"Vince\", \"Wendy\", \"Xander\", ",
 									"    \"Yara\", \"Zane\", \"Liam\", \"Noah\", \"Emma\", \"Olivia\", \"Ava\", \"Sophia\"",
 									"];",
 									"",
-									"// Генериране на рандъм индекс",
 									"var randomIndex = Math.floor(Math.random() * names.length);",
 									"",
-									"// Избиране на рандъм име от масива",
 									"var randomName = names[randomIndex];",
 									"",
-									"// Задаване на рандъм име в средата на Postman",
 									"pm.environment.set(\"randomName\", randomName);",
 									"",
-									"//console.log(\"Generated Random Name: \" + randomName);"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -306,8 +303,8 @@
 								"exec": [
 									"var firstNames = [",
 									"    \"Arthur\", \"Blake\", \"Cody\", \"Damian\", \"Elliot\", \"Felix\", \"Gavin\", \"Harvey\",",
-									"    \"Ian\", \"Jasper\", \"Keegan\", \"Lance\", \"Marshall\", \"Nolan\", \"Orson\", \"Preston\",",
-									"    \"Quentin\", \"Reid\", \"Sawyer\", \"Tanner\", \"Ulysses\", \"Vaughn\", \"Wesley\", \"Xander\",",
+									"    \"Ian\", \"Jasper\", \"Vanko\", \"Lance\", \"Marshall\", \"Nolan\", \"Orson\", \"Preston\",",
+									"    \"Quentin\", \"Armine\", \"Sawyer\", \"Tanner\", \"Ulysses\", \"Vaughn\", \"Wesley\", \"Xander\",",
 									"    \"Yosef\", \"Zeke\", \"Anderson\", \"Bryce\", \"Clayton\", \"Derek\"",
 									"];",
 									"",
@@ -315,8 +312,8 @@
 									"    \"Armstrong\", \"Bennett\", \"Carter\", \"Dixon\", \"Ellison\", \"Fletcher\", \"Grant\", ",
 									"    \"Hawkins\", \"Ingram\", \"Jefferson\", \"Keller\", \"Lambert\", \"McCarthy\", \"Nelson\",",
 									"    \"O'Connor\", \"Patterson\", \"Quigley\", \"Reynolds\", \"Sullivan\", \"Turner\",",
-									"    \"Underwood\", \"Vinson\", \"Waters\", \"Xiong\", \"Youngblood\", \"Zimmerman\",",
-									"    \"Adler\", \"Barron\", \"Carson\", \"Dawson\"",
+									"    \"Underwood\", \"Vinson\", \"Waters\", \"Xiong\", \"Velchev\", \"Zimmerman\",",
+									"    \"Adler\", \"Barron\", \"Carson\", \"Stoykova\"",
 									"];",
 									"",
 									"var randomFirstIndex = Math.floor(Math.random() * firstNames.length);",
@@ -395,13 +392,52 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"const cheerio = require('cheerio');",
+									"",
+									"const $ = cheerio.load(pm.response.text());",
+									"",
+									"",
+									"pm.test(\"Post is marked as public\", function () {",
+									"    const isPublic = $('.position').first().text().includes(\"Public post: true\");",
+									"    pm.expect(isPublic).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"Like button is present\", function () {",
+									"    const likeButton = $('input.fa-heart').length;",
+									"    pm.expect(likeButton).to.be.above(0); ",
+									"});",
+									"",
+									"const postTitle = pm.environment.get(\"postTitle\"); ",
+									"",
+									"pm.test(`Response contains '${postTitle}'`, function () {",
+									"    pm.expect(pm.response.text()).to.include(postTitle);",
 									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
 							}
 						}
 					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -412,6 +448,12 @@
 								"key": "Cookie",
 								"value": "JSESSIONID={{JSESSIONID}}",
 								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text",
+								"disabled": true
 							}
 						],
 						"body": {
@@ -425,7 +467,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content=public demo post&name={{randomName}}&public=true",
+							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content={{postTitle}}&name={{randomName}}&public=true",
 							"host": [
 								"{{Base WEAre Url}}"
 							],
@@ -437,7 +479,7 @@
 							"query": [
 								{
 									"key": "content",
-									"value": "public demo post"
+									"value": "{{postTitle}}"
 								},
 								{
 									"key": "name",
@@ -461,7 +503,43 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"const cheerio = require('cheerio');",
+									"",
+									"const $ = cheerio.load(pm.response.text());",
+									"",
+									"",
+									"pm.test(\"Post is marked as false\", function () {",
+									"    const isPublic = $('.position').first().text().includes(\"Public post: false\");",
+									"    pm.expect(isPublic).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"Like button is present\", function () {",
+									"    const likeButton = $('input.fa-heart').length;",
+									"    pm.expect(likeButton).to.be.above(0); ",
+									"});",
+									"",
+									"const postTitle2 = pm.environment.get(\"postTitle2\"); ",
+									"",
+									"pm.test(`Response contains '${postTitle2}'`, function () {",
+									"    pm.expect(pm.response.text()).to.include(postTitle2);",
 									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -491,7 +569,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content=privet demo post&name={{randomName}}&public=false",
+							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content={{postTitle2}}&name={{randomName}}&public=false",
 							"host": [
 								"{{Base WEAre Url}}"
 							],
@@ -503,7 +581,7 @@
 							"query": [
 								{
 									"key": "content",
-									"value": "privet demo post"
+									"value": "{{postTitle2}}"
 								},
 								{
 									"key": "name",
@@ -530,7 +608,28 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									"const responseText = pm.response.text();",
+									"",
+									"pm.test(\"Response contains the expected friend request format\", function () {",
+									"    pm.expect(responseText).to.include(\"send friend request to\");",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
 									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"if (!pm.request.body.raw.includes('\"id\"')) {",
+									"    throw new Error(\"Error,ID field\");",
+									"}"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -677,13 +776,13 @@
 									"var responseData = pm.response.json();",
 									"",
 									"if (Array.isArray(responseData) && responseData.length > 0) {",
-									"    var requestId = responseData[0].id; // Извличане на `id` от първия обект",
+									"    var requestId = responseData[0].id; ",
 									"",
 									"    pm.environment.set(\"requestId\", requestId);",
 									"",
 									"    console.log(\"Saved Request ID: \" + requestId);",
 									"} else {",
-									"    console.log(\"Респонсът е празен или не съдържа валидни данни.\");",
+									"    console.log(\"Error\");",
 									"}",
 									""
 								],
@@ -714,6 +813,28 @@
 				},
 				{
 					"name": "approve request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const responseText = pm.response.text();",
+									"",
+									"pm.test(\"Response contains the expected friend request format\", function () {",
+									"    pm.expect(responseText).to.include(\"approved request of\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
 							"content-type": true
@@ -787,7 +908,35 @@
 							"listen": "test",
 							"script": {
 								"exec": [
-									""
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"const cheerio = require('cheerio');",
+									"",
+									"const $ = cheerio.load(pm.response.text());",
+									"",
+									"",
+									"pm.test(\"Post is marked as public\", function () {",
+									"    const isPublic = $('.position').first().text().includes(\"Public post: true\");",
+									"    pm.expect(isPublic).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"Like button is present\", function () {",
+									"    const likeButton = $('input.fa-heart').length;",
+									"    pm.expect(likeButton).to.be.above(0); ",
+									"});",
+									"",
+									"const postTitle3 = pm.environment.get(\"postTitle3\"); ",
+									"",
+									"pm.test(`Response contains '${postTitle3}'`, function () {",
+									"    pm.expect(pm.response.text()).to.include(postTitle3);",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -817,7 +966,7 @@
 							]
 						},
 						"url": {
-							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content=post from User 2 demo&name={{randomName2}}&public=true",
+							"raw": "{{Base WEAre Url}}/posts/auth/newPost?content={{postTitle3}}&name={{randomName2}}&public=true",
 							"host": [
 								"{{Base WEAre Url}}"
 							],
@@ -829,7 +978,7 @@
 							"query": [
 								{
 									"key": "content",
-									"value": "post from User 2 demo"
+									"value": "{{postTitle3}}"
 								},
 								{
 									"key": "name",
@@ -929,10 +1078,44 @@
 									"    pm.response.to.have.status(200);",
 									"});",
 									"",
+									"const responseJson = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'postId'\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"postId\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'content'\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"content\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'picture'\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"picture\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'date'\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"date\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'likes'\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"likes\");",
+									"});",
+									"",
+									"pm.test(\"postId is an integer\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"postId\");",
+									"    pm.expect(responseJson.postId % 1 === 0).to.be.true;",
+									"});",
+									"",
 									""
 								],
 								"type": "text/javascript",
 								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"packages": {},
+								"type": "text/javascript"
 							}
 						}
 					],
@@ -981,7 +1164,38 @@
 							"script": {
 								"exec": [
 									"let responseData = pm.response.json();",
-									"pm.environment.set(\"commentId\", responseData.commentId);"
+									"pm.environment.set(\"commentId\", responseData.commentId);",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const responseJson = pm.response.json();",
+									"",
+									"pm.test(\"commentId is an integer\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"commentId\");",
+									"    pm.expect(responseJson.commentId % 1 === 0).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"content is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"content\");",
+									"    pm.expect(responseJson.content).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"likes is an array\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"likes\");",
+									"    pm.expect(responseJson.likes).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"date is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"date\");",
+									"    pm.expect(responseJson.date).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"liked is a boolean\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"liked\");",
+									"    pm.expect(responseJson.liked).to.be.a(\"boolean\");",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1096,6 +1310,49 @@
 				},
 				{
 					"name": "Like Comment",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const responseJson = pm.response.json();",
+									"",
+									"pm.test(\"commentId is an integer\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"commentId\");",
+									"    pm.expect(responseJson.commentId % 1 === 0).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"content is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"content\");",
+									"    pm.expect(responseJson.content).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"likes is an array\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"likes\");",
+									"    pm.expect(responseJson.likes).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"date is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"date\");",
+									"    pm.expect(responseJson.date).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"liked is a boolean\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"liked\");",
+									"    pm.expect(responseJson.liked).to.be.a(\"boolean\");",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1185,7 +1442,7 @@
 			"name": "Delete",
 			"item": [
 				{
-					"name": "LogIn User 2 Copy",
+					"name": "LogIn User 2",
 					"event": [
 						{
 							"listen": "test",
