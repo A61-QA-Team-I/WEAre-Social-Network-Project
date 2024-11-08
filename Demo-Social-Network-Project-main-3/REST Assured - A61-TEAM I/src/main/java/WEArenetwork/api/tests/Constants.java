@@ -22,7 +22,7 @@ public class Constants {
 
 
 
-    public static final String CREATE_PUBLIC_POST_USER_1_ENDPOINT = BASE_WEAre_URL + "/posts/auth/newPost?content={{postTitle}}&name={{randomName}}&public=true";
+    public static final String CREATE_PUBLIC_POST_USER_1_ENDPOINT = BASE_WEAre_URL + "/posts/auth/newPost?content=";
 
     public static final String CREATE_PRIVET_POST_USER_1_ENDPOINT = BASE_WEAre_URL + "/posts/auth/newPost?content={{postTitle2}}&name={{randomName}}&public=false";
 
@@ -34,11 +34,11 @@ public class Constants {
 
 
 
-    public static final String SEND_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/request?name={{userId}}";
+    public static final String SEND_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/request?name=";
 
-    public static final String GET_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/users/{{userId2}}/request/";
+    public static final String GET_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/users/";
 
-    public static final String APPROVE_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/users/{{userId2}}/request/approve?requestId={{requestId}}";
+    public static final String APPROVE_REQUEST_ENDPOINT = BASE_WEAre_URL + "/api/auth/users/";
 
 
 
