@@ -30,7 +30,7 @@ public class Constants {
 
     public static final String LIKE_POST_ENDPOINT = BASE_WEAre_URL + "/api/post/auth/likesUp";
 
-    public static final String DELETE_POST_ENDPOINT = BASE_WEAre_URL + "/api/post/auth/manager?postId={{postId}}";
+    public static final String DELETE_POST_ENDPOINT = BASE_WEAre_URL + "/api/post/auth/manager?postId=";
 
 
 

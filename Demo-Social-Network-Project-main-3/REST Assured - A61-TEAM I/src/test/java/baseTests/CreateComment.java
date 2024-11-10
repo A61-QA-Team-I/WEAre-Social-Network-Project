@@ -3,37 +3,35 @@ import baseSetup.BaseSetup;
 import org.testng.annotations.Test;
 
 
-
-
-public class FriendRequest extends BaseSetup{
+public class CreateComment extends BaseSetup{
 
 
     @Test(priority = 1)
     public void testCreateUser() {
 
-       createUser();
+        createUser();
     }
+
 
     @Test(priority = 2)
     public void testLogIn() {
 
-        logIn();
-
+       logIn();
     }
 
 
     @Test(priority = 3)
-    public void testCreateUser2() {
+    public void testCreatePost() {
 
-        createUser2();
+        createPost();
+
     }
 
 
     @Test(priority = 4)
-    public void testSendRequest() {
+    public void testCreateUser2() {
 
-        sendRequest();
-
+        createUser2();
     }
 
 
@@ -45,16 +43,17 @@ public class FriendRequest extends BaseSetup{
 
 
     @Test(priority = 6)
-    public void testGetRequestUser2() {
+    public void testCreateCommentPost() {
 
-        getRequestUser2();
+        createCommentPost();
 
     }
 
 
     @Test(priority = 7)
-    public void testApproveRequest() {
+    public void testDeletePost() {
 
-        approveRequest();
+        deletePost();
     }
+
 }
