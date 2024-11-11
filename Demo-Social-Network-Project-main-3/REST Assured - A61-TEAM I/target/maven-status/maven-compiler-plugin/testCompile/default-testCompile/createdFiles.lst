@@ -1,0 +1,8 @@
+baseTests/LikePost.class
+baseTests/CreateUsers.class
+baseSetup/BaseSetup.class
+baseTests/CreateComment.class
+baseTests/CreatePost.class
+baseTests/FriendRequest.class
+testData/TestData.class
+testData/UniqueNameGenerator.class
