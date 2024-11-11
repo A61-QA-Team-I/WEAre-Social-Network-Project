@@ -1,5 +1,7 @@
 package baseTests;
 import baseSetup.BaseSetup;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
 
@@ -7,13 +9,15 @@ import org.testng.annotations.Test;
 
 public class FriendRequest extends BaseSetup{
 
-
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void testCreateUser() {
 
        createUser();
     }
 
+
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 2)
     public void testLogIn() {
 
@@ -22,6 +26,8 @@ public class FriendRequest extends BaseSetup{
     }
 
 
+
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 3)
     public void testCreateUser2() {
 
@@ -37,6 +43,7 @@ public class FriendRequest extends BaseSetup{
     }
 
 
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 5)
     public void testLogInUser2() {
 

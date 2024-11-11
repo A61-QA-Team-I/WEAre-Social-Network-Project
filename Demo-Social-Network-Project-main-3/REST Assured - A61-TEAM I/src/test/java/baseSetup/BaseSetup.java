@@ -1,4 +1,7 @@
 package baseSetup;
+import io.qameta.allure.Allure;
+import io.qameta.allure.Issue;
+import io.qameta.allure.Link;
 import io.restassured.RestAssured;
 import io.restassured.config.RedirectConfig;
 import io.restassured.path.json.JsonPath;
@@ -24,9 +27,8 @@ public class BaseSetup {
     protected TestData testData = new TestData();
 
 
-
     public void createUser() {
-
+        addIssueAndLink("Jira-84", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-84");
         String requestBody = "{"
                 + "\"username\": \"" + testData.randomName + "\","
                 + "\"password\": \"" + testData.userPassword + "\","
@@ -73,7 +75,8 @@ public class BaseSetup {
 
 
 
-    public  void logIn() {
+    public void logIn() {
+        addIssueAndLink("Jira-87", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-87");
 
         Response response = RestAssured.given()
                 .config(RestAssured.config().redirect(RedirectConfig.redirectConfig().followRedirects(true)))
@@ -105,6 +108,7 @@ public class BaseSetup {
 
 
     public  void updateUserPersonalInfo() {
+        addIssueAndLink("Jira-81", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-81");
 
         String requestBody = "{"
                 + "\"id\": " + testData.userId + ","
@@ -143,6 +147,7 @@ public class BaseSetup {
 
 
     public  void createUser2() {
+        addIssueAndLink("Jira-83", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-83");
 
         String requestBody = "{"
                 + "\"username\": \"" + testData.randomNameUser2 + "\","
@@ -181,8 +186,8 @@ public class BaseSetup {
     }
 
 
-
-    public  void getAllUsers() {
+    public void getAllUsers() {
+        addIssueAndLink("Jira-82", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-82");
 
         String requestBody = "{"
                 + "\"index\": 0,"
@@ -220,7 +225,9 @@ public class BaseSetup {
     }
 
 
-    public  void sendRequest () {
+
+    public void sendRequest () {
+        addIssueAndLink("Jira-93", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-93");
 
         String requestBody = "{"
                 + "\"id\": " + testData.user2Id + ","
@@ -246,7 +253,10 @@ public class BaseSetup {
 
 
 
+
+
     public  void logInUser2() {
+        addIssueAndLink("Jira-86", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-86");
 
         Response response = RestAssured.given()
                 .config(RestAssured.config().redirect(RedirectConfig.redirectConfig().followRedirects(true)))
@@ -276,8 +286,8 @@ public class BaseSetup {
     }
 
 
-
     public  void getRequestUser2 () {
+        addIssueAndLink("Jira-94", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-94");
 
         Response response = given()
                 .header("Content-Type", "application/json")
@@ -302,8 +312,8 @@ public class BaseSetup {
     }
 
 
-
-    public  void approveRequest() {
+    public void approveRequest() {
+        addIssueAndLink("Jira-92", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-92");
 
         Response response = given()
                 .header("Content-Type", "application/x-www-form-urlencoded")
@@ -323,7 +333,9 @@ public class BaseSetup {
         System.out.println();
     }
 
-    public  void createPost() {
+
+    public void createPost() {
+        addIssueAndLink("Jira-90", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-90");
 
         boolean isPublic = true;
         File file = new File("src/main/resources/welcome Massage.png");
@@ -371,8 +383,8 @@ public class BaseSetup {
 
     }
 
-
     public  void deletePost() {
+        addIssueAndLink("Jira-103", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-103");
 
         Response response = given()
                 .cookie("JSESSIONID", testData.jsessionId)
@@ -391,8 +403,8 @@ public class BaseSetup {
 
     }
 
-
-    public  void createCommentPost() {
+    public void createCommentPost() {
+        addIssueAndLink("Jira-97", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-97");
 
 
         String requestBody = "{"
@@ -431,8 +443,8 @@ public class BaseSetup {
     }
 
 
-
-    public  void likePost() {
+    public void likePost() {
+        addIssueAndLink("Jira-100", "Jira Task", "https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-100");
 
         Response response = given()
                 .cookie("JSESSIONID", testData.JSESSIONID_USER2)
@@ -459,5 +471,10 @@ public class BaseSetup {
 
         System.out.println("Liked status: "+ "\u001B[32m" + likedStatus + "\u001B[0m");
 
+    }
+
+    protected void addIssueAndLink(String issueId, String taskName, String taskUrl) {
+        Allure.link(taskName, taskUrl);
+        Allure.issue(issueId, taskUrl);
     }
 }

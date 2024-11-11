@@ -1,12 +1,14 @@
 package baseTests;
 import baseSetup.BaseSetup;
+import io.qameta.allure.Severity;
+import io.qameta.allure.SeverityLevel;
 import org.testng.annotations.Test;
 
 
 
 public class CreatePost extends BaseSetup{
 
-
+    @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void testCreateUser() {
 
@@ -14,13 +16,12 @@ public class CreatePost extends BaseSetup{
     }
 
 
-
-    @Test(priority = 2)
+@Severity(SeverityLevel.CRITICAL)
+@Test(priority = 2)
     public void testLogIn() {
 
      logIn();
     }
-
 
 
 @Test(priority = 3)
@@ -29,7 +30,6 @@ public class CreatePost extends BaseSetup{
      createPost();
 
     }
-
 
 
 
