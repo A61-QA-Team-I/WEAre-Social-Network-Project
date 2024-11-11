@@ -1,11 +1,145 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testng-results ignored="0" total="0" passed="0" failed="0" skipped="0">
+<testng-results ignored="0" total="31" passed="31" failed="0" skipped="0">
   <reporter-output>
   </reporter-output>
-  <suite started-at="2024-11-10T19:39:47 EET" name="Surefire suite" finished-at="2024-11-10T19:39:47 EET" duration-ms="3">
+  <suite started-at="2024-11-11T21:20:55 EET" name="Main Suite" finished-at="2024-11-11T21:20:58 EET" duration-ms="2445">
     <groups>
     </groups>
-    <test started-at="2024-11-10T19:39:47 EET" name="Surefire test" finished-at="2024-11-10T19:39:47 EET" duration-ms="3">
-    </test> <!-- Surefire test -->
-  </suite> <!-- Surefire suite -->
+    <test started-at="2024-11-11T21:20:55 EET" name="REST API" finished-at="2024-11-11T21:20:58 EET" duration-ms="2445">
+      <class name="baseTests.CreateUsers">
+        <test-method signature="testCreateUser()[pri:1, instance:baseTests.CreateUsers@64f1fd08]" started-at="2024-11-11T21:20:55 EET" name="testCreateUser" finished-at="2024-11-11T21:20:56 EET" duration-ms="503" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testLogIn()[pri:2, instance:baseTests.CreateUsers@64f1fd08]" started-at="2024-11-11T21:20:56 EET" name="testLogIn" finished-at="2024-11-11T21:20:56 EET" duration-ms="71" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogIn -->
+        <test-method signature="testUpdateUserPersonalInfo()[pri:3, instance:baseTests.CreateUsers@64f1fd08]" started-at="2024-11-11T21:20:56 EET" name="testUpdateUserPersonalInfo" finished-at="2024-11-11T21:20:56 EET" duration-ms="188" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUpdateUserPersonalInfo -->
+        <test-method signature="testCreateUser2()[pri:4, instance:baseTests.CreateUsers@64f1fd08]" started-at="2024-11-11T21:20:56 EET" name="testCreateUser2" finished-at="2024-11-11T21:20:56 EET" duration-ms="74" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser2 -->
+        <test-method signature="testGetAllUsers()[pri:5, instance:baseTests.CreateUsers@64f1fd08]" started-at="2024-11-11T21:20:56 EET" name="testGetAllUsers" finished-at="2024-11-11T21:20:56 EET" duration-ms="42" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllUsers -->
+      </class> <!-- baseTests.CreateUsers -->
+      <class name="baseTests.LikePost">
+        <test-method signature="testCreateUser()[pri:1, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:57 EET" name="testCreateUser" finished-at="2024-11-11T21:20:57 EET" duration-ms="66" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testLogIn()[pri:2, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:57 EET" name="testLogIn" finished-at="2024-11-11T21:20:58 EET" duration-ms="173" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogIn -->
+        <test-method signature="testCreatePost()[pri:3, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testCreatePost" finished-at="2024-11-11T21:20:58 EET" duration-ms="68" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePost -->
+        <test-method signature="testCreateUser2()[pri:4, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testCreateUser2" finished-at="2024-11-11T21:20:58 EET" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser2 -->
+        <test-method signature="testLogInUser2()[pri:5, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testLogInUser2" finished-at="2024-11-11T21:20:58 EET" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogInUser2 -->
+        <test-method signature="testCreateCommentPost()[pri:6, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testCreateCommentPost" finished-at="2024-11-11T21:20:58 EET" duration-ms="41" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateCommentPost -->
+        <test-method signature="testLikePost()[pri:7, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testLikePost" finished-at="2024-11-11T21:20:58 EET" duration-ms="98" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLikePost -->
+        <test-method signature="testDeletePost()[pri:8, instance:baseTests.LikePost@692e028d]" started-at="2024-11-11T21:20:58 EET" name="testDeletePost" finished-at="2024-11-11T21:20:58 EET" duration-ms="19" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeletePost -->
+      </class> <!-- baseTests.LikePost -->
+      <class name="baseTests.CreateComment">
+        <test-method signature="testCreateUser()[pri:1, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testCreateUser" finished-at="2024-11-11T21:20:57 EET" duration-ms="64" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testLogIn()[pri:2, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testLogIn" finished-at="2024-11-11T21:20:57 EET" duration-ms="59" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogIn -->
+        <test-method signature="testCreatePost()[pri:3, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testCreatePost" finished-at="2024-11-11T21:20:57 EET" duration-ms="33" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePost -->
+        <test-method signature="testCreateUser2()[pri:4, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testCreateUser2" finished-at="2024-11-11T21:20:57 EET" duration-ms="62" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser2 -->
+        <test-method signature="testLogInUser2()[pri:5, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testLogInUser2" finished-at="2024-11-11T21:20:57 EET" duration-ms="54" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogInUser2 -->
+        <test-method signature="testCreateCommentPost()[pri:6, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testCreateCommentPost" finished-at="2024-11-11T21:20:57 EET" duration-ms="45" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateCommentPost -->
+        <test-method signature="testDeletePost()[pri:7, instance:baseTests.CreateComment@1cec219f]" started-at="2024-11-11T21:20:57 EET" name="testDeletePost" finished-at="2024-11-11T21:20:57 EET" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeletePost -->
+      </class> <!-- baseTests.CreateComment -->
+      <class name="baseTests.FriendRequest">
+        <test-method signature="testCreateUser()[pri:1, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:56 EET" name="testCreateUser" finished-at="2024-11-11T21:20:56 EET" duration-ms="65" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testLogIn()[pri:2, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:56 EET" name="testLogIn" finished-at="2024-11-11T21:20:57 EET" duration-ms="79" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogIn -->
+        <test-method signature="testCreateUser2()[pri:3, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:57 EET" name="testCreateUser2" finished-at="2024-11-11T21:20:57 EET" duration-ms="97" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser2 -->
+        <test-method signature="testSendRequest()[pri:4, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:57 EET" name="testSendRequest" finished-at="2024-11-11T21:20:57 EET" duration-ms="13" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testSendRequest -->
+        <test-method signature="testLogInUser2()[pri:5, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:57 EET" name="testLogInUser2" finished-at="2024-11-11T21:20:57 EET" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogInUser2 -->
+        <test-method signature="testGetRequestUser2()[pri:6, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:57 EET" name="testGetRequestUser2" finished-at="2024-11-11T21:20:57 EET" duration-ms="20" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetRequestUser2 -->
+        <test-method signature="testApproveRequest()[pri:7, instance:baseTests.FriendRequest@4c18621b]" started-at="2024-11-11T21:20:57 EET" name="testApproveRequest" finished-at="2024-11-11T21:20:57 EET" duration-ms="10" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testApproveRequest -->
+      </class> <!-- baseTests.FriendRequest -->
+      <class name="baseTests.CreatePost">
+        <test-method signature="testCreateUser()[pri:1, instance:baseTests.CreatePost@39c385d6]" started-at="2024-11-11T21:20:57 EET" name="testCreateUser" finished-at="2024-11-11T21:20:57 EET" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateUser -->
+        <test-method signature="testLogIn()[pri:2, instance:baseTests.CreatePost@39c385d6]" started-at="2024-11-11T21:20:57 EET" name="testLogIn" finished-at="2024-11-11T21:20:57 EET" duration-ms="61" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLogIn -->
+        <test-method signature="testCreatePost()[pri:3, instance:baseTests.CreatePost@39c385d6]" started-at="2024-11-11T21:20:57 EET" name="testCreatePost" finished-at="2024-11-11T21:20:57 EET" duration-ms="93" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreatePost -->
+        <test-method signature="testDeletePost()[pri:4, instance:baseTests.CreatePost@39c385d6]" started-at="2024-11-11T21:20:57 EET" name="testDeletePost" finished-at="2024-11-11T21:20:57 EET" duration-ms="18" status="PASS">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testDeletePost -->
+      </class> <!-- baseTests.CreatePost -->
+    </test> <!-- REST API -->
+  </suite> <!-- Main Suite -->
 </testng-results>
