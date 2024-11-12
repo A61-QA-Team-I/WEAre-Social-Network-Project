@@ -127,25 +127,12 @@
 					"response": []
 				},
 				{
-					"name": "Create Users 2",
+					"name": "Log",
 					"event": [
 						{
-							"listen": "prerequest",
+							"listen": "test",
 							"script": {
 								"exec": [
-									"var names = [",
-									"    \"Benjamin\", \"Catherine\", \"Daniel\", \"Ella\", \"Finn\", \"Georgia\", \"Henry\", \"Isla\",",
-									"    \"Jacob\", \"Kylie\", \"Lucas\", \"Mason\", \"Nora\", \"Owen\", \"Penelope\", \"Quincy\",",
-									"    \"Riley\", \"Sophie\", \"Thomas\", \"Ursula\", \"Victor\", \"Willow\", \"Xenia\", \"Yusuf\",",
-									"    \"Zara\", \"Aiden\", \"Bella\", \"Caleb\", \"Delilah\", \"Ethan\"",
-									"];",
-									"",
-									"var randomIndex = Math.floor(Math.random() * names.length);",
-									"",
-									"var randomName = names[randomIndex];",
-									"",
-									"pm.environment.set(\"randomName2\", randomName);",
-									"",
 									""
 								],
 								"type": "text/javascript",
@@ -153,31 +140,10 @@
 							}
 						},
 						{
-							"listen": "test",
+							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"var responseBody = pm.response.text();",
-									"",
-									"var idMatch = responseBody.match(/id (\\d+)/);",
-									"if (idMatch) {",
-									"    var userId = idMatch[1]; ",
-									"",
-									"    pm.environment.set(\"userId2\", userId);",
-									"",
-									"}",
-									"",
-									"pm.test(\"Response contains success message\", function () {",
-									"    pm.expect(pm.response.text()).to.include(\"User with name\");",
-									"});",
-									"",
-									"pm.test(\"Response format is as expected\", function () {",
-									"    var regex = /^User with name \\w+ and id \\d+ was created$/;",
-									"    pm.expect(responseBody).to.match(regex);",
-									"});"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -186,7 +152,7 @@
 					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
-							"content-length": true
+							"content-type": true
 						}
 					},
 					"request": {
@@ -196,29 +162,33 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Length",
-								"value": "195",
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"{{randomName2}}\",\n  \"password\": \"VankoVelchev#\",\n  \"confirmPassword\": \"VankoVelchev#\",\n  \"email\": \"ivan.velchev@abv.bg\",\n  \"category\": { \"id\": 148 },\n  \"authorities\": [\"ROLE_USER\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "{{Base WEAre Url}}/api/users/",
+							"raw": "{{Base WEAre Url}}/authenticate",
 							"host": [
 								"{{Base WEAre Url}}"
 							],
 							"path": [
-								"api",
-								"users",
-								""
+								"authenticate"
 							]
 						}
 					},
@@ -731,7 +701,194 @@
 			"name": "Request",
 			"item": [
 				{
-					"name": "send request User 1 to User2",
+					"name": "Create Users 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var names = [",
+									"    \"Benjamin\", \"Catherine\", \"Daniel\", \"Ella\", \"Finn\", \"Georgia\", \"Henry\", \"Isla\",",
+									"    \"Jacob\", \"Kylie\", \"Lucas\", \"Mason\", \"Nora\", \"Owen\", \"Penelope\", \"Quincy\",",
+									"    \"Riley\", \"Sophie\", \"Thomas\", \"Ursula\", \"Victor\", \"Willow\", \"Xenia\", \"Yusuf\",",
+									"    \"Zara\", \"Aiden\", \"Bella\", \"Caleb\", \"Delilah\", \"Ethan\"",
+									"];",
+									"",
+									"var randomIndex = Math.floor(Math.random() * names.length);",
+									"",
+									"var randomName = names[randomIndex];",
+									"",
+									"pm.environment.set(\"randomName2\", randomName);",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var responseBody = pm.response.text();",
+									"",
+									"var idMatch = responseBody.match(/id (\\d+)/);",
+									"if (idMatch) {",
+									"    var userId = idMatch[1]; ",
+									"",
+									"    pm.environment.set(\"userId2\", userId);",
+									"",
+									"}",
+									"",
+									"pm.test(\"Response contains success message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"User with name\");",
+									"});",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    var regex = /^User with name \\w+ and id \\d+ was created$/;",
+									"    pm.expect(responseBody).to.match(regex);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-length": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Length",
+								"value": "195",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{randomName2}}\",\n  \"password\": \"VankoVelchev#\",\n  \"confirmPassword\": \"VankoVelchev#\",\n  \"email\": \"ivan.velchev@abv.bg\",\n  \"category\": { \"id\": 148 },\n  \"authorities\": [\"ROLE_USER\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/api/users/",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"if (!pm.request.body.raw.includes('\"id\"')) {",
+									"    throw new Error(\"Error,ID field\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID={{JSESSIONID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": {{userId2}},\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/api/auth/request?name={{userId}}",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"request"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "send request User 1 to User2 Copy",
 					"event": [
 						{
 							"listen": "test",
@@ -772,7 +929,19 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -811,6 +980,74 @@
 									"key": "name",
 									"value": "{{userId}}"
 								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName2}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
 							]
 						}
 					},
@@ -1421,6 +1658,74 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
 									"var cookie = pm.cookies.get(\"JSESSIONID\");",
 									"pm.globals.set(\"JSESSIONID\", cookie);",
 									"",
@@ -1634,7 +1939,75 @@
 			"name": "Delete",
 			"item": [
 				{
-					"name": "LogIn User 2",
+					"name": "Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName2}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn User",
 					"event": [
 						{
 							"listen": "test",
