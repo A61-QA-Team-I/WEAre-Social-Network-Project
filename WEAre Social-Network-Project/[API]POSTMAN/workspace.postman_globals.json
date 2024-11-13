@@ -1,0 +1,33 @@
+{
+	"id": "57ffbe25-a3b0-4c6e-8076-edefeb260aac",
+	"values": [
+		{
+			"key": "sessionCookie",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "JSESSIONID",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "JSESSIONID2",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		},
+		{
+			"key": "JSESSIONID_USER2",
+			"value": "",
+			"type": "any",
+			"enabled": true
+		}
+	],
+	"name": "Globals",
+	"_postman_variable_scope": "globals",
+	"_postman_exported_at": "2024-11-12T19:52:12.080Z",
+	"_postman_exported_using": "Postman/11.19.0"
+}
