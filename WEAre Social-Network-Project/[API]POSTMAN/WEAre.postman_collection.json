@@ -54,6 +54,30 @@
 									"",
 									"}",
 									"",
+									"pm.test(\"Response contains success message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"User with name\");",
+									"});",
+									"",
+									"var responseBody = pm.response.text();",
+									"var idMatch = responseBody.match(/id (\\d+)/);",
+									"if (idMatch) {",
+									"    var userId = idMatch[1];",
+									"    pm.environment.set(\"userId\", userId);",
+									"    pm.test(\"User ID is extracted and saved as environment variable\", function () {",
+									"        pm.expect(userId).to.not.be.undefined;",
+									"    });",
+									"}",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    var regex = /^User with name \\w+ and id \\d+ was created$/;",
+									"    pm.expect(responseBody).to.match(regex);",
+									"});",
+									"",
+									"pm.test(\"Response contains the correct username\", function () {",
+									"    var expectedUsername = pm.variables.replaceIn(\"{{randomName}}\");",
+									"    pm.expect(pm.response.text()).to.include(`User with name ${expectedUsername}`);",
+									"});",
+									"",
 									"",
 									""
 								],
@@ -103,25 +127,12 @@
 					"response": []
 				},
 				{
-					"name": "Create Users 2",
+					"name": "Log",
 					"event": [
 						{
-							"listen": "prerequest",
+							"listen": "test",
 							"script": {
 								"exec": [
-									"var names = [",
-									"    \"Benjamin\", \"Catherine\", \"Daniel\", \"Ella\", \"Finn\", \"Georgia\", \"Henry\", \"Isla\",",
-									"    \"Jacob\", \"Kylie\", \"Lucas\", \"Mason\", \"Nora\", \"Owen\", \"Penelope\", \"Quincy\",",
-									"    \"Riley\", \"Sophie\", \"Thomas\", \"Ursula\", \"Victor\", \"Willow\", \"Xenia\", \"Yusuf\",",
-									"    \"Zara\", \"Aiden\", \"Bella\", \"Caleb\", \"Delilah\", \"Ethan\"",
-									"];",
-									"",
-									"var randomIndex = Math.floor(Math.random() * names.length);",
-									"",
-									"var randomName = names[randomIndex];",
-									"",
-									"pm.environment.set(\"randomName2\", randomName);",
-									"",
 									""
 								],
 								"type": "text/javascript",
@@ -129,22 +140,10 @@
 							}
 						},
 						{
-							"listen": "test",
+							"listen": "prerequest",
 							"script": {
 								"exec": [
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
-									"",
-									"var responseBody = pm.response.text();",
-									"",
-									"var idMatch = responseBody.match(/id (\\d+)/);",
-									"if (idMatch) {",
-									"    var userId = idMatch[1]; ",
-									"",
-									"    pm.environment.set(\"userId2\", userId);",
-									"",
-									"}"
+									""
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -153,7 +152,7 @@
 					],
 					"protocolProfileBehavior": {
 						"disabledSystemHeaders": {
-							"content-length": true
+							"content-type": true
 						}
 					},
 					"request": {
@@ -163,29 +162,33 @@
 						"method": "POST",
 						"header": [
 							{
-								"key": "Content-Length",
-								"value": "195",
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
 								"type": "text"
 							}
 						],
 						"body": {
-							"mode": "raw",
-							"raw": "{\n  \"username\": \"{{randomName2}}\",\n  \"password\": \"VankoVelchev#\",\n  \"confirmPassword\": \"VankoVelchev#\",\n  \"email\": \"ivan.velchev@abv.bg\",\n  \"category\": { \"id\": 148 },\n  \"authorities\": [\"ROLE_USER\"]\n}",
-							"options": {
-								"raw": {
-									"language": "json"
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
 								}
-							}
+							]
 						},
 						"url": {
-							"raw": "{{Base WEAre Url}}/api/users/",
+							"raw": "{{Base WEAre Url}}/authenticate",
 							"host": [
 								"{{Base WEAre Url}}"
 							],
 							"path": [
-								"api",
-								"users",
-								""
+								"authenticate"
 							]
 						}
 					},
@@ -203,6 +206,21 @@
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"pm.test(\"Verify 'LOGOUT' button is present for logged-in user\", function () {",
+									"    pm.response.to.have.status(200); ",
+									"    pm.expect(pm.response.text()).to.include('LOGOUT'); ",
+									"});",
+									"",
+									"pm.test(\"Verify 'Add New Post' button is present for logged-in user\", function () {",
+									"    var responseBody = pm.response.text();",
+									"    var regex = /<a\\s+href=\"\\/posts\\/auth\\/newPost\"[^>]*>.*?Add New\\s*post<\\/a>/i;",
+									"    pm.expect(responseBody).to.match(regex);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -266,6 +284,55 @@
 				},
 				{
 					"name": "[Get] All Users",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is an array\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    pm.expect(jsonData).to.be.an(\"array\");",
+									"});",
+									"",
+									"pm.test(\"Each user has required properties\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function (user) {",
+									"        pm.expect(user).to.have.property(\"userId\").that.is.a(\"number\");",
+									"        pm.expect(user).to.have.property(\"username\").that.is.a(\"string\");",
+									"        pm.expect(user.expertiseProfile).to.have.property(\"id\").that.is.a(\"number\");",
+									"        pm.expect(user.expertiseProfile).to.have.property(\"skills\").that.is.an(\"array\");",
+									"        pm.expect(user.expertiseProfile).to.have.property(\"category\").that.is.an(\"object\");",
+									"        pm.expect(user.expertiseProfile.category).to.have.property(\"id\").that.is.a(\"number\");",
+									"        pm.expect(user.expertiseProfile.category).to.have.property(\"name\").that.is.a(\"string\");",
+									"       ",
+									"    });",
+									"});",
+									"",
+									"pm.test(\"All users are enabled\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function (user) {",
+									"        pm.expect(user.enabled).to.be.true;",
+									"    });",
+									"});",
+									"",
+									"pm.test(\"Usernames are non-empty strings\", function () {",
+									"    var jsonData = pm.response.json();",
+									"    jsonData.forEach(function (user) {",
+									"        pm.expect(user.username).to.be.a(\"string\").and.not.be.empty;",
+									"    });",
+									"});",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
 					"request": {
 						"auth": {
 							"type": "noauth"
@@ -338,6 +405,38 @@
 								"exec": [
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"const responseJson = pm.response.json();",
+									"",
+									"pm.test(\"Response contains 'id' and it is an integer\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"id\");",
+									"    pm.expect(Number.isInteger(responseJson.id)).to.be.true;",
+									"});",
+									"",
+									"pm.test(\"Response contains 'firstName' and it is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"firstName\");",
+									"    pm.expect(responseJson.firstName).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'lastName' and it is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"lastName\");",
+									"    pm.expect(responseJson.lastName).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'sex' and it is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"sex\");",
+									"    pm.expect(responseJson.sex).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'birthYear' and it is a string\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"birthYear\");",
+									"    pm.expect(responseJson.birthYear).to.be.a(\"string\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'picturePrivacy' and it is a boolean\", function () {",
+									"    pm.expect(responseJson).to.have.property(\"picturePrivacy\");",
+									"    pm.expect(responseJson.picturePrivacy).to.be.a(\"boolean\");",
 									"});"
 								],
 								"type": "text/javascript",
@@ -602,21 +701,110 @@
 			"name": "Request",
 			"item": [
 				{
-					"name": "send request User 1 to User2",
+					"name": "Create Users 2",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"var names = [",
+									"    \"Benjamin\", \"Catherine\", \"Daniel\", \"Ella\", \"Finn\", \"Georgia\", \"Henry\", \"Isla\",",
+									"    \"Jacob\", \"Kylie\", \"Lucas\", \"Mason\", \"Nora\", \"Owen\", \"Penelope\", \"Quincy\",",
+									"    \"Riley\", \"Sophie\", \"Thomas\", \"Ursula\", \"Victor\", \"Willow\", \"Xenia\", \"Yusuf\",",
+									"    \"Zara\", \"Aiden\", \"Bella\", \"Caleb\", \"Delilah\", \"Ethan\"",
+									"];",
+									"",
+									"var randomIndex = Math.floor(Math.random() * names.length);",
+									"",
+									"var randomName = names[randomIndex];",
+									"",
+									"pm.environment.set(\"randomName2\", randomName);",
+									"",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"var responseBody = pm.response.text();",
+									"",
+									"var idMatch = responseBody.match(/id (\\d+)/);",
+									"if (idMatch) {",
+									"    var userId = idMatch[1]; ",
+									"",
+									"    pm.environment.set(\"userId2\", userId);",
+									"",
+									"}",
+									"",
+									"pm.test(\"Response contains success message\", function () {",
+									"    pm.expect(pm.response.text()).to.include(\"User with name\");",
+									"});",
+									"",
+									"pm.test(\"Response format is as expected\", function () {",
+									"    var regex = /^User with name \\w+ and id \\d+ was created$/;",
+									"    pm.expect(responseBody).to.match(regex);",
+									"});"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-length": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Length",
+								"value": "195",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"username\": \"{{randomName2}}\",\n  \"password\": \"VankoVelchev#\",\n  \"confirmPassword\": \"VankoVelchev#\",\n  \"email\": \"ivan.velchev@abv.bg\",\n  \"category\": { \"id\": 148 },\n  \"authorities\": [\"ROLE_USER\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/api/users/",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"api",
+								"users",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "request",
 					"event": [
 						{
 							"listen": "test",
 							"script": {
 								"exec": [
-									"const responseText = pm.response.text();",
-									"",
-									"pm.test(\"Response contains the expected friend request format\", function () {",
-									"    pm.expect(responseText).to.include(\"send friend request to\");",
-									"});",
-									"",
-									"pm.test(\"Status code is 200\", function () {",
-									"    pm.response.to.have.status(200);",
-									"});",
 									""
 								],
 								"type": "text/javascript",
@@ -643,7 +831,19 @@
 					},
 					"request": {
 						"auth": {
-							"type": "noauth"
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "string"
+								}
+							]
 						},
 						"method": "POST",
 						"header": [
@@ -688,6 +888,172 @@
 					"response": []
 				},
 				{
+					"name": "send request User 1 to User2 Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const responseText = pm.response.text();",
+									"",
+									"pm.test(\"Response contains the expected friend request format\", function () {",
+									"    pm.expect(responseText).to.include(\"send friend request to\");",
+									"});",
+									"",
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});",
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"if (!pm.request.body.raw.includes('\"id\"')) {",
+									"    throw new Error(\"Error,ID field\");",
+									"}"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "basic",
+							"basic": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "string"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Cookie",
+								"value": "JSESSIONID={{JSESSIONID}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"id\": {{userId2}},\n  \"username\": \"\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/api/auth/request?name={{userId}}",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"api",
+								"auth",
+								"request"
+							],
+							"query": [
+								{
+									"key": "name",
+									"value": "{{userId}}"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName2}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "LogIn User 2",
 					"event": [
 						{
@@ -701,6 +1067,21 @@
 									"console.log(\"JSESSIONID for User 2: \" + cookieUser2);",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"pm.test(\"Verify 'LOGOUT' button is present for logged-in user\", function () {",
+									"    pm.response.to.have.status(200); ",
+									"    pm.expect(pm.response.text()).to.include('LOGOUT'); ",
+									"});",
+									"",
+									"pm.test(\"Verify 'Add New Post' button is present for logged-in user\", function () {",
+									"    var responseBody = pm.response.text();",
+									"    var regex = /<a\\s+href=\"\\/posts\\/auth\\/newPost\"[^>]*>.*?Add New\\s*post<\\/a>/i;",
+									"    pm.expect(responseBody).to.match(regex);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -784,6 +1165,13 @@
 									"} else {",
 									"    console.log(\"Error\");",
 									"}",
+									"",
+									"pm.test(\"Response array is not empty\", function () {",
+									"    var responseData = pm.response.json();",
+									"    pm.expect(responseData.length).to.be.above(0, \"Expected response array to have at least one entry\");",
+									"});",
+									"",
+									"",
 									""
 								],
 								"type": "text/javascript",
@@ -1012,14 +1400,42 @@
 									"",
 									"    pm.environment.set(\"postId\", postId);",
 									"",
-									" ",
 									"",
 									"var postIdUser2 = responseData[0].postId;",
 									"    pm.environment.set(\"postIdUser2\", postIdUser2);",
 									"    console.log(\"Saved Post ID for User 2: \" + postIdUser2);",
 									"} else {",
 									"    console.log(\"Not enough posts found or the response is not a valid array.\");",
-									"}"
+									"}",
+									"",
+									"",
+									"var firstPost = responseData[0];",
+									"",
+									"",
+									"pm.test(\"Response contains 'postId'\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"postId\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'content'\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"content\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'picture'\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"picture\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'date'\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"date\");",
+									"});",
+									"",
+									"pm.test(\"Response contains 'likes'\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"likes\");",
+									"});",
+									"",
+									"pm.test(\"postId is an integer\", function () {",
+									"    pm.expect(firstPost).to.have.property(\"postId\");",
+									"    pm.expect(firstPost.postId % 1 === 0).to.be.true;",
+									"});"
 								],
 								"type": "text/javascript",
 								"packages": {}
@@ -1242,11 +1658,94 @@
 							"listen": "test",
 							"script": {
 								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn User",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
 									"var cookie = pm.cookies.get(\"JSESSIONID\");",
 									"pm.globals.set(\"JSESSIONID\", cookie);",
 									"",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"pm.test(\"Verify 'LOGOUT' button is present for logged-in user\", function () {",
+									"    pm.response.to.have.status(200); ",
+									"    pm.expect(pm.response.text()).to.include('LOGOUT'); ",
+									"});",
+									"",
+									"pm.test(\"Verify 'Add New Post' button is present for logged-in user\", function () {",
+									"    var responseBody = pm.response.text();",
+									"    var regex = /<a\\s+href=\"\\/posts\\/auth\\/newPost\"[^>]*>.*?Add New\\s*post<\\/a>/i;",
+									"    pm.expect(responseBody).to.match(regex);",
 									"});"
 								],
 								"type": "text/javascript",
@@ -1363,12 +1862,10 @@
 							}
 						],
 						"url": {
-							"raw": "http://localhost:8081/api/comment/auth/likesUp?commentId={{commentId}}",
-							"protocol": "http",
+							"raw": "{{Base WEAre Url}}/api/comment/auth/likesUp?commentId={{commentId}}",
 							"host": [
-								"localhost"
+								"{{Base WEAre Url}}"
 							],
-							"port": "8081",
 							"path": [
 								"api",
 								"comment",
@@ -1442,7 +1939,75 @@
 			"name": "Delete",
 			"item": [
 				{
-					"name": "LogIn User 2",
+					"name": "Log",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									""
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {
+							"content-type": true
+						}
+					},
+					"request": {
+						"auth": {
+							"type": "noauth"
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/x-www-form-urlencoded",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "urlencoded",
+							"urlencoded": [
+								{
+									"key": "username",
+									"value": "{{randomName2}}",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "VankoVelchev#",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{Base WEAre Url}}/authenticate",
+							"host": [
+								"{{Base WEAre Url}}"
+							],
+							"path": [
+								"authenticate"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "LogIn User",
 					"event": [
 						{
 							"listen": "test",
@@ -1455,6 +2020,21 @@
 									"console.log(\"JSESSIONID for User 2: \" + cookieUser2);",
 									"pm.test(\"Status code is 200\", function () {",
 									"    pm.response.to.have.status(200);",
+									"});",
+									"",
+									"pm.test(\"Response is HTML\", function () {",
+									"    pm.expect(pm.response.headers.get('Content-Type')).to.include('text/html');",
+									"});",
+									"",
+									"pm.test(\"Verify 'LOGOUT' button is present for logged-in user\", function () {",
+									"    pm.response.to.have.status(200); ",
+									"    pm.expect(pm.response.text()).to.include('LOGOUT'); ",
+									"});",
+									"",
+									"pm.test(\"Verify 'Add New Post' button is present for logged-in user\", function () {",
+									"    var responseBody = pm.response.text();",
+									"    var regex = /<a\\s+href=\"\\/posts\\/auth\\/newPost\"[^>]*>.*?Add New\\s*post<\\/a>/i;",
+									"    pm.expect(responseBody).to.match(regex);",
 									"});"
 								],
 								"type": "text/javascript",
