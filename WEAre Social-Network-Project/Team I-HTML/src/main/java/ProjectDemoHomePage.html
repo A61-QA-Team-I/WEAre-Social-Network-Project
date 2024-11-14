@@ -187,7 +187,7 @@
     </a>
 </div>
 
-<h1>Test Plan for Social Network Application</h1>
+<h1>Test Plan for WEAre Social Network Application</h1>
 
 <section>
     <h2> Overview</h2>
@@ -259,23 +259,7 @@
     </ol>
 </section>
 
-<section>
-    <h2>Testing Strategy</h2>
 
-    <p>To ensure the quality and stability of the social network application, we have developed a comprehensive testing strategy that encompasses manual testing, automation, and API verification:</p>
-
-    <ol>
-        <li><strong>Manual Testing</strong>: Initially, we will perform thorough checks of core functionalities such as user registration, login, post creation, likes, comments, and profile management. The goal is to identify and document all critical and high-risk bugs in <strong>Jira</strong>. Our team will employ "exploratory testing" techniques to cover edge cases and unpredictable scenarios to ensure comprehensive coverage.</li>
-        <div style="height: 10px;"></div>
-        <li><strong>API Testing with Postman</strong>: Once the initial manual testing and bug documentation are completed, we will use <strong>Postman</strong> to validate all key API endpoints. This will include not only basic CRUD operations (Create, Read, Update, Delete) but also the system's behavior for various response statuses (200 OK, 404 Not Found, 500 Internal Server Error, etc.). We will also test API security by checking for proper handling of unauthorized requests and error management.</li>
-        <div style="height: 10px;"></div>
-        <li><strong>Automated Testing with Selenium WebDriver</strong>: After resolving major issues, we will begin automation using <strong>IntelliJ</strong> and <strong>Selenium WebDriver</strong> to streamline regression testing. The focus will be on automating critical user flows like registration, login, and post creation, ensuring there are no regressions with each update. We will implement the "page object model" design pattern and use data-driven testing techniques to make our scripts robust and easily maintainable across multiple browsers.</li>
-        <div style="height: 10px;"></div>
-        <li><strong>Cross-browser Testing</strong>: We will validate the application's performance on major browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>, to ensure a consistent user experience and prevent compatibility issues. These tests will be automated using Selenium Grid to cover various browser environments efficiently.</li>
-        <div style="height: 10px;"></div>
-        <li><strong>Performance Testing with JMeter</strong>: We will use <strong>JMeter</strong> to conduct load testing, simulating high user traffic and assessing system behavior under stress. The goal is to identify potential performance bottlenecks and ensure that the application remains stable under peak loads. Stress testing will be performed in different environments to measure the maximum performance capacity and evaluate the system's ability to recover gracefully from failures.</li>
-    </ol>
-</section>
 
 <section>
     <h2>Risk Management and Mitigation Strategies</h2>
@@ -306,6 +290,27 @@
 
     <p>As a team, we believe that successful testing relies on good organization, efficient communication, and swift problem-solving. Our approach enables us to work in sync and stay prepared for any challenges that may arise.</p>
 </section>
+
+
+<section>
+    <h2>Testing Strategy</h2>
+
+    <p>To ensure the quality and stability of the social network application, we have developed a comprehensive testing strategy that encompasses manual testing, automation, and API verification:</p>
+
+    <ol>
+        <li><strong>Manual Testing</strong>: Initially, we will perform thorough checks of core functionalities such as user registration, login, post creation, likes, comments, and profile management. The goal is to identify and document all critical and high-risk bugs in <strong>Jira</strong>. Our team will employ "exploratory testing" techniques to cover edge cases and unpredictable scenarios to ensure comprehensive coverage.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>API Testing with Postman</strong>: Once the initial manual testing and bug documentation are completed, we will use <strong>Postman</strong> to validate all key API endpoints. This will include not only basic CRUD operations (Create, Read, Update, Delete) but also the system's behavior for various response statuses (200 OK, 404 Not Found, 500 Internal Server Error, etc.). We will also test API security by checking for proper handling of unauthorized requests and error management.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Automated Testing with Selenium WebDriver</strong>: After resolving major issues, we will begin automation using <strong>IntelliJ</strong> and <strong>Selenium WebDriver</strong> to streamline regression testing. The focus will be on automating critical user flows like registration, login, and post creation, ensuring there are no regressions with each update. We will implement the "page object model" design pattern and use data-driven testing techniques to make our scripts robust and easily maintainable across multiple browsers.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Cross-browser Testing</strong>: We will validate the application's performance on major browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>, to ensure a consistent user experience and prevent compatibility issues. These tests will be automated using Selenium Grid to cover various browser environments efficiently.</li>
+        <div style="height: 10px;"></div>
+        <li><strong>Performance Testing with JMeter</strong>: We will use <strong>JMeter</strong> to conduct load testing, simulating high user traffic and assessing system behavior under stress. The goal is to identify potential performance bottlenecks and ensure that the application remains stable under peak loads. Stress testing will be performed in different environments to measure the maximum performance capacity and evaluate the system's ability to recover gracefully from failures.</li>
+    </ol>
+</section>
+
+
 
 <section>
     <h2>Entry Criteria</h2>
@@ -413,13 +418,12 @@
     <div style="height: 10px;"></div>
     <div style="height: 10px;"></div>
 
-    <h3>Testing Scenarios</h3>
-    <p>The tests will cover key functionalities, including user registration, login, post creation, and user interactions.</p>
+
     <p>This test environment is designed to provide maximum compatibility and facilitate extensive testing to ensure the stability and quality of the application.</p>
 </section>
 
 <section>
-    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#social-network-test-cases---detailed-test-plan" target="_blank" style="text-decoration:none; color: blue;">Test Scenarios</a></h2>
+    <h2><a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#social-network-test-cases---detailed-test-plan" target="_blank" style="text-decoration:none; color: blue;">Manual Testing Scenarios</a></h2>
 
     <ul>
         <li>
@@ -563,8 +567,10 @@
     </ul>
 </section>
 
+<section>
 
     <h2>Test Schedule</h2>
+    <div style="height: 10px;"></div>
 
     <img src="../images/output copy.png" alt="Test Schedule" style="max-width: 70%; height: auto;" />
 
@@ -673,6 +679,15 @@
             Upon completion of the entire testing strategy, we will provide a detailed overview of the testing approach, tools utilized, and test findings. This documentation will summarize the scope of testing and offer clarity and accountability for all identified and reported issues, facilitating transparency and continuous improvement of the testing process.
         </li>
     </ol>
+</section>
+
+<section>
+
+    <h2><a href="testReporting/baseTestReportingPage.html" style="text-decoration:none; color:blue;">Test Reporting</a></h2>
+
+
+
+
 </section>
 
 

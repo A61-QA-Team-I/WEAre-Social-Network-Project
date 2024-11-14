@@ -26,7 +26,6 @@ public class FriendRequest extends BaseSetup{
     }
 
 
-
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 3)
     public void testCreateUser2() {

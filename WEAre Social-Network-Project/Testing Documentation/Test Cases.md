@@ -1,5 +1,8 @@
-# Social Network Test Cases - Detailed Test Plan
+# WEAre Social Network Test Cases - Detailed Test Plan
 
+
+
+## Manual Testing Scenarios
 ## 1. User Registration
 
 - **Positive test**: Enter a unique username between 2 and 20 characters, a valid password, and a unique email. Ensure the user is successfully created.  
@@ -221,5 +224,83 @@ To ensure that the API handles errors correctly, it is crucial to verify that ex
 
 ---
 
-- **API test**: Verify if a GET request to the API returns all users.  
-- **API test**: Verify if an unauthenticated request can be made to the server.
+# REST Assured Testing Overview
+
+## Users
+
+### 1. Create User
+- **Methods**: `createUser()` and `createUser2()`
+- **Description**: Creates a new user with unique usernames.
+- **Details**: Sends requests to predefined endpoints with JSON bodies containing user details.
+
+### 2. Log In
+- **Methods**: `logIn()` and `logInUser2()`
+- **Description**: Authenticates two users by sending credentials in `application/x-www-form-urlencoded` format.
+- **Details**: On success, stores session cookies (`JSESSIONID`) for maintaining user sessions.
+
+### 3. Update User Info
+- **Method**: `updateUserPersonalInfo()`
+- **Description**: Updates the personal information of the user.
+- **Details**: Uses the session cookie for authentication and modifies fields like `firstName`, `lastName`, `sex`, and `birthYear`.
+
+### 4. Retrieve All Users
+- **Method**: `getAllUsers()`
+- **Description**: Retrieves a list of users with pagination.
+- **Details**: Allows specifying pagination parameters (index and size) to control the response size.
+
+### 5. Send Friend Request
+- **Method**: `sendRequest()`
+- **Description**: Sends a friend request to another user.
+- **Details**: Requires the recipient's user ID.
+
+### 6. Approve Friend Request
+- **Method**: `approveRequest()`
+- **Description**: Approves a pending friend request.
+- **Details**: Requires the request ID.
+
+## Posts
+
+### 1. Create Post
+- **Method**: `createPost()`
+- **Description**: Uploads a public post, including an image file.
+- **Details**: Uses `multipart/form-data` format and extracts the `postId` for reference in other operations.
+
+### 2. Delete Post
+- **Method**: `deletePost()`
+- **Description**: Deletes an existing post by its post ID.
+
+### 3. Comment on Post
+- **Method**: `createCommentPost()`
+- **Description**: Adds a comment to a specified post.
+- **Details**: Uses the post ID and user ID in the JSON request body and validates fields like `commentId`.
+
+### 4. Like a Post
+- **Method**: `likePost()`
+- **Description**: Allows a user to like a post.
+- **Details**: Updates the post's `liked` status and confirms the like in the response.
+
+## Comments and Likes
+
+- **Add Comments**: Users can add comments to posts using `createCommentPost()`, verifying `commentId` and other fields for successful creation.
+- **Like/Unlike**: `likePost()` toggles the like status for posts, updating the `liked` attribute and confirming the action.
+
+## Key Assertions
+
+Each method includes assertions to check:
+- **Status Code Verification**: Ensures `200` status codes for successful operations.
+- **Field Validation**: Confirms that fields like `id`, `username`, and `content` are present in the response.
+
+## Integration with Jira Tasks
+
+- **Jira Task Linking**: Each method starts by linking to a specific Jira task via `addIssueAndLink()`.
+- **Description**: Keeps test functions aligned with corresponding Jira tickets for effective tracking.
+
+## Summary
+
+This setup covers:
+- Basic CRUD operations
+- User authentication
+- Friend requests
+- Post management
+
+Each feature is aligned with a Jira task ID, and assertions ensure expected outcomes are met for each operation.

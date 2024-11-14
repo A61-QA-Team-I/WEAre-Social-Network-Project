@@ -3,10 +3,10 @@ import testData.UniqueNameGenerator;
 
 public class TestData {
 
-    public  String randomName= UniqueNameGenerator.getInstance().generateUniqueName();
-    public  String randomNameUser2= UniqueNameGenerator.getInstance().generateUniqueName();
-    public  String firstName= UniqueNameGenerator.getInstance().generateUniqueName();
-    public  String lastName= UniqueNameGenerator.getInstance().generateUniqueName();
+    public  String randomName;
+    public  String randomNameUser2;
+    public  String firstName;
+    public  String lastName;
     public  int userId;
     public  int user2Id;
     public  int postId;

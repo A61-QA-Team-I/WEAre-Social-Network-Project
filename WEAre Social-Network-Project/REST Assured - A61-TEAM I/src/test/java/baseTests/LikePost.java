@@ -9,7 +9,6 @@ import org.testng.annotations.Test;
 
 public class LikePost extends BaseSetup {
 
-
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 1)
     public void testCreateUser() {
@@ -32,6 +31,7 @@ public class LikePost extends BaseSetup {
         createPost();
 
     }
+
 
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 4)
@@ -58,13 +58,13 @@ public class LikePost extends BaseSetup {
     }
 
 
-
     @Test(priority = 7)
     public void testLikePost() {
 
        likePost();
 
     }
+
 
     @Test(priority = 8)
     public void testDeletePost() {

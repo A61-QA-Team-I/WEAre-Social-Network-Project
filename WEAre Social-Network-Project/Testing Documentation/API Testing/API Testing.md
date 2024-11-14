@@ -91,7 +91,7 @@ All tests were executed in Postman, with user sessions authenticated through coo
 Utilizing global environments and cookie-based session validation ensured all essential API functionalities worked as intended. This robust testing phase reinforced system stability and verified adherence to project specifications.
 
 ## Conclusion
-The API testing for the WEAre Social Network successfully validated core functionalities in user management, authentication, post handling, and interactions. The implementation of cookie-based session management was effective, confirming readiness for further development.
+The API testing for the WEAre Social Network application successfully validated critical functions, including user management, authentication, post handling, and user interactions. Despite difficulties in finding the correct API documentation and the lack of properly defined endpoints, the team expanded their approach and found a solution for sending correct requests to the application's database. After 17 test requests, the team confirmed that the API is functioning properly but believes there is still work to be done to address the issues. Despite the successful testing, the team emphasizes that further improvements are needed, such as enhancing the documentation and ensuring proper user authentication, which will require additional work before the application is ready for real-world use
 
 **Testing Period:** November 6, 2024 – November 10, 2024
 
