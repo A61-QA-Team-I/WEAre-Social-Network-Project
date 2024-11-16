@@ -16,12 +16,14 @@ public class CreateComment extends BaseSetup {
         createUser();
     }
 
+
     @Severity(SeverityLevel.CRITICAL)
     @Test(priority = 2)
     public void testLogIn() {
 
         logIn();
     }
+
 
     @Test(priority = 3)
     public void testCreatePost() {
@@ -61,5 +63,4 @@ public class CreateComment extends BaseSetup {
 
         deletePost();
     }
-
 }
