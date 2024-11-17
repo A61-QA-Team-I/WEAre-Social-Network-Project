@@ -27,11 +27,9 @@ public class CreatePost extends BaseSetup{
 @Test(priority = 3)
     public void testCreatePost() {
 
-     createPost();
+    createPost();
 
     }
-
-
 
 
 @Test(priority = 4)

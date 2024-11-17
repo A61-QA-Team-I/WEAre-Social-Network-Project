@@ -24,9 +24,6 @@ public class CreateUsers extends BaseSetup {
     }
 
 
-
-
-
     @Test(priority = 3)
     public void testUpdateUserPersonalInfo() {
 
