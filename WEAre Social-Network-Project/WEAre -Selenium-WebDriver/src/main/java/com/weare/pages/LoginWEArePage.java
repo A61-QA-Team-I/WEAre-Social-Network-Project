@@ -1,5 +1,4 @@
 package com.weare.pages;
-
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -25,7 +24,6 @@ private final By LogoutLinkLocator = By.cssSelector("a.nav-link[href='/logout']"
 
         WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
 
-
         WebElement nameButton = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameLinkLocator));
         nameButton.sendKeys(registeredName);
 
@@ -34,7 +32,6 @@ private final By LogoutLinkLocator = By.cssSelector("a.nav-link[href='/logout']"
 
         WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitLinkLocator));
         submitButton.click();
-
 
     }
 
@@ -46,6 +43,7 @@ private final By LogoutLinkLocator = By.cssSelector("a.nav-link[href='/logout']"
         boolean isVisibleSignIn = logout.isDisplayed();
 
     }
+
 
     public boolean isLogoutButtonVisible() {
         WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
@@ -59,30 +57,9 @@ private final By LogoutLinkLocator = By.cssSelector("a.nav-link[href='/logout']"
     }
 
 
-    public void submitLoginUser2Form (String registeredUser2Name, String password) {
-
-        WebDriverWait wait = new WebDriverWait(driver(), Duration.ofSeconds(10));
-
-
-        WebElement nameButton = wait.until(ExpectedConditions.visibilityOfElementLocated(usernameLinkLocator));
-        nameButton.sendKeys(registeredUser2Name);
-
-        WebElement emailButton = wait.until(ExpectedConditions.visibilityOfElementLocated(passwordLinkLocator));
-        emailButton.sendKeys(password);
-
-        WebElement submitButton = wait.until(ExpectedConditions.elementToBeClickable(submitLinkLocator));
-        submitButton.click();
-
-
-    }
-
-
     public void logout() {
-
 
         driverWait().until(ExpectedConditions.elementToBeClickable(LogoutLinkLocator));
         driver().findElement(LogoutLinkLocator).click();
-
-
     }
 }

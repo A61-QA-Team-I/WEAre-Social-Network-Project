@@ -30,11 +30,13 @@ public class HomeWEArePage extends BaseWEArePage {
 
     }
 
+
     public void assertNavigated() {
 
         String actualUrl = driver().getCurrentUrl();
 
     }
+
 
     public String getPageTitle() {
 
