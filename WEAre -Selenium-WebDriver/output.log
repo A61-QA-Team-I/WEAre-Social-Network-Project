@@ -1,0 +1,135 @@
+2024-11-20 23:43:18,234 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:19,546 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-20 23:43:20,055 INFO  [main] Finding element with locator: By.id: name
+2024-11-20 23:43:20,142 INFO  [main] Finding element with locator: By.id: email
+2024-11-20 23:43:20,169 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:20,201 INFO  [main] Finding element with locator: By.id: confirm
+2024-11-20 23:43:20,227 INFO  [main] Finding element with locator: By.xpath: //input[@value='Register']
+2024-11-20 23:43:20,399 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-20 23:43:20,452 INFO  [main] Finding element with locator: By.id: name
+2024-11-20 23:43:20,477 INFO  [main] Finding element with locator: By.id: email
+2024-11-20 23:43:20,501 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:20,528 INFO  [main] Finding element with locator: By.id: confirm
+2024-11-20 23:43:20,552 INFO  [main] Finding element with locator: By.xpath: //input[@value='Register']
+2024-11-20 23:43:20,695 INFO  [main] Getting current URL: http://localhost:8081/register
+2024-11-20 23:43:20,696 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:20,731 INFO  [main] Getting current URL: http://localhost:8081/login
+2024-11-20 23:43:20,734 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:20,767 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:20,794 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:21,105 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:21,172 INFO  [main] Navigating to page: http://localhost:8081/posts/auth/newPost
+2024-11-20 23:43:21,217 INFO  [main] Finding element with locator: By.id: StringListId
+2024-11-20 23:43:21,768 INFO  [main] Finding element with locator: By.id: message
+2024-11-20 23:43:21,803 INFO  [main] Finding element with locator: By.xpath: //input[@value='Save post']
+2024-11-20 23:43:21,887 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:22,019 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:22,276 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:22,318 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:22,350 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:22,386 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:22,633 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:22,696 INFO  [main] Navigating to page: http://localhost:8081/posts#
+2024-11-20 23:43:22,922 INFO  [main] Finding element with locator: By.xpath: //input[@value='Like']
+2024-11-20 23:43:23,145 INFO  [main] Finding element with locator: By.xpath: //input[@value='Dislike']
+2024-11-20 23:43:23,660 INFO  [main] Finding element with locator: By.xpath: //input[@value='Dislike']
+2024-11-20 23:43:23,690 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:23,768 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:24,078 INFO  [main] Closing Browser...
+2024-11-20 23:43:24,212 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:25,190 INFO  [main] Getting current URL: data:,
+2024-11-20 23:43:25,191 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:25,489 INFO  [main] Getting current URL: http://localhost:8081/login
+2024-11-20 23:43:25,490 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:25,582 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:25,616 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:25,806 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:25,868 INFO  [main] Navigating to page: http://localhost:8081/posts/auth/newPost
+2024-11-20 23:43:25,909 INFO  [main] Finding element with locator: By.id: StringListId
+2024-11-20 23:43:26,456 INFO  [main] Finding element with locator: By.id: message
+2024-11-20 23:43:26,483 INFO  [main] Finding element with locator: By.xpath: //input[@value='Save post']
+2024-11-20 23:43:26,620 INFO  [main] Finding element with locator: By.xpath: //p[contains(text(), 'Demo post')]
+2024-11-20 23:43:26,640 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:26,694 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:27,003 INFO  [main] Closing Browser...
+2024-11-20 23:43:27,116 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:28,097 INFO  [main] Getting current URL: data:,
+2024-11-20 23:43:28,098 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-20 23:43:28,364 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:28,407 INFO  [main] Getting current URL: http://localhost:8081/login
+2024-11-20 23:43:28,407 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:28,489 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:28,521 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:28,769 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:28,834 INFO  [main] Navigating to page: http://localhost:8081/search?searchParam1=&searchParam2=&index=0&size=10
+2024-11-20 23:43:28,886 INFO  [main] Finding element with locator: By.xpath: //h2[@class='mr-3 text-black' and text()='Scott']
+2024-11-20 23:43:29,903 INFO  [main] Finding element with locator: By.xpath: //h2[@class='mr-3 text-black' and text()='Scott']
+2024-11-20 23:43:32,086 INFO  [main] Finding element with locator: By.xpath: //input[@value='connect']
+2024-11-20 23:43:32,113 INFO  [main] Finding element with locator: By.xpath: //input[@value='connect']
+2024-11-20 23:43:32,210 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:32,271 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:32,577 INFO  [main] Closing Browser...
+2024-11-20 23:43:32,689 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:33,686 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:33,956 INFO  [main] Getting current URL: http://localhost:8081/
+2024-11-20 23:43:33,957 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/register']
+2024-11-20 23:43:33,971 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/login']
+2024-11-20 23:43:34,521 INFO  [main] Closing Browser...
+2024-11-20 23:43:34,632 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:35,679 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:35,951 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:36,016 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:36,045 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:36,342 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:36,361 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:36,412 INFO  [main] Finding element with locator: By.xpath: //a[normalize-space(text())='Personal Profile']
+2024-11-20 23:43:36,842 INFO  [main] Finding element with locator: By.xpath: //a[contains(@class, 'nav-link') and contains(text(), 'edit')]
+2024-11-20 23:43:37,497 INFO  [main] Finding element with locator: By.xpath: //p[text()='Billy Gibbons']
+2024-11-20 23:43:37,517 INFO  [main] Navigating to page: http://localhost:8081/posts#
+2024-11-20 23:43:37,733 INFO  [main] Finding element with locator: By.xpath: //input[@value='Like']
+2024-11-20 23:43:37,947 INFO  [main] Closing Browser...
+2024-11-20 23:43:38,055 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:39,051 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:40,321 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:40,402 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:40,433 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:40,678 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:40,757 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:41,009 INFO  [main] Closing Browser...
+2024-11-20 23:43:41,119 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:42,073 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:42,316 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:42,383 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:42,412 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:42,713 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:42,739 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:43,037 INFO  [main] Closing Browser...
+2024-11-20 23:43:43,150 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:43:44,160 INFO  [main] Getting current URL: data:,
+2024-11-20 23:43:44,161 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:44,570 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:44,646 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:44,675 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:44,991 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:45,014 INFO  [main] Navigating to page: http://localhost:8081/search?searchParam1=&searchParam2=&index=0&size=10
+2024-11-20 23:43:45,065 INFO  [main] Finding element with locator: By.xpath: //h2[@class='mr-3 text-black' and text()='Scott']
+2024-11-20 23:43:46,085 INFO  [main] Finding element with locator: By.xpath: //h2[@class='mr-3 text-black' and text()='Scott']
+2024-11-20 23:43:48,238 INFO  [main] Finding element with locator: By.xpath: //input[@value='connect']
+2024-11-20 23:43:48,267 INFO  [main] Finding element with locator: By.xpath: //input[@value='connect']
+2024-11-20 23:43:48,351 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:48,450 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:48,709 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-20 23:43:48,750 INFO  [main] Finding element with locator: By.id: username
+2024-11-20 23:43:48,781 INFO  [main] Finding element with locator: By.id: password
+2024-11-20 23:43:48,808 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-20 23:43:49,118 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:49,186 INFO  [main] Navigating to page: http://localhost:8081/search?searchParam1=&searchParam2=&index=0&size=10
+2024-11-20 23:43:49,240 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:49,287 INFO  [main] Finding element with locator: By.xpath: //a[normalize-space(text())='Personal Profile']
+2024-11-20 23:43:50,632 INFO  [main] Finding element with locator: By.cssSelector: form.search-job input.btn-primary[type='submit']
+2024-11-20 23:43:51,704 INFO  [main] Finding element with locator: By.cssSelector: input.btn.btn-primary[value='Approve Request']
+2024-11-20 23:43:52,348 INFO  [main] Navigating to page: http://localhost:8081
+2024-11-20 23:43:52,423 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-20 23:43:52,735 INFO  [main] Closing Browser...
+2024-11-20 23:43:52,847 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-20 23:44:04,136 INFO  [main] Closing Browser...
