@@ -1,0 +1,48 @@
+2024-11-23 21:43:50,175 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:43:51,755 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-23 21:43:52,456 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-23 21:43:52,828 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-23 21:43:53,104 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'the email already exist')]
+2024-11-23 21:43:53,618 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'the email already exist')]
+2024-11-23 21:43:54,136 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'the email already exist')]
+2024-11-23 21:43:54,653 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'the email already exist')]
+2024-11-23 21:43:55,170 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'the email already exist')]
+2024-11-23 21:43:55,190 INFO  [main] Closing Browser...
+2024-11-23 21:43:55,344 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:43:56,309 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-23 21:43:56,906 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'password must be minimum 8 characters')]
+2024-11-23 21:43:57,421 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'password must be minimum 8 characters')]
+2024-11-23 21:43:57,936 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'password must be minimum 8 characters')]
+2024-11-23 21:43:58,457 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'password must be minimum 8 characters')]
+2024-11-23 21:43:58,977 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'password must be minimum 8 characters')]
+2024-11-23 21:43:58,991 INFO  [main] Closing Browser...
+2024-11-23 21:43:59,109 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:44:00,141 INFO  [main] Navigating to page: http://localhost:8081/register
+2024-11-23 21:44:00,738 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'username must be maximum 20 characters')]
+2024-11-23 21:44:01,251 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'username must be maximum 20 characters')]
+2024-11-23 21:44:01,770 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'username must be maximum 20 characters')]
+2024-11-23 21:44:02,286 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'username must be maximum 20 characters')]
+2024-11-23 21:44:02,803 INFO  [main] Finding element with locator: By.xpath: //i[contains(text(), 'username must be maximum 20 characters')]
+2024-11-23 21:44:02,817 INFO  [main] Closing Browser...
+2024-11-23 21:44:02,947 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:44:03,959 INFO  [main] Closing Browser...
+2024-11-23 21:44:04,077 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:44:05,092 INFO  [main] Getting current URL: data:,
+2024-11-23 21:44:05,092 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-23 21:44:05,349 INFO  [main] Getting current URL: http://localhost:8081/login
+2024-11-23 21:44:05,351 INFO  [main] Finding element with locator: By.id: username
+2024-11-23 21:44:05,425 INFO  [main] Finding element with locator: By.id: password
+2024-11-23 21:44:05,455 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-23 21:44:05,617 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-23 21:44:06,766 INFO  [main] Closing Browser...
+2024-11-23 21:44:06,884 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:44:07,897 INFO  [main] Getting current URL: data:,
+2024-11-23 21:44:07,897 INFO  [main] Navigating to page: http://localhost:8081/login
+2024-11-23 21:44:08,125 INFO  [main] Getting current URL: http://localhost:8081/login
+2024-11-23 21:44:08,125 INFO  [main] Finding element with locator: By.id: username
+2024-11-23 21:44:08,197 INFO  [main] Finding element with locator: By.id: password
+2024-11-23 21:44:08,225 INFO  [main] Finding element with locator: By.xpath: //input[@value='Login']
+2024-11-23 21:44:08,388 INFO  [main] Finding element with locator: By.cssSelector: a.nav-link[href='/logout']
+2024-11-23 21:44:09,560 INFO  [main] Closing Browser...
+2024-11-23 21:44:09,692 INFO  [main] Starting Chrome browser in normal mode...
+2024-11-23 21:44:10,977 INFO  [main] Closing Browser...
