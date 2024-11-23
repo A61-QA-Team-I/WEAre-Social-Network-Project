@@ -1,0 +1,9 @@
+<suite name="Failure-to-meet-requirements">
+    <test name="Failure-to-meet-requirement-based-tests">
+
+        <classes>
+            <class name="wearetests.web.failuretomeetrequirements.WEAreCreateUserTest" />
+            <class name="wearetests.web.failuretomeetrequirements.WEAreSearchingUserTest" />
+        </classes>
+    </test>
+</suite>

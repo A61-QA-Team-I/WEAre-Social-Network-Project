@@ -1,0 +1,20 @@
+<suite name="Requirements-based-tests">
+    <test name="Requirements-based-tests">
+
+        <classes>
+            <class name="wearetests.web.requirementsbasedtests.WEAreCreateUserTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreLikePost" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreCreatePostTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreSendRequest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreHomePageTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreEditUserTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreLoginTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreApproveRequest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreAnonymousLikePostTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreCreateCommentTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreAdminDeletePostTest" />
+            <class name="wearetests.web.requirementsbasedtests.WEAreAdminDisableAccount" />
+
+        </classes>
+    </test>
+</suite>
