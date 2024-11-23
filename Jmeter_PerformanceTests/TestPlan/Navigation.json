@@ -1,0 +1,12 @@
+{
+    "ThreadGroup": {
+        "loop_count": 1,
+        "ramp_up": 1,
+        "num_threads": 1
+    },
+    "HttpSampler": {
+        "name": "Navigate to Home Page",
+        "method": "GET",
+        "url": "http://localhost:8081"
+    }
+}

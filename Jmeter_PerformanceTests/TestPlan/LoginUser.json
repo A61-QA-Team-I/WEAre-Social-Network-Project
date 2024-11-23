@@ -1,0 +1,16 @@
+{
+    "ThreadGroup": {
+        "loop_count": 1,
+        "ramp_up": 1,
+        "num_threads": 1
+    },
+    "HttpSampler": {
+        "name": "Login User",
+        "method": "POST",
+        "url": "http://localhost:8081/authenticate",
+        "body": "{\"username\": \"random_user\", \"password\": \"VankoVelchev#\"}",
+        "headers": {
+            "Content-Type": "application/x-www-form-urlencoded"
+        }
+    }
+}
