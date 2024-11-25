@@ -1,4 +1,4 @@
-===== REPOSITORY STRUCTURE ====
+========= REPOSITORY STRUCTURE ========
 =
 
 This repository contains components for the WEAre Social Network Project, including JMeter performance tests and Selenium WebDriver automated UI tests. Each section has its own README with detailed instructions.
