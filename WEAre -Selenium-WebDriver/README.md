@@ -1,6 +1,4 @@
-=========================
 == SELENIUM TEST SUITE ==
-=========================
 
 1. **Navigate to the Repository**:
    This repository contains the Selenium WebDriver framework and test cases for the WEAre Social Network Project.
