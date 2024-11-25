@@ -8,6 +8,8 @@ import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.safari.SafariDriver;
+import org.openqa.selenium.safari.SafariOptions;
 import testframework.enums.BrowserMode;
 import testframework.enums.BrowserType;
 import testframework.enums.FrameworkSettings;
@@ -66,6 +68,13 @@ public class DriverManager {
                 }
 
                 startedDriver = new Driver(new EdgeDriver(edgeOptions), defaultTimeoutSeconds);
+                break;
+            }
+            case SAFARI: {
+                if (browserMode == BrowserMode.HEADLESS) {
+                    throw new UnsupportedOperationException("Safari does not support headless mode.");
+                }    LOGGER.info("Starting Safari browser in normal mode...");
+                startedDriver = new Driver(new SafariDriver(), defaultTimeoutSeconds);
                 break;
             }
             default:
