@@ -1,4 +1,4 @@
-================= INSTRUCTIONS =================
+================= INSTRUCTIONS! =================
 =
 
 1. Navigate to the `Jmeter_PerformanceTests` directory to run the desired performance tests.
@@ -39,9 +39,5 @@ run_tests.bat Navigation 20 10 5 120
 - To avoid conflicts, the `run_tests.bat` script automatically clears the contents of the `TestResults` and `Logs` folders before running a new test.
 - Alternatively, you can clean these folders manually if needed.
 
-===================
-== INSTRUCTIONS! ==
-===================
-
-
-
+================= INSTRUCTIONS! =================
+=
