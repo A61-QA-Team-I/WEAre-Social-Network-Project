@@ -1,5 +1,4 @@
-============
-== SELENIUM TEST SUITE =========
+============ SELENIUM TEST SUITE =========
 =
 
 1. **Navigate to the Repository**:
@@ -48,8 +47,7 @@
      allure serve target/allure-results
      ```
 
-============
-== JENKINS SETUP GUIDE =========
+============ JENKINS SETUP GUIDE =========
 =
 
 1. **Jenkins Instance**:
@@ -80,7 +78,6 @@
    - Both jobs bring up Docker containers, run the test suite, generate Allure reports, and shut down the containers after execution.
    - The **Allure Report** is served locally after test execution and can be easily accessed through the **Allure Report** inside the executed job
 
-============
-== END OF README =========
+============ END OF README =========
 =
 
