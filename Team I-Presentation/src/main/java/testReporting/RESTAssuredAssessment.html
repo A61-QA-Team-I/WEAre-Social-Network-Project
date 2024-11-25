@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>WEAre Social Network REST ASSURED Report</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 10%;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+            z-index: 1000;
+        }
+
+        .footer img {
+            max-width: 150px;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<h1>WEAre Social Network REST ASSURED Report</h1>
+
+<section>
+    <h2>Overview</h2>
+    <p>The WEAre Social Network application offers a comprehensive REST API that powers essential social networking functionalities, including user management, post creation, commenting, and friend requests. This API enables seamless interactions between users and supports a dynamic social environment with public and private sharing options. Built with scalability and extensibility in mind, the API serves as the backbone for all user activities and content generation within the platform. This document outlines the primary API endpoints, the testing framework, and the data management approach implemented to ensure robust testing, reliability, and accuracy across all functional areas. With a focus on automation and test coverage, this documentation also highlights the tools and strategies used to validate and maintain high-quality performance for the WEAre Social Network API.</p>
+
+    <p><strong>Contributors:</strong></p>
+    <ul>
+        <li>Ivan Velchev</li>
+        <li>Armine Stoykova</li>
+        <li>Gabriel Georgiev</li>
+    </ul>
+
+    <p><strong>Application:</strong> WEAre Social Network</p>
+    <p><strong>Hosting:</strong> The application is hosted locally at <a href="http://localhost:8081" target="_blank">http://localhost:8081</a></p>
+</section>
+
+<section>
+    <h2>Technologies Used</h2>
+    <ul>
+        <a href="https://www.oracle.com/java/" target="_blank" style="text-decoration: none;">
+            <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/121px-Java_programming_language_logo.svg.png" alt="Java Logo" width="32" height="32" style="vertical-align: middle; margin-right: 5px;">
+            <strong>Java</strong>
+        </a>: The primary programming language used for <strong>writing automation scripts</strong> with Selenium WebDriver. Java is highly compatible with Selenium and offers a robust environment for creating maintainable and efficient automated tests.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+     <strong>TestNG:</strong> A testing framework used to organize and run test cases with extensive annotation support for test management.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+
+            <a href="https://www.jetbrains.com/idea/" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/64px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA Logo" width="32" height="32" style="vertical-align: middle; margin-right: 5px;">
+                <strong>IntelliJ IDEA</strong>
+            </a>: An integrated development environment (IDE) used for <strong>developing and running Java-based automation scripts</strong>. IntelliJ provides powerful features like code completion, debugging tools, and seamless integration with testing frameworks, enhancing productivity and efficiency.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+
+     <strong>REST Assured:</strong> A library for REST API testing, used to send HTTP requests and verify responses.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+      <strong>Allure:</strong> A reporting tool for generating detailed and visual test reports, with integration for linking tests to Jira tasks for traceability.</li>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <strong>Jsoup:</strong> An HTML parsing library used to extract specific elements from HTML responses.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+    <strong>Hamcrest:</strong> A flexible library for assertions, allowing readable and maintainable validation of response data.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+            <a href="https://www.atlassian.com/software/jira" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/800px-Jira_Logo.svg.png" alt="Jira Logo" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Jira/Trello</strong>
+            </a>: Tools for <strong>bug tracking and task management</strong>. Jira is ideal for project management in Agile environments, while Trello provides a visual approach for organizing tasks and enhancing team collaboration.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+        <strong>Java Faker:</strong> A library for generating random and unique test data, supporting data independence and reducing test conflicts
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+
+
+            <a href="https://www.docker.com/products/docker-desktop" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Docker_logo.png" alt="Docker Logo" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Docker Desktop</strong>
+            </a>: Used to set up and run the <strong>API locally</strong> in isolated containers. Docker Desktop ensures a consistent setup across different machines, simplifying the deployment and testing of services.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <strong>Maven:</strong> Build automation tool that manages dependencies and project configurations.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+        <strong>MariaDB:</strong> Database management system used for data persistence.
+        <div style="height: 6px;"></div>
+        <div style="height: 6px;"></div>
+      <strong>Swagger:</strong> Used for API documentation to provide a clear and interactive API overview.
+    </ul>
+</section>
+
+
+<section>
+    <h2>Key Project Modules</h2>
+    <h3>1. Base Setup</h3>
+    <p><strong>BaseSetup:</strong> A foundational class that configures common test settings and provides helper methods for API actions. This includes methods for user creation, login, updating personal information, and managing posts and comments.</p>
+    <div style="height: 6px;"></div>
+    <div style="height: 6px;"></div>
+
+    <h3>2. Test Data Management</h3>
+    <p><strong>TestData Class:</strong> Centralized data storage for test sessions, including usernames, session IDs, and identifiers (user IDs, post IDs, comment IDs). This class ensures each test has unique data to avoid conflicts.</p>
+
+    <p><strong>UniqueNameGenerator:</strong> Utilizes <code>Java Faker</code> to generate unique names for each test session. The generator tracks used names to prevent duplicates, which ensures data independence and allows tests to run concurrently without conflicts.</p>
+    <div style="height: 6px;"></div>
+    <div style="height: 6px;"></div>
+    <h3>3. Test Classes</h3>
+    <ul>
+        <li><strong>CreateComment:</strong> Tests related to comment creation on posts.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>CreatePost:</strong> Tests for creating posts, supporting file uploads for images.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>CreateUsers:</strong> Tests for user creation functionality.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>FriendRequest:</strong> Tests managing friend requests, including sending and approving them.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>LikePost:</strong> Tests the functionality of liking posts.</li>
+    </ul>
+    <div style="height: 6px;"></div>
+    <div style="height: 6px;"></div>
+    <h3>4. Resources</h3>
+    <ul>
+        <li><strong>main-suite.xml:</strong> TestNG suite configuration file, specifying the tests to run and managing their execution order.</li>
+    </ul>
+    <p><a href="Demo">A link to the GitHub repository for the REST API code and documentation.</a></p></section>
+
+<section>
+    <h2>Test Reporting with Allure</h2>
+    <p>Allure is used to produce detailed test reports, providing insights into test results with features such as:</p>
+    <ul>
+        <li><strong>Jira Issue Links:</strong> Each test is linked to its corresponding Jira task, enhancing traceability and documentation within the reporting.</li>
+        <li><strong>Severity and Feature Annotations:</strong> Tests are annotated with <code>@Severity(SeverityLevel.CRITICAL)</code> and <code>@Feature("User Management")</code> for better categorization and to highlight critical test cases in the reports.</li>
+    </ul>
+</section>
+
+<section>
+    <h2>Assertions and Validation</h2>
+    <p>The project leverages <strong>Hamcrest</strong> for flexible and readable assertions, ensuring that the REST API responses meet expected outcomes at every level. Key assertions in the testing framework include:</p>
+    <ul>
+        <li><strong>Status Code Verification:</strong> Validates that each API call responds with the correct HTTP status code, such as <code>200 OK</code> for successful operations or <code>404 Not Found</code> for invalid requests. This ensures that the API behaves as expected in various scenarios.</li>
+        <li><strong>Content Validation:</strong> Confirms that the response body contains essential data, such as specific usernames, post titles, or other expected strings. This type of validation helps verify that critical data is correctly returned from the server and matches the test requirements.</li>
+        <li><strong>Data Type Verification:</strong> Ensures that JSON response fields contain the correct data types (e.g., integers for IDs, strings for usernames). This level of validation checks data consistency across the API, helping to maintain data integrity and reliability in responses.</li>
+    </ul>
+    <p>These assertions collectively help ensure that the API consistently delivers the correct data with the expected structure and behavior, providing confidence in the application's reliability and robustness. The use of <strong>Hamcrest</strong> allows for readable assertions that make the test outcomes clear and understandable, contributing to efficient debugging and reporting.</p>
+</section>
+
+<section>
+    <h2>Post-Execution Test Report and Assessment</h2>
+    <p>This document captures the comprehensive testing structure, tools, and strategies utilized for validating the WEAre Social Network REST API. By leveraging <strong>TestNG</strong>, <strong>REST Assured</strong>, and <strong>Allure</strong>, our framework achieves a robust, independent, and traceable testing process. Through unique data generation, detailed reporting, and integrated issue tracking, this framework has proven effective for exhaustive REST API testing and automation.</p>
+
+    <h3>Team Assessment:</h3>
+    <p>Following the execution of all test cases, we are pleased to report that <strong>all 31 test cases passed successfully</strong>, both in <strong>HTML</strong> and <strong>JSON</strong> formats. Our framework captures and stores all selected dependencies and unique identifiers for entities like user IDs, post IDs, and comment IDs, ensuring traceability throughout the testing process.</p>
+
+    <h3>Database Integration</h3>
+    <ul>
+        <li><strong>Data Consistency:</strong> All keys and dependencies, including IDs for posts, comments, and users, were correctly stored and retrieved.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>Reliability:</strong> The database operated efficiently, with accurate response times and no failures, ensuring data integrity.</li>
+        <div style="height: 6px;"></div>
+        <li><strong>Key Validation:</strong> Database keys match the expected structure, ensuring that the data integrity and referential integrity constraints are properly upheld.</li>
+    </ul>
+    <div style="height: 6px;"></div>
+    <div style="height: 6px;"></div>
+
+    <h2>Conclusion:</h2>
+    <p>The team assessment for the WEAre Social Network REST API testing highlights the successful execution of all 31 test cases, including accurate database integration and reliable response times. The testing framework, utilizing TestNG, REST Assured, and Allure, provided comprehensive coverage, traceability of tests, and validated performance. However, the team notes that some functional issues remain unresolved, and additional work is required to correct the documentation and improve user authentication before the application can be considered ready for real-world use.</p>
+    <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-109"
+       target="_blank"
+       style="text-decoration: none; color: #007BFF;">
+        REST ASSURED Functionality Jira Link
+    </a>
+
+</section>
+
+
+
+
+
+<h2 class="back-to-home"><a href="baseTestReportingPage.html" class="back-button">Back</a></h2>
+
+
+
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>

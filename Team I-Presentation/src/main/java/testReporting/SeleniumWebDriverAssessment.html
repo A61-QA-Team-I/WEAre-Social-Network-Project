@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Reporting for WEAre Social Network Application</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 10%;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+            z-index: 1000;
+        }
+
+        .footer img {
+            max-width: 150px;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1>Automation Testing Documentation for WEAre-Selenium WebDriver</h1>
+</header>
+<section>
+    <h2>Overview</h2>
+    <p>
+        The <strong>WEAre social network platform</strong>, hosted at
+        <a href="http://localhost:8081" target="_blank">http://localhost:8081</a>,
+        underwent extensive automation testing to ensure its core functionalities operate as expected
+        and meet defined requirements. The automation process was conducted from
+        <strong>November 13, 2024, to November 23, 2024</strong>, focusing on validating critical workflows,
+        identifying areas for improvement, and ensuring a robust testing foundation for future enhancements.
+    </p>
+    <p>
+        Our team implemented a <strong>custom Selenium WebDriver framework</strong> that follows the
+        <strong>Page Object Model (POM)</strong> design pattern. This approach enabled modularity,
+        reusability, and ease of maintenance for automated tests. With the use of <strong>Junit</strong>
+        for test execution and reporting, and <strong>Maven</strong> for dependency management,
+        we ensured the testing process was efficient and well-structured.
+    </p>
+    <p>
+        The automation covered a wide range of scenarios, including requirements-based tests
+        and failure-to-meet-requirements tests. These tests were meticulously selected based on
+        equivalence partitioning and platform requirements to simulate real-world use cases and edge cases.
+        While the automated tests validate a significant portion of the platform's functionality, several
+        failures were observed due to validation issues in the application, highlighting areas that require
+        immediate attention.
+    </p>
+    <p>
+        Despite the identified challenges, the automation framework demonstrates a high degree of flexibility
+        and scalability. Once the current issues are resolved, it will be straightforward to extend the test
+        suite for future features and enhancements.
+    </p>
+</section>
+<section>
+    <h2>Team Members</h2>
+    <ul>
+        <li>Armine Stoykova</li>
+        <li>Ivan Velchev</li>
+        <li>Gabriel Geоrgiev</li>
+    </ul>
+</section>
+<section>
+    <h2>Scope</h2>
+    <p>
+        The automation testing of the <strong>WEAre social network platform</strong> focused on the following areas:
+    </p>
+    <ul>
+        <li><strong>Validation of Functional Requirements:</strong> Ensuring core features such as user registration, login, post creation, and account management operate as expected.</li>
+        <li><strong>Failure Scenarios Testing:</strong> Identifying gaps in input validation for passwords, usernames, and email duplication.</li>
+        <li><strong>Scenarios Coverage:</strong> Testing critical workflows and edge cases selected based on platform requirements and equivalence partitioning.</li>
+        <li><strong>Reusability of Page Classes:</strong> Developing modular and reusable page classes to streamline testing for current and future scenarios.</li>
+        <li><strong>Cross-browser Testing:</strong> Testing was performed on the three most used browsers according to statistical data for the year 2024.</li>
+    </ul>
+    <p>
+        The scope aimed to achieve 100% coverage of selected scenarios, ensuring the platform's readiness for real-world usage while identifying areas for improvement.
+    </p>
+</section>
+<section>
+    <h2>Initial Approach and Challenges</h2>
+    <h3>Initial Approach:</h3>
+    <p>
+        The testing process was structured to maximize efficiency and provide clear traceability. We started by:
+    </p>
+    <ol>
+        <li>Designing the test scenarios based on platform requirements and equivalence partitioning techniques.</li>
+        <li>Implementing reusable page classes using the Page Object Model (POM) for modularity.</li>
+        <li>
+            Structuring the tests into two categories:
+            <ul>
+                <li><strong>Requirements-Based Tests:</strong> Validating expected functionality.</li>
+                <li><strong>Failure-to-Meet-Requirements Tests:</strong> Highlighting gaps in validation and input handling.</li>
+            </ul>
+        </li>
+    </ol>
+    <h3>Challenges:</h3>
+    <ul>
+        <li><strong>Validation Gaps:</strong> The platform lacked proper validation for passwords, usernames, and duplicate emails, leading to test failures in equivalence partitioning scenarios.</li>
+        <li><strong>Edge Cases:</strong> Handling of string lengths and unsupported characters in inputs was incomplete, causing tests to fail.</li>
+        <li><strong>Localhost Stability:</strong> The localhost environment occasionally exhibited slow responses, which required retries to ensure consistent test results.</li>
+        <li><strong>Scenario Failures:</strong> Tests related to edge cases (e.g., long usernames, invalid passwords) failed due to platform-level issues.</li>
+    </ul>
+</section>
+<section>
+    <h2>Technologies and Approach</h2>
+    <ul>
+        <li><strong>Framework:</strong> We developed a custom <strong>test automation framework</strong> based on <strong>Page Object Model (POM)</strong> to ensure separation of concerns and reusability of components.</li>
+        <li><strong>Tools and Dependencies:</strong>
+            <ul>
+                <li><strong>Selenium WebDriver:</strong> For browser automation.</li>
+                <li><strong>Maven:</strong> For dependency management and build lifecycle.</li>
+                <li><strong>Junit:</strong> For test execution and generating detailed reports.</li>
+            </ul>
+        </li>
+        <li><strong>Testing Methodology:</strong>
+            <ul>
+                <li>The scenarios were designed using <strong>equivalence partitioning</strong> and <strong>requirements-based testing</strong> to ensure comprehensive coverage of functionality.</li>
+                <li>Additional tests were created to validate <strong>failure scenarios</strong>, focusing on edge cases such as invalid input handling.</li>
+            </ul>
+        </li>
+    </ul>
+</section>
+<section>
+    <h2>Tests Automated</h2>
+    <h3>Requirements-Based Tests (12 Tests):</h3>
+    <p>These tests ensure the core functionality of the platform operates as expected:</p>
+    <ol>
+        <li>WEAreAdminDeletePostTest</li>
+        <li>WEAreAdminDisableAccountTest</li>
+        <li>WEAreAnonymousLikePostTest</li>
+        <li>WEAreApproveRequestTest</li>
+        <li>WEAreCreateCommentTest</li>
+        <li>WEAreCreatePostTest</li>
+        <li>WEAreCreateUserTest</li>
+        <li>WEAreEditUserTest</li>
+        <li>WEAreHomePageTest</li>
+        <li>WEAreLikePostTest</li>
+        <li>WEAreLoginTest</li>
+        <li>WEAreSendRequestTest</li>
+    </ol>
+    <h3>Failure-to-Meet-Requirements Tests (2 Tests):</h3>
+    <p>
+        These tests verify that the platform appropriately handles scenarios where input does not meet requirements. They also highlight areas of improvement for validation handling:
+    </p>
+    <ol>
+        <li>WEAreCreateUserTest</li>
+        <li>WEAreSearchingUserTest</li>
+    </ol>
+</section>
+<section>
+    <h2>Pages Created</h2>
+    <p>The following <strong>9 page classes</strong> were developed and reused across tests to ensure modularity:</p>
+    <ol>
+        <li>LoginWEArePage</li>
+        <li>RegisterWEArePage</li>
+        <li>CreatePostPage</li>
+        <li>EditUserWEArePage</li>
+        <li>DeletePostPage</li>
+        <li>LikePostWEArePage</li>
+        <li>HomeWEArePage</li>
+        <li>AdministrationPage</li>
+        <li>RequestWEArePage</li>
+    </ol>
+</section>
+<section>
+    <h2>Statistics</h2>
+    <h3>Automated Tests:</h3>
+    <ul>
+        <li><strong>Total Tests:</strong> <strong>14</strong>
+            <ul>
+                <li>Requirements-Based Tests: <strong>12</strong></li>
+                <li>Failure-to-Meet-Requirements Tests: 2</li>
+            </ul>
+        </li>
+    </ul>
+    <h3>Pages Created:</h3>
+    <ul>
+        <li><strong>Total Pages:</strong> <strong>9</strong></li>
+    </ul>
+    <h3>Coverage:</h3>
+    <p><strong>100% Automation Coverage</strong> for selected scenarios.</p>
+</section>
+<section>
+    <h2>Challenges</h2>
+    <ol>
+        <li><strong>Validation Issues:</strong>
+            <ul>
+                <li>Password validation issues caused failures in scenarios with invalid input (e.g., short passwords, unsupported characters).</li>
+                <li>Equivalence partitioning tests fail due to improper handling of string lengths and validation rules.</li>
+            </ul>
+        </li>
+        <li><strong>Scenario Failures:</strong>
+            <ul>
+                <li>Failure-to-meet-requirements tests fail due to platform limitations (e.g., duplicate email not flagged, long usernames allowed).</li>
+            </ul>
+        </li>
+        <li><strong>Platform Readiness:</strong>
+            <ul>
+                <li>The platform is not production-ready as these failures indicate that critical functionality is incomplete.</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+<section>
+    <h2>Assessment and Recommendations</h2>
+    <h3>Current State:</h3>
+    <p>The system has significant validation gaps. Until these are addressed, the application is <strong>not ready for production deployment</strong>.</p>
+    <h3>Future Steps:</h3>
+    <ul>
+        <li>Resolve issues with password validation, email duplication, and input string length validation.</li>
+        <li>Retest all failing scenarios after fixes are implemented.</li>
+    </ul>
+    <h3>Scenarios Selection:</h3>
+    <p>Scenarios were carefully selected based on the platform's requirements and critical workflows.</p>
+</section>
+<section>
+    <h2>Conclusion</h2>
+    <p>
+        The automation process effectively validated the majority of the platform's functionalities through a structured approach combining <strong>requirements-based testing</strong> and <strong>failure-to-meet-requirements testing</strong>. Our custom-built framework, designed with <strong>Page Object Model (POM)</strong> principles, proved to be robust, scalable, and reusable, allowing seamless execution of diverse test scenarios.
+    </p>
+    <p>
+        However, during the process, several <strong>critical gaps</strong> were identified in the platform's validation mechanisms, particularly around password rules, duplicate email handling, and input constraints. These issues caused certain equivalence partitioning tests to fail, highlighting the need for immediate attention to improve input validation and error handling.
+    </p>
+    <p>
+        As a team, we made significant strides by:
+    </p>
+    <ul>
+        <li>Automating 100% of the selected scenarios.</li>
+        <li>Covering both <strong>positive and negative</strong> workflows to simulate real-world use cases.</li>
+        <li>Identifying critical edge cases that are currently not handled by the platform.</li>
+    </ul>
+    <p>
+        While the test scenarios and the automation framework are well-structured and comprehensive, our assessment is that the <strong>WEAre social network platform is not yet production-ready</strong>. For the platform to move closer to readiness, the following steps are crucial:
+    </p>
+    <ol>
+        <li>Resolve the identified issues with password validation, duplicate email detection, and input length constraints.</li>
+        <li>Revisit and improve error messaging and feedback mechanisms for invalid inputs to ensure a seamless user experience.</li>
+        <li>Perform a <strong>retest of all failed scenarios</strong> once fixes are implemented.</li>
+    </ol>
+    <p>
+        As a team, we firmly believe that the platform has the potential to meet production standards after addressing these challenges. With our automation framework in place, any future updates or fixes can be validated efficiently and with minimal effort. This framework also lays a strong foundation for scaling test coverage as the platform evolves with additional features.
+    </p>
+    <p>
+        In conclusion, while the platform currently requires additional development effort, our automation efforts have established a clear roadmap for achieving a stable, production-ready system. The insights gained during this testing phase will serve as a valuable guide for future development and quality assurance.
+    </p>
+    <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-131"
+       target="_blank"
+       style="text-decoration: none; color: #007BFF;">
+        Selenium WebDriver Functionality Jira Link
+    </a>
+</section>
+
+
+
+
+
+<h2 class="back-to-home"><a href="baseTestReportingPage.html" class="back-button">Back</a></h2>
+
+
+
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>
