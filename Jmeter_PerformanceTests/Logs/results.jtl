@@ -1,0 +1,11 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1732392832357,18,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Software caused connection abort: recv failed,Navigation Thread Group 1-1,text,false,Test failed: code expected to contain /200/,2588,0,1,1,http://localhost:8081/,0,0,17
+1732392832791,1,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-2,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,1
+1732392833291,1,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-3,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,0
+1732392833789,1,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-4,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,1
+1732392834289,2,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-5,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,1
+1732392834789,1,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-6,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,1
+1732392835289,2,Navigate to Main Page,Non HTTP response code: java.net.SocketException,Non HTTP response message: Connection reset,Navigation Thread Group 1-7,text,false,Test failed: code expected to contain /200/,2441,0,1,1,http://localhost:8081/,0,0,1
+1732392835788,376,Navigate to Main Page,200,,Navigation Thread Group 1-8,text,true,,26554,113,1,1,http://localhost:8081/,360,0,1
+1732392836288,14,Navigate to Main Page,200,,Navigation Thread Group 1-9,text,true,,26554,113,1,1,http://localhost:8081/,10,0,0
+1732392836789,11,Navigate to Main Page,200,,Navigation Thread Group 1-10,text,true,,26554,113,1,1,http://localhost:8081/,9,0,0
