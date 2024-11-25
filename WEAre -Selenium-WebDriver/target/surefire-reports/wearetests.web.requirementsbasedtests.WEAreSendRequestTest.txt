@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: wearetests.web.requirementsbasedtests.WEAreSendRequestTest
--------------------------------------------------------------------------------
-Tests run: 1, Failures: 0, Errors: 0, Skipped: 0, Time elapsed: 5.887 s - in wearetests.web.requirementsbasedtests.WEAreSendRequestTest
