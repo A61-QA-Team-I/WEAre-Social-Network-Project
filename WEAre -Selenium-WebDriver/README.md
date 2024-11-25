@@ -47,7 +47,7 @@
      allure serve target/allure-results
      ```
 
-============== JENKINS SETUP GUIDE ===============
+============== JENKINS SETUP GUIDE ================
 =
 
 1. **Jenkins Instance**:
