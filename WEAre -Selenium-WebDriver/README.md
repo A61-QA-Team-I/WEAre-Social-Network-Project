@@ -1,5 +1,5 @@
 ================
-== SELENIUM TEST SUITE ==
+== SELENIUM TEST SUITE =========
 =
 
 1. **Navigate to the Repository**:
