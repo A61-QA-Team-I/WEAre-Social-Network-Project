@@ -3,9 +3,11 @@ package wearetests.web.failuretomeetrequirements;
 import com.testData.TestData;
 import com.testData.UniqueNameGenerator;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import wearetests.core.WEAreBaseTest;
 
+@Order(14)
 public class WEAreCreateUserBVATest extends WEAreBaseTest {
 
 

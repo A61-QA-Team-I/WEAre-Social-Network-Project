@@ -1,0 +1,28 @@
+-------------------------------------------------------------------------------
+Test set: wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 11.623 s <<< FAILURE! - in wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest
+wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithExistingEmail  Time elapsed: 3.553 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: //i[contains(text(), 'the email already exist')] (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '4.26.0', revision: '8ccf0219d7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: testframework.Driver
+	at wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithExistingEmail(WEAreCreateUserBVATest.java:61)
+
+wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithShortPassword  Time elapsed: 3.578 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: //i[contains(text(), 'password must be minimum 8 characters')] (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '4.26.0', revision: '8ccf0219d7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: testframework.Driver
+	at wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithShortPassword(WEAreCreateUserBVATest.java:26)
+
+wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithLongUsername  Time elapsed: 3.562 s  <<< ERROR!
+org.openqa.selenium.TimeoutException: 
+Expected condition failed: waiting for visibility of element located by By.xpath: //i[contains(text(), 'username must be maximum 20 characters')] (tried for 2 second(s) with 500 milliseconds interval)
+Build info: version: '4.26.0', revision: '8ccf0219d7'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '23'
+Driver info: testframework.Driver
+	at wearetests.web.failuretomeetrequirements.WEAreCreateUserBVATest.createUserWithLongUsername(WEAreCreateUserBVATest.java:43)
+

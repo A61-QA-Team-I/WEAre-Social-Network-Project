@@ -11,7 +11,7 @@ public class EditUserWEArePage extends BaseWEArePage {
 
     public static final String FIRST_NAME = "Billy";
     public static final String LAST_NAME = "Gibbons";
-    public static final String BIRTH_DAY = "25/11/1965";
+    public static final String BIRTH_DAY = "11/11/1965";
     private final By personalProfLinkLocator = By.xpath("//a[normalize-space(text())='Personal Profile']");
     private final By editProfileLinkLocator = By.xpath("//a[contains(@class, 'nav-link') and contains(text(), 'edit')]");
     private final By firstNameLinkLocator = By.id("nameE");

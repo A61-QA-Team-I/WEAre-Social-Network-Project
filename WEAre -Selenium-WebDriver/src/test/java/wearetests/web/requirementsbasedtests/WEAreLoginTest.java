@@ -4,9 +4,11 @@ import com.testData.TestData;
 import io.qameta.allure.*;
 import io.qameta.allure.SeverityLevel;
 import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import wearetests.core.WEAreBaseTest;
 
+@Order(7)
 public class WEAreLoginTest extends WEAreBaseTest {
 
 

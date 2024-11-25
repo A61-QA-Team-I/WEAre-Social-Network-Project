@@ -3,10 +3,11 @@ package wearetests.web.requirementsbasedtests;
 import com.testData.TestData;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
+import org.junit.jupiter.api.Order;
 import org.junit.jupiter.api.Test;
 import wearetests.core.WEAreBaseTest;
 
-
+@Order(8)
 public class WEAreApproveRequestTest extends WEAreBaseTest {
 
 
