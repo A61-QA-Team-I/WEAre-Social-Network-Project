@@ -1,4 +1,4 @@
-=============== INSTRUCTIONS ===============
+================= INSTRUCTIONS =================
 =
 
 1. Navigate to the `Jmeter_PerformanceTests` directory to run the desired performance tests.
