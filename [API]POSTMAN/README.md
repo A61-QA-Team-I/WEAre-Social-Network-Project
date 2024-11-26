@@ -19,9 +19,7 @@ The report is based on tests executed using the following files:
 **Special Notes**:
 - Tests named `Log` are used for cookie generation and session setup. They are included in the collection but are **excluded** from the final reporting as they are not part of the pass/fail statistics.
 
-=
-
-=========== Postman Report Generator ===========
+============== Postman Report Generator ==============
 =
 
 1. **Navigate to the Directory**:
@@ -82,4 +80,5 @@ The report is based on tests executed using the following files:
 9. **Modifying the Script**:
    - To customize the output format, styles, or handling of specific tests, you can edit the `convert_to_html.py` script directly.
 
+========== END OF README ===========
 =
