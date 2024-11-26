@@ -23,6 +23,15 @@ This section includes independent Selenium WebDriver test cases and suite execut
 
 ---
 
+### **Postman Collection for Automated API Tests**
+📂 **Directory**: `[API]POSTMAN`
+
+📄 **Instructions**: [Postman Collection README]()
+
+This section includes independent Selenium WebDriver test cases and suite execution details.
+
+---
+
 ### **How to Navigate**
 - Click on the links above to view detailed instructions for each module.
 - For general setup or issues, refer to the relevant README files in the directories.
