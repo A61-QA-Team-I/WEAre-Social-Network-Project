@@ -5,6 +5,42 @@ This repository contains components for the WEAre Social Network Project, includ
 
 ---
 
+### **REST Assured Automated API Tests**
+📂 **Directory**: `REST Assured - A61-TEAM I`
+
+📄 **Instructions**: [REST Assured README]()
+
+To do...
+
+---
+
+### **Security Tests Automation**
+📂 **Directory**: `Security Testing-WEAre App`
+
+📄 **Instructions**: [Security Tests README]()
+
+To do...
+
+---
+
+### **Selenium IDE Tests**
+📂 **Directory**: `Selenium IDE`
+
+📄 **Instructions**: [Selenium IDE README]()
+
+To do...
+
+---
+
+### **Postman Collection for Automated API Tests**
+📂 **Directory**: `[API]POSTMAN`
+
+📄 **Instructions**: [Postman Collection README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/blob/main/%5BAPI%5DPOSTMAN/README.md#-postman-automation-testing-suite-)
+
+This section includes Postman collections, environment variables, and globals for automated API tests, along with instructions for generating detailed HTML reports from test results logs.
+
+---
+
 ### **JMeter Performance Tests**
 📂 **Directory**: `Jmeter_PerformanceTests`
 
@@ -29,6 +65,24 @@ This section includes independent Selenium WebDriver test cases and suite execut
 📄 **Instructions**: [Postman Collection README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/blob/main/%5BAPI%5DPOSTMAN/README.md#-postman-automation-testing-suite-)
 
 This section includes Postman collections, environment variables, and globals for automated API tests, along with instructions for generating detailed HTML reports from test results logs.
+
+---
+
+### **Testing Documentation**
+📂 **Directory**: `Testing Documentation`
+
+📄 **Instructions**: [Testing Documentation README]()
+
+To do...
+
+---
+
+### **Presentation**
+📂 **Directory**: `Team I-Presentation`
+
+📄 **Instructions**: [Presentation README]()
+
+To do...
 
 ---
 
