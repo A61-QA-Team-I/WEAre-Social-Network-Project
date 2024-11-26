@@ -1,0 +1,21 @@
+timeStamp,elapsed,label,responseCode,responseMessage,threadName,dataType,success,failureMessage,bytes,sentBytes,grpThreads,allThreads,URL,Latency,IdleTime,Connect
+1732647451048,84,Create User,200,,Create User Thread Group 1-1,text,true,,364,372,1,1,http://localhost:8081/api/users/,81,0,17
+1732647455513,68,Create User,200,,Create User Thread Group 1-2,text,true,,364,372,1,1,http://localhost:8081/api/users/,67,0,0
+1732647460514,63,Create User,200,,Create User Thread Group 1-3,text,true,,364,372,1,1,http://localhost:8081/api/users/,62,0,1
+1732647465513,61,Create User,200,,Create User Thread Group 1-4,text,true,,364,372,1,1,http://localhost:8081/api/users/,61,0,1
+1732647470512,61,Create User,200,,Create User Thread Group 1-5,text,true,,364,372,1,1,http://localhost:8081/api/users/,61,0,0
+1732647475513,66,Create User,200,,Create User Thread Group 1-6,text,true,,364,372,1,1,http://localhost:8081/api/users/,66,0,1
+1732647480514,76,Create User,200,,Create User Thread Group 1-7,text,true,,364,372,1,1,http://localhost:8081/api/users/,76,0,0
+1732647485512,60,Create User,200,,Create User Thread Group 1-8,text,true,,364,372,1,1,http://localhost:8081/api/users/,60,0,0
+1732647490512,59,Create User,200,,Create User Thread Group 1-9,text,true,,364,372,1,1,http://localhost:8081/api/users/,59,0,1
+1732647495512,61,Create User,200,,Create User Thread Group 1-10,text,true,,364,372,1,1,http://localhost:8081/api/users/,60,0,1
+1732647500512,60,Create User,200,,Create User Thread Group 1-11,text,true,,364,372,1,1,http://localhost:8081/api/users/,59,0,1
+1732647505513,60,Create User,200,,Create User Thread Group 1-12,text,true,,364,372,1,1,http://localhost:8081/api/users/,59,0,0
+1732647510512,64,Create User,200,,Create User Thread Group 1-13,text,true,,364,372,1,1,http://localhost:8081/api/users/,64,0,0
+1732647515514,61,Create User,200,,Create User Thread Group 1-14,text,true,,364,372,2,2,http://localhost:8081/api/users/,60,0,1
+1732647520514,59,Create User,200,,Create User Thread Group 1-15,text,true,,364,372,1,1,http://localhost:8081/api/users/,59,0,0
+1732647525513,66,Create User,200,,Create User Thread Group 1-16,text,true,,364,372,1,1,http://localhost:8081/api/users/,66,0,0
+1732647530512,68,Create User,200,,Create User Thread Group 1-17,text,true,,364,372,1,1,http://localhost:8081/api/users/,68,0,0
+1732647535513,67,Create User,200,,Create User Thread Group 1-18,text,true,,364,372,1,1,http://localhost:8081/api/users/,67,0,0
+1732647540511,60,Create User,200,,Create User Thread Group 1-19,text,true,,364,372,1,1,http://localhost:8081/api/users/,60,0,0
+1732647545513,70,Create User,200,,Create User Thread Group 1-20,text,true,,364,372,1,1,http://localhost:8081/api/users/,70,0,0

@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Selenium IDE Test Documentation</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 10%;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+            z-index: 1000;
+        }
+
+        .footer img {
+            max-width: 150px;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+
+
+<h1>Selenium IDE Test Documentation for WEAre Social Network</h1>
+<section>
+<h2>Project Overview</h2>
+<p>
+    This document outlines the Selenium IDE testing conducted for the <strong>WEAre Social Network</strong> application,
+    hosted locally at <code>http://localhost:8081</code>. The testing was conducted by <strong>Ivan Velchev, Armine Stoykova</strong>,
+    and <strong>Gabriel Georgiev</strong>, focusing on validating the application's core functionalities and user interactions.
+    The goal was to ensure adherence to functional requirements, identify UI inconsistencies, and evaluate the platform’s stability
+    and usability under real-world scenarios.
+</p>
+    </section>
+<section>
+<h2>Scope of Selenium IDE Testing</h2>
+<p>The testing targeted critical functionalities, including:</p>
+<ul>
+    <li><strong>Login and Authentication</strong></li>
+    <li><strong>Post Management (Create, Edit, Delete)</strong></li>
+    <li><strong>User Interactions (Like, Comment)</strong></li>
+    <li><strong>Administrative Actions (Delete Post/User)</strong></li>
+    <li><strong>UI Navigation</strong></li>
+</ul>
+    </section>
+<section>
+<h2>Tools Used</h2>
+<ul>
+    <li><strong>Selenium IDE</strong>: A browser-based tool for automating web interactions and creating reusable test scripts.</li>
+    <li><strong>Chrome Browser</strong>: The environment for executing test cases.</li>
+</ul>
+<p><strong>Test Suite File</strong>: <code>WEAre_Social_Network.side</code></p>
+<p><strong>Testing Period</strong>: November 24, 2024</p>
+    </section>
+<section>
+<h2>Testing Approach and Challenges</h2>
+<p>
+    The team focused on validating essential workflows such as login, post creation, and comment handling.
+    Some challenges encountered included:
+</p>
+<ul>
+    <li><strong>Dynamic Element Handling</strong>: Certain elements loaded dynamically, requiring tailored commands to ensure reliable interactions.</li>
+    <li><strong>Session Management</strong>: Testing with different user roles (e.g., admins and regular users) required precise login and logout flows.</li>
+</ul>
+<p>The challenges were effectively managed to ensure seamless test execution.</p>
+    </section>
+<section>
+<h2>Summary of Tests Conducted</h2>
+<p>A total of <strong>8 tests</strong> were designed and executed to validate the core functionalities of the application:</p>
+<ol>
+    <li><strong>Admin Delete Post</strong> - Verified admin privileges to delete posts.</li>
+    <li><strong>Anonymous Like Post</strong> - Tested liking public posts as an anonymous user.</li>
+    <li><strong>Create Comment</strong> - Ensured comments could be successfully added to posts.</li>
+    <li><strong>Create Post</strong> - Validated the creation of both public and private posts.</li>
+    <li><strong>Edit User</strong> - Confirmed user profiles could be edited successfully.</li>
+    <li><strong>Home Page</strong> - Checked homepage navigation and visibility of essential elements.</li>
+    <li><strong>Like Post</strong> - Verified post-liking functionality for logged-in users.</li>
+    <li><strong>Login Page</strong> - Tested login, logout, and re-login functionality with multiple accounts.</li>
+</ol>
+    </section>
+<section>
+<h2>Key Observations</h2>
+
+<h3>Validated Features</h3>
+<ul>
+    <li>Login and authentication workflows functioned seamlessly across various user roles.</li>
+    <li>Post management operations, such as creation, editing, and deletion, worked as intended.</li>
+    <li>Comment addition and deletion reflected accurately in the UI.</li>
+    <li>Admin actions, including deleting posts, were verified successfully.</li>
+    <li>Navigation tests confirmed intuitive user experience and UI consistency.</li>
+</ul>
+
+<h3>Identified Issues</h3>
+<ul>
+    <li><strong>Dynamic Element Handling</strong>: A single instance required additional <code>wait</code> logic, which was implemented to improve reliability.</li>
+    <li><strong>Error Feedback</strong>: Certain invalid actions lacked descriptive error messages, potentially confusing users.</li>
+</ul>
+    </section>
+<section>
+<h2>Testing Outcome</h2>
+<p>
+    The Selenium IDE tests successfully validated the application's core functionalities, ensuring compliance with the requirements.
+    Most features worked as expected, with only minor improvements recommended.
+</p>
+    </section>
+<section>
+<h2>Conclusion</h2>
+<p>
+    The Selenium IDE tests for the <strong>WEAre Social Network</strong> application successfully validated key functionalities
+    and user interactions, ensuring the platform’s readiness for end-user operations. While the majority of features were stable
+    and met the requirements, a few minor issues (e.g., dynamic element delays, insufficient error feedback) were identified and logged for future improvement.
+</p>
+<p><strong>Testing Period:</strong> November 24-25, 2024</p>
+<p><strong>Links to Documentation:</strong> <a href="https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Selenium%20IDE" target="_blank">GitHub Link</a></p>
+
+</section>
+
+<h2 class="back-to-home"><a href="baseTestReportingPage.html" class="back-button">Back</a></h2>
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>

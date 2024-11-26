@@ -1,0 +1,16 @@
+{
+    "ThreadGroup": {
+        "loop_count": 1,
+        "ramp_up": 1,
+        "num_threads": 1
+    },
+    "HttpSampler": {
+        "name": "Create User",
+        "method": "POST",
+        "url": "http://localhost:8081/api/users/",
+        "body": "{\"username\": \"random_user\", \"password\": \"VankoVelchev#\", \"confirmPassword\": \"VankoVelchev#\", \"email\": \"ivan.velchev@abv.bg\", \"category\": {\"id\": 157}, \"authorities\": [\"ROLE_USER\"]}",
+        "headers": {
+            "Content-Type": "application/json"
+        }
+    }
+}

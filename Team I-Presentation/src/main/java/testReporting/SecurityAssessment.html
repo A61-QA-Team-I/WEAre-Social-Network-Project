@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Security Testing Documentation</title>
+    <style>
+        body {
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+        .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer {
+            position: fixed;
+            bottom: 0;
+            right: 0;
+            width: 10%;
+            background-color: rgba(255, 255, 255, 0.0);
+            text-align: center;
+            padding: 10px;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+            z-index: 1000;
+        }
+
+        .footer img {
+            max-width: 150px;
+        }
+
+        .back-to-home {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            text-align: center;
+        }
+
+        .back-button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .back-button:hover {
+            background-color: #45a049;
+        }
+
+    </style>
+</head>
+<body>
+
+
+<header>
+    <h1><strong>Security Testing Documentation</strong></h1>
+</header>
+<section>
+    <h2>Project Overview</h2>
+    <p>This document outlines the <strong>Security Testing</strong> conducted for the <strong>WEAre Social Network</strong> application, hosted locally at <code>http://localhost:8081</code>. The testing was performed by <strong>Ivan Velchev</strong> to identify security vulnerabilities related to user authentication and password management. The primary focus was to evaluate the platform's resilience against brute force attacks and enforce best practices for password strength.</p>
+</section>
+
+
+
+<section>
+    <h2><strong>Scope of Security Testing</strong></h2>
+    <ul>
+        <li>Identifying vulnerabilities in the login mechanism against brute force attempts.</li>
+        <li>Evaluating the password policy enforcement during user registration.</li>
+        <li>Ensuring the platform implements adequate safeguards against sequential login attempts with invalid credentials.</li>
+    </ul>
+</section>
+
+<section>
+    <h2><strong>Tools Used</strong></h2>
+    <ul>
+        <li><strong>Selenium WebDriver</strong>: For automating the login attempts and generating unique test data.</li>
+        <li><strong>JUnit</strong>: To structure and validate test cases with assertions.</li>
+        <li><strong>IntelliJ IDEA</strong>: For test development and execution.</li>
+    </ul>
+    <p><strong>Testing Period:</strong> November 25-26 , 2024</p>
+</section>
+
+
+
+<section>
+    <h2><strong>Testing Approach</strong></h2>
+    <p>The test was designed to simulate a brute force attack using a subset of the <strong>200 most commonly used passwords</strong>, as identified in public security reports. The logic included:</p>
+    <ol>
+        <li>
+            <strong>User Creation</strong>:
+            <ul>
+                <li>A user was programmatically created using the application’s registration form.</li>
+                <li>Passwords used during creation were selected from a set of 10 weak, commonly used passwords.</li>
+                <li>Validation was performed to confirm that users could be registered with passwords shorter than <strong>8 characters</strong>, violating industry best practices.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Login Attempts</strong>:
+            <ul>
+                <li>The test attempted to log in using <strong>50% of the 200 most common passwords</strong>.</li>
+                <li>A login was considered successful if:
+                    <ul>
+                        <li>The "Logout" button became active after an attempt, indicating a valid session.</li>
+                    </ul>
+                </li>
+            </ul>
+        </li>
+        <li>
+            <strong>Validation Logic</strong>:
+            <ul>
+                <li>Password validation was performed by checking the activation of the "Logout" button post-login.</li>
+                <li>A match indicated <strong>PASS</strong>, while repeated failures highlighted insufficient brute force protection mechanisms.</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+
+
+<section>
+    <h2><strong>Key Observations</strong></h2>
+
+    <h3><strong>Validated Issues</strong></h3>
+    <ol>
+        <li>
+            <strong>Lack of Brute Force Protection</strong>:
+            <ul>
+                <li>The platform allowed sequential login attempts without any rate-limiting or CAPTCHA challenges.</li>
+                <li>Multiple attempts to guess passwords succeeded, exposing the system to brute force attacks.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Weak Password Policy</strong>:
+            <ul>
+                <li>Users were allowed to register with passwords shorter than <strong>8 characters</strong>, which is a significant deviation from security best practices.</li>
+                <li>No enforcement for including mixed character types (uppercase, lowercase, digits, special characters).</li>
+            </ul>
+        </li>
+    </ol>
+
+    <h3><strong>Potential Risks</strong></h3>
+    <ul>
+        <li><strong>Account Compromise:</strong> The lack of protection against brute force attacks makes user accounts vulnerable to unauthorized access.</li>
+        <li><strong>Data Privacy Violations:</strong> Weak password policies could lead to easily compromised accounts, resulting in potential data breaches.</li>
+    </ul>
+</section>
+
+
+
+<section>
+    <h2><strong>Recommendations</strong></h2>
+    <ol>
+        <li>
+            <strong>Implement Brute Force Mitigations</strong>:
+            <ul>
+                <li>Add rate-limiting or CAPTCHA for repeated login attempts with incorrect credentials.</li>
+                <li>Introduce account lockout mechanisms after a predefined number of failed attempts.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Enforce Strong Password Policies</strong>:
+            <ul>
+                <li>Mandate a minimum password length of <strong>8 characters</strong>.</li>
+                <li>Require a combination of uppercase letters, lowercase letters, numbers, and special characters.</li>
+            </ul>
+        </li>
+        <li>
+            <strong>Enhanced Feedback for Invalid Login Attempts</strong>:
+            <ul>
+                <li>Display descriptive error messages for failed logins, without revealing if the username or password is incorrect.</li>
+            </ul>
+        </li>
+    </ol>
+</section>
+
+
+
+<section>
+    <h2><strong>Testing Outcome</strong></h2>
+    <p>The security testing revealed critical vulnerabilities in the <strong>WEAre Social Network</strong> application, including the absence of brute force protection and weak password policy enforcement. These issues were logged as <strong>Severity Level: CRITICAL</strong> in the project’s Jira board for immediate resolution.</p>
+</section>
+
+
+
+<section>
+    <h2><strong>Conclusion</strong></h2>
+    <p>The <strong>WEAre Social Network</strong> application currently lacks basic security measures to protect user accounts. Addressing these vulnerabilities should be a top priority to ensure the platform’s safety and user trust.</p>
+    <p>Without immediate action, the application remains at risk of exploitation by malicious actors. The absence of rate-limiting or CAPTCHA mechanisms for login attempts makes it highly susceptible to brute force attacks, potentially leading to unauthorized access and compromising user data. Additionally, allowing the creation of accounts with weak passwords further exacerbates the risks, as such credentials can be easily guessed or cracked using common password lists.</p>
+    <p>To safeguard user accounts and maintain platform integrity, it is crucial to prioritize the implementation of robust security controls. This includes introducing strong password enforcement, setting limits on repeated login attempts, and improving the feedback provided for invalid actions to avoid exposing sensitive account information. By addressing these issues promptly, the platform can enhance its resilience against cyber threats, build user confidence, and ensure compliance with industry-standard security practices.</p>
+    <p><strong>GitHub Repository:</strong> <a href="https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Security%20Testing-WEAre%20App">GitHub Link</a></p>
+</section>
+
+
+
+
+
+<h2 class="back-to-home"><a href="baseTestReportingPage.html" class="back-button">Back</a></h2>
+
+
+
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>

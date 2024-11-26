@@ -1,0 +1,1334 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Test Plan for WEAre Network Application</title>
+    <style>
+        body {
+             background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            font-family: Roboto, sans-serif;
+            line-height: 1.6;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1, h2, h3 {
+            color: #333;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+       .container {
+            display: flex;
+            justify-content: flex-start;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .circle-link {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .square-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            width: 150px;
+            padding: 10px;
+            border-radius: 10px;
+            background-color: #eaeaea;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .small-square {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+        }
+
+        .square-text {
+            font-size: 14px;
+            color: #333;
+        }
+
+        section {
+            margin-bottom: 20px;
+            padding: 20px;
+            background-color: white;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        .task-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .task-table th, .task-table td {
+            border: 1px solid #ccc;
+            padding: 10px;
+            text-align: left;
+        }
+
+        .task-table th {
+            background-color: #f4f4f4;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #333;
+            color: white;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+        .footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 10%;
+    background-color: rgba(255, 255, 255, 0.0);
+    text-align: center;
+    padding: 10px;
+    box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+    z-index: 1000;
+}
+
+.footer img {
+    max-width: 150px;
+    }
+
+
+
+        .menu-container {
+            position: fixed;
+            top: 0;
+            right: -250px;
+            width: 250px;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            overflow-y: auto;
+            box-shadow: -2px 0 5px rgba(0, 0, 0, 0.5);
+            transition: right 0.3s ease-in-out;
+            z-index: 100
+        }
+        #schedule-chart {
+            z-index: 1;
+        }
+        .menu-container:hover {
+            right: 0; /* Slides into view */
+        }
+
+        .menu-header {
+            padding: 15px;
+            background-color: #444;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-links {
+            padding: 0;
+            margin: 0;
+            list-style: none;
+        }
+
+        .menu-links li {
+            border-bottom: 1px solid #555;
+        }
+
+        .menu-links a {
+            text-decoration: none;
+            color: white;
+            display: block;
+            padding: 10px 15px;
+        }
+
+        .menu-links a:hover {
+            background-color: #555;
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <a href="Vanko3/IvanVelchev.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/Vanko.png" alt="member 1" class="small-square">
+            <div class="square-text">Ivan Velchev</div>
+        </div>
+    </a>
+
+    <a href="Armine/Armine.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/Image.jpeg" alt="member 2" class="small-square">
+            <div class="square-text">Armine Stoykova</div>
+        </div>
+    </a>
+
+    <a href="Gabriel/Gabriel.html" class="circle-link">
+        <div class="square-container">
+            <img src="images/1713257987187.png" alt="member 3" class="small-square">
+            <div class="square-text">Gabriel Georgiev</div>
+        </div>
+    </a>
+</div>
+
+
+
+<div class="menu-container">
+    <div class="menu-header">Legend</div>
+    <ul class="menu-links">
+        <li><a href="#overview">Overview</a></li>
+        <li><a href="#Scope of Testing">Scope of Testing</a></li>
+        <li><a href="#Objectives of Testing">Objectives of Testing</a></li>
+        <li><a href="#Risk Management">Risk Management </a></li>
+        <li><a href="#Risk Mitigation">Risk Mitigation Strategies</a></li>
+        <li><a href="#Testing Strategy">Testing Strategy</a></li>
+        <li><a href="#Entry Criteria">Entry Criteria</a></li>
+        <li><a href="#Exit Criteria">Exit Criteria</a></li>
+        <li><a href="#Roles and Responsibilities">Roles and Responsibilities</a></li>
+        <li><a href="#Test Environment">Test Environment</a></li>
+        <li><a href="#Manual Testing Scenarios">Manual Testing Scenarios</a></li>
+        <li><a href="#REST API">REST API Functionality Overview</a></li>
+        <li><a href="#Exception Handling">Exception Handling</a></li>
+        <li><a href="#REST ASSURED">REST ASSURED Functionality Overview</a></li>
+        <li><a href="#Selenium WebDriver">Selenium WebDriver Functionality Overview</a></li>
+        <li><a href="#Schedule">Test Schedule</a></li>
+        <li><a href="#Tools">Tools and Technologies</a></li>
+        <li><a href="#Success Criteria">Success Criteria</a></li>
+        <li><a href="#Test Reporting">Test Reporting</a></li>
+    </ul>
+</div>
+
+
+
+
+<h1>Test Plan for WEAre Social Network Application</h1>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="overview" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 24px; color: #222; border-bottom: 2px solid #333; padding-bottom: 10px; margin-bottom: 20px;">
+        📋 Overview
+    </h2>
+    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+        The application WEAre social network  enables users to connect with others, create, comment, and like posts, and view a personalized feed of the latest or most relevant content from their connections. Users can create profiles, send friend requests, and follow others. They can share text, images, or videos, and interact with content by commenting or liking posts. The feed is tailored to each user, displaying posts based on their preferences and interactions. The theme of the application can be flexible, such as a platform similar to Facebook focused on news feeds, a space for travelers to share reviews, or a tool for students to stay connected and share information.</p>
+    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;"> This comprehensive test plan outlines the approach for thoroughly validating the social network application, ensuring its core functionalities are robust, reliable, and efficient. The plan employs a combination of manual, API, automated, and performance testing to deliver a high-quality product. Key areas of focus include:</p>
+
+    <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8; color: #555;">
+        <li style="margin-bottom: 15px;">
+            <span style="font-weight: bold; color: #222;">✅ Manual Testing:</span> In-depth validation of all essential functionalities, including user registration, login, post creation, and user interactions. This approach will cover complex scenarios, edge cases, and negative testing that are less suited for automation. Manual testing will allow for exploratory testing and help uncover unexpected issues in user experience that automated tests may overlook.
+        </li>
+        <li style="margin-bottom: 15px;">
+            <span style="font-weight: bold; color: #222;">🔧 API Testing:</span>: Utilizing Postman to rigorously test backend services, ensuring accurate and reliable data handling. This will involve verifying CRUD operations, error handling, security protocols, and overall API performance. By focusing on API testing, we ensure that the application’s data flow between the frontend and backend is smooth and that APIs handle requests and responses as expected under various conditions.
+        </li>
+        <li style="margin-bottom: 15px;">
+            <span style="font-weight: bold; color: #222;">🤖 Automation:</span>: Leveraging Selenium WebDriver and Java to streamline the testing of repetitive scenarios, such as user registration and post creation, across multiple browsers. Automation will enhance test efficiency and maintain a consistent level of quality. Automated tests will help ensure that core functionalities remain intact with every release, enabling faster regression testing and improving overall test coverage.
+        </li>
+        <li style="margin-bottom: 15px;">
+            <span style="font-weight: bold; color: #222;">📊 Performance Testing</span>: Employing JMeter to simulate high-traffic conditions and measure system stability and responsiveness. Stress testing will help identify potential bottlenecks and ensure the application can gracefully handle heavy loads. Performance testing will focus on assessing load times, response times, and system behavior under peak usage to ensure the application provides a smooth experience for users even during traffic surges.
+        </li>
+        <li>
+            <span style="font-weight: bold; color: #222;">🔒 Security Testing</span>: Basic security checks to validate user data protection and prevent unauthorized access. These tests will help identify potential vulnerabilities and ensure compliance with data protection standards, providing users with confidence that their personal information is secure within the application.
+        </li>
+    </ul>
+</section>
+
+
+<style>
+    h2:hover {
+        color: #2196F3;
+        transition: color 0.3s ease;
+    }
+</style>
+
+
+
+
+    <section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+        <h2 id="Scope of Testing" style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 24px; color: #222; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+             Scope of Testing
+        </h2>
+
+        <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+           The tests will cover the following key functionalities:</p>
+
+        <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+                <strong>Manual Testing:</strong>: User registration, login, post creation, likes, comments, profile management, and user interactions.</li>     <div style="margin: 30px 0;">
+            <img src="../images/outputВ.png" alt="Distribution of Testing Efforts" style="float: right; max-width: 45%; height: auto; margin-left: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+        </div>
+
+
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #36a2eb;">&#9679;</span>
+                <strong>API Testing:</strong>: CRUD operations (create, read, update, delete) for users and posts using <strong>Postman</strong>.</li>
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #ffce56;">&#9679;</span>
+                <strong>Automation:</strong>: Core scenarios such as registration, login, and post creation using <strong>Selenium WebDriver and Java</strong>.</li>
+
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #9c27b0;">&#9679;</span>
+                <strong>Cross-browser Testing:</strong>: Testing on <strong>Google Chrome</strong>, <strong>Mozilla Firefox, Edge</strong>, and <strong>Safari</strong>.</li>
+
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #4caf50;">&#9679;</span>
+                <strong>Cross-platform Testing:</strong>: Testing on <strong>macOS</strong> and <strong>Windows</strong>.</li>
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #f44336;">&#9679;</span>
+                <strong>Performance Testing:</strong>: Load testing to ensure system performance under high traffic.</li>
+
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #03a9f4;">&#9679;</span>
+                <strong>Security Testing:</strong>: Verification of basic security requirements, including protection of user data, prevention of unauthorized access, and validation of secure data handling.</li>
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #8bc34a;">&#9679;</span>
+                <strong>Error Handling and Validation:</strong>: Testing form validations, error messages, and response handling for invalid inputs to ensure robustness and user guidance</li>
+        </ul>
+            <h3 style="font-family: 'Helvetica Neue', Arial, sans-serif; font-size: 20px; color: #333; margin-top: 40px; margin-bottom: 15px;">
+                What will NOT be tested:
+            </h3>
+
+        <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #f44336;">&#10006;</span>
+                <strong>Third-party integrations:</strong>: The plan will not cover performance testing of external APIs or services integrated with the application.</li>
+            </li>
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #f44336;">&#10006;</span>
+                <strong>Detailed UI/UX design validation:</strong>: Pixel-perfect UI comparisons or deep aesthetic checks for design consistency will not be performed.</li>
+            </li>
+            <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+                <span style="position: absolute; left: 0; color: #f44336;">&#10006;</span>
+                <strong>Performance on unsupported browsers or devices:</strong>: The application will not be tested on browsers or devices outside of Chrome, Firefox, Safari, macOS, and Windows.</li>
+    </ul>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #eef5f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Objectives of Testing" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Objectives of Testing
+    </h2>
+
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/747/747376.png" alt="Manual Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #4CAF50; margin-bottom: 10px;">Manual Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - This will involve detailed validation of the application’s core functionalities, including user registration, login, post creation, user interactions (likes, comments, and connections), and profile management. Manual testing will also cover boundary cases, negative testing, and scenarios that are challenging to automate. Additionally, it will focus on ensuring a smooth user experience and identifying any issues that may not be detected through automation.
+            </p>
+        </div>
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936962.png" alt="API Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #36A2EB; margin-bottom: 10px;">API Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - Using Postman, we will test backend services to ensure accurate and efficient data handling. This includes validating CRUD operations (Create, Read, Update, Delete) for both users and posts. We will also test the APIs’ security, error handling, and performance under various conditions. The goal is to ensure that all API endpoints respond correctly with the expected status codes and data formats, even under edge cases or high loads.
+            </p>
+        </div>
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3094/3094836.png" alt="Automated Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #FFCE56; margin-bottom: 10px;">Automated Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - Automation will be conducted using Selenium WebDriver and Java to increase the efficiency and reliability of regression testing. The focus will be on automating high-priority scenarios such as user registration, login, and post creation. Automation scripts will be designed to run across different browsers to ensure cross-browser compatibility. The use of page object models and data-driven testing techniques will make the scripts robust and maintainable.
+            </p>
+        </div>
+
+        <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center; margin-top: 20px;">
+
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2919/2919600.png" alt="Performance Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #9C27B0; margin-bottom: 10px;">Performance Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - Utilizing JMeter, performance testing will be conducted to assess the application's behavior under high traffic and concurrent user loads. We will simulate real-world scenarios to identify potential bottlenecks and ensure that the system maintains acceptable response times and stability. Stress testing will also be performed to determine the maximum capacity of the application and its ability to recover gracefully from failures.
+            </p>
+        </div>
+
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3064/3064197.png" alt="Security Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #F44336; margin-bottom: 10px;">Security Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - Basic security checks will be conducted to validate data protection and prevent unauthorized access. This includes verifying user authentication, session management, and data privacy to ensure the application meets standard security practices.
+            </p>
+        </div>
+        <div style="flex: 1; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); text-align: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="UX Testing Icon" style="width: 60px; margin-bottom: 10px;">
+            <h3 style="font-size: 20px; color: #8BC34A; margin-bottom: 10px;">User Experience Testing</h3>
+            <p style="font-size: 16px; color: #555;">
+                - As part of manual testing, we will evaluate the user interface for intuitive design, ease of use, and consistency. UX testing will help identify any usability issues that could hinder the user experience and ensure that navigation and interactions are smooth and user-friendly.
+            </p>
+        </div>
+        </div></div>
+</section>
+
+
+
+
+
+<section>
+    <h2 id="Schedule" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Schedule
+    </h2>
+    <div id="schedule-chart" style="width:100%; height:500px;"></div>
+
+    <style>
+        #schedule-chart {
+            width: 100%;
+            height: 100%;
+            max-width: 100%;
+            max-height: 500px;
+        }
+    </style>
+
+    <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+    <script>
+        var data = [
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-11-13', '2024-11-23'],
+                y: ['Automation (Selenium)', 'Automation (Selenium)'],
+                marker: {color: 'blue', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-11-23', '2024-11-26'],
+                y: ['Selenium IDE', 'Selenium IDE'],
+                marker: {color: 'black', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-11-05', '2024-11-13'],
+                y: ['REST Assured (IntelliJ)', 'REST Assured (IntelliJ)'],
+                marker: {color: 'magenta', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-10-28', '2024-11-08'],
+                y: ['Manual Testing (Postman)', 'Manual Testing (Postman)'],
+                marker: {color: 'red', size: 12},
+                line: {width: 3}
+            },
+
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-11-20', '2024-11-24'],
+                y: ['Performance (Jmeter)', 'Performance (Jmeter)'],
+                marker: {color: 'pink', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-10-23', '2024-11-03'],
+                y: ['Manual Testing (Jira)', 'Manual Testing (Jira)'],
+                marker: {color: 'orange', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-11-24', '2024-11-26'],
+                y: ['Security', 'Security'],
+                marker: {color: 'brown', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-10-17', '2024-10-29'],
+                y: ['Environment Setup', 'Environment Setup'],
+                marker: {color: 'yellow', size: 12},
+                line: {width: 3}
+            },
+            {
+                type: 'scatter',
+                mode: 'markers+lines',
+                x: ['2024-10-17', '2024-11-26'],
+                y: ['Test Plan', 'Test Plan'],
+                marker: {color: 'green', size: 12},
+                line: {width: 3}
+            }
+        ];
+
+        var layout = {
+            title: 'Staggered Test Schedule',
+            xaxis: {
+                title: 'Date',
+                showgrid: true,
+                tickformat: '%Y-%m-%d'
+            },
+            yaxis: {
+                title: 'Task',
+                tickvals: [
+                    'Automation (Selenium)', 'Selenium IDE', 'REST Assured (IntelliJ)',
+                    'Manual Testing (Postman)', 'Manual Testing (Jira)', 'Performance (Jmeter)','Security', 'Environment Setup', 'Test Plan'
+                ],
+                ticktext: [
+                    'Automation', 'Selenium IDE', 'Rest Assured',
+                    'Api Postman', 'Manual', 'Performance','Security', 'Setup', 'Test Plan'
+                ]
+            },
+            showlegend: false
+        };
+
+        Plotly.newPlot('schedule-chart', data, layout);
+
+        window.onresize = function() {
+            Plotly.Plots.resize('schedule-chart');
+        };
+    </script>
+</section>
+
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Risk Management" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Risk Management and Mitigation Strategies
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.8; color: #555;">
+        As a team of three developers, we are well-prepared to tackle any risks and challenges that may arise during testing. We rely on effective communication and proactive planning to maintain a smooth workflow and successfully complete our tasks. Here is our approach to risk management:
+    </p>
+
+    <h3 style="font-family: 'Roboto', sans-serif; font-size: 22px; color: #007BFF; margin-top: 20px; margin-bottom: 15px;">Potential Risks:</h3>
+    <ul style="list-style: none; padding-left: 0;">
+        <li style="margin-bottom: 15px; display: flex; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3135/3135715.png" alt="Delays Icon" style="width: 30px; margin-right: 15px;">
+            <strong>Delays in Test Environment Setup: </strong>  Issues with configuration or technical limitations may cause delays.
+        </li>
+        <li style="margin-bottom: 15px; display: flex; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1483/1483536.png" alt="Resource Icon" style="width: 30px; margin-right: 15px;">
+            <strong>Resource Shortages:</strong> The absence of key tools, hardware, or time constraints could impact our work.
+        </li>
+        <li style="margin-bottom: 15px; display: flex; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/3176/3176360.png" alt="Changes Icon" style="width: 30px; margin-right: 15px;">
+            <strong>Requirement Changes:</strong> When system requirements change, we need to quickly adapt our test cases and strategies.
+        </li>
+        <li style="margin-bottom: 15px; display: flex; align-items: center;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2936/2936844.png" alt="Dependencies Icon" style="width: 30px; margin-right: 15px;">
+            <strong>Dependencies on External Systems:</strong> Third-party dependencies could pose risks if those systems are not functioning properly.
+        </li>
+    </ul>
+
+    <h3 id="Risk Mitigation" style="font-family: 'Roboto', sans-serif; font-size: 22px; color: #007BFF; margin-top: 40px; margin-bottom: 15px;">Risk Mitigation Strategies:</h3>
+    <div style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-around;">
+        <div style="flex: 1; min-width: 280px; max-width: 300px; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <img src="https://cdn-icons-png.flaticon.com/512/1034/1034381.png" alt="Stand-Up Icon" style="width: 50px; margin-bottom: 10px;">
+            <h4 style="font-size: 18px; color: #4CAF50;">Daily Stand-Up Calls</h4>
+            <p style="font-size: 14px; color: #555;"> We hold brief daily calls to share our progress, discuss current risks, and propose solutions. This keeps everyone informed and allows us to react quickly to potential problems.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 280px; max-width: 300px; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <img src="https://cdn-icons-png.flaticon.com/512/1027/1027177.png" alt="Weekly Meetings Icon" style="width: 50px; margin-bottom: 10px;">
+            <h4 style="font-size: 18px; color: #17A2B8;">Weekly Meetings</h4>
+            <p style="font-size: 14px; color: #555;"> Once a week, we have an in-depth meeting to review achievements, discuss the project status, and identify both new and existing risks. We also plan mitigation strategies if things aren't going as expected.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 280px; max-width: 300px; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <img src="https://cdn-icons-png.flaticon.com/512/2283/2283564.png" alt="Backup Icon" style="width: 50px; margin-bottom: 10px;">
+            <h4 style="font-size: 18px; color: #FFC107;">Backup Test Environments</h4>
+            <p style="font-size: 14px; color: #555;">  We maintain backup environments and virtual machines to ensure flexibility if issues arise with the primary setup.</p>
+        </div>
+
+        <div style="flex: 1; min-width: 280px; max-width: 300px; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <img src="https://cdn-icons-png.flaticon.com/512/2334/2334434.png" alt="Planning Icon" style="width: 50px; margin-bottom: 10px;">
+            <h4 style="font-size: 18px; color: #28A745;">Resource Planning</h4>
+            <p style="font-size: 14px; color: #555;">We allocate tasks and resources ahead of time, ensuring everyone knows their responsibilities. If needed, we can quickly reallocate resources to handle critical situations.</p>
+        </div>
+    </div>
+
+    <p style="font-size: 16px; color: #555; margin-top: 20px;">
+        As a team, we believe that successful testing relies on good organization, efficient communication, and swift problem-solving. Our approach enables us to work in sync and stay prepared for any challenges that may arise.
+    </p>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Testing Strategy" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Testing Strategy
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.8; color: #555;">
+        To ensure the quality and stability of the social network application, we have developed a comprehensive testing strategy that encompasses manual testing, automation, and API verification:
+    </p>
+
+    <div class="carousel-container">
+        <div class="carousel">
+            <div class="carousel-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/800px-Jira_Logo.svg.png" alt="Jira Logo" style="width: 100px;">                <h4>Manual Testing</h4>
+                <p> Initially, we will perform thorough checks of core functionalities such as user registration, login, post creation, likes, comments, and profile management. The goal is to identify and document all critical and high-risk bugs in <strong>Jira</strong>. Our team will employ "exploratory testing" techniques to cover edge cases and unpredictable scenarios to ensure comprehensive coverage.</p>
+            </div>
+
+            <div class="carousel-card active">
+                <img src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg" alt="API Testing Icon" style="width: 60px; margin-bottom: 10px;">
+                <h4>API Testing</h4>
+                <p> Once the initial manual testing and bug documentation are completed, we will use <strong>Postman</strong> to validate all key API endpoints. This will include not only basic CRUD operations (Create, Read, Update, Delete) but also the system's behavior for various response statuses (200 OK, 404 Not Found, 500 Internal Server Error, etc.). We will also test API security by checking for proper handling of unauthorized requests and error management.</p>
+            </div>
+
+            <div class="carousel-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" alt="Automation Icon" style="width: 60px; margin-bottom: 10px;">
+                <h4>Automated Testing with Selenium WebDriver</h4>
+                <p> After resolving major issues, we will begin automation using <strong>IntelliJ</strong> and <strong>Selenium WebDriver</strong> to streamline regression testing. The focus will be on automating critical user flows like registration, login, and post creation, ensuring there are no regressions with each update. We will implement the "page object model" design pattern and use data-driven testing techniques to make our scripts robust and easily maintainable across multiple browsers.</p>
+            </div>
+
+            <div class="carousel-card">
+                <img src="https://cdn-icons-png.flaticon.com/512/2965/2965270.png" alt="Cross-Browser Testing Icon" style="width: 60px; margin-bottom: 10px;">
+                <h4>Cross-Browser Testing</h4>
+                <p> We will validate the application's performance on major browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>, to ensure a consistent user experience and prevent compatibility issues. These tests will be automated using Selenium Grid to cover various browser environments efficiently.</p>
+            </div>
+
+            <div class="carousel-card">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Apache_JMeter.png" alt="Performance Testing Icon" style="width: 60px; margin-bottom: 10px;">
+                <h4>Performance Testing with JMeter</h4>
+                <p>We will use <strong>JMeter</strong> to conduct load testing, simulating high user traffic and assessing system behavior under stress. The goal is to identify potential performance bottlenecks and ensure that the application remains stable under peak loads. Stress testing will be performed in different environments to measure the maximum performance capacity and evaluate the system's ability to recover gracefully from failures.</p>
+            </div>
+        </div>
+        <button class="carousel-btn left" id="prev-btn">❮</button>
+        <button class="carousel-btn right" id="next-btn">❯</button>
+    </div>
+</section>
+<style>
+    .carousel-container {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: relative;
+        width: 100%;
+        max-width: 1200px;
+        margin: auto;
+        overflow: hidden;
+    }
+
+    .carousel {
+        display: flex;
+        gap: 50px;
+        justify-content: center;
+        align-items: center;
+        transition: transform 0.5s ease-in-out;
+    }
+
+    .carousel-card {
+        flex: 0 0 200px;
+        background: #fff;
+        border-radius: 15px;
+        padding: 20px;
+        box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        text-align: center;
+        opacity: 0.5;
+        transform: scale(0.8);
+        transition: transform 0.5s, opacity 0.5s;
+    }
+
+    .carousel-card.active {
+        flex: 0 0 400px;
+        opacity: 1;
+        transform: scale(1.2);
+        z-index: 2;
+    }
+
+    .carousel-card img {
+        width: 80px;
+        margin-bottom: 15px;
+    }
+
+    .carousel-card h4 {
+        font-size: 22px;
+        margin-bottom: 10px;
+    }
+
+    .carousel-card p {
+        font-size: 16px;
+        color: #555;
+    }
+
+    .carousel-btn {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 50%;
+        width: 50px;
+        height: 50px;
+        cursor: pointer;
+        font-size: 25px;
+        z-index: 10;
+    }
+
+    .carousel-btn.left {
+        left: 10px;
+    }
+
+    .carousel-btn.right {
+        right: 10px;
+    }
+
+    .carousel-btn:hover {
+        background: #388E3C;
+    }
+</style>
+<script>
+    const carousel = document.querySelector('.carousel');
+    const cards = document.querySelectorAll('.carousel-card');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+
+    let currentIndex = 2;
+
+    function updateCarousel() {
+        const cardWidth = cards[0].offsetWidth;
+        const containerWidth = carousel.offsetWidth;
+
+        cards.forEach((card, index) => {
+            card.classList.remove('active');
+            card.style.opacity = '0.5';
+            card.style.transform = 'scale(0.8)';
+            if (index === currentIndex) {
+                card.classList.add('active');
+                card.style.opacity = '1';
+                card.style.transform = 'scale(1.2)';
+            }
+        });
+
+        const offset = -currentIndex * (cardWidth + 50) + (containerWidth - cardWidth) / 2;
+        carousel.style.transform = `translateX(${offset}px)`;
+    }
+
+    prevBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex - 1 + cards.length) % cards.length;
+        updateCarousel();
+    });
+
+    nextBtn.addEventListener('click', () => {
+        currentIndex = (currentIndex + 1) % cards.length;
+        updateCarousel();
+    });
+
+    updateCarousel();
+</script>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Entry Criteria" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Entry Criteria
+    </h2>
+    <p style="font-size: 16px; line-height: 1.8; color: #555;">
+        To begin the testing phase, the following prerequisites must be met to ensure smooth and effective test execution:
+    </p>
+
+    <ul style="list-style: none; padding-left: 0; margin-top: 20px;">
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+            <img src="https://cdn-icons-png.flaticon.com/512/1330/1330216.png" alt="Environment Icon" style="width: 30px; margin-right: 15px;">
+            <div>
+                <strong style="font-size: 18px; color: #4CAF50;">Fully Configured Test Environments:</strong>
+                <p style="font-size: 14px; color: #555; margin-top: 5px;">
+                    Fully Configured Test Environments</strong>: All testing environments, including staging servers and databases, must be properly set up, stable, and accessible to the testing team. The test infrastructure should utilize <strong>Docker Desktop</strong> for efficient container management and <strong>MariaDB</strong> as the database solution for reliable and fast data storage. This setup ensures that all functionalities are tested in an environment as close to production as possible.
+                </p>
+            </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2983/2983782.png" alt="Data Icon" style="width: 30px; margin-right: 15px;">
+            <div>
+                <strong style="font-size: 18px; color: #FF9800;">Validated Test Data:</strong>
+                <p style="font-size: 14px; color: #555; margin-top: 5px;">
+                    Comprehensive and accurate test data for each scenario must be prepared and validated. This data should cover both standard use cases and edge cases to thoroughly assess the application’s behavior under various conditions.
+                </p>
+            </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+            <img src="https://cdn-icons-png.flaticon.com/512/189/189665.png" alt="Tool Icon" style="width: 30px; margin-right: 15px;">
+            <div>
+                <strong style="font-size: 18px; color: #2196F3;">Tool Installation and Configuration:</strong>
+                <p style="font-size: 14px; color: #555; margin-top: 5px;">
+                    All necessary testing tools, such as <strong>Postman</strong> for API validation, <strong>Selenium WebDriver</strong> for automated UI testing, and required browsers (Google Chrome, Mozilla Firefox, Safari), must be installed and correctly configured on the testers' machines. Additionally, <strong>Docker Desktop</strong> should be installed and ready to manage containerized services, and <strong>MariaDB</strong> must be set up and operational for all testing needs.
+                </p>
+            </div>
+        </li>
+        <li style="margin-bottom: 20px; display: flex; align-items: flex-start;">
+            <img src="https://cdn-icons-png.flaticon.com/512/2921/2921222.png" alt="Review Icon" style="width: 30px; margin-right: 15px;">
+            <div>
+                <strong style="font-size: 18px; color: #E91E63;">Reviewed and Approved Test Cases:</strong>
+                <p style="font-size: 14px; color: #555; margin-top: 5px;">
+                    Every test case must be meticulously documented, reviewed by the testing team, and approved to ensure complete coverage and accuracy. This step provides confidence that all key functionalities will be tested thoroughly.
+                </p>
+            </div>
+        </li>
+    </ul>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); display: flex; align-items: center;">
+    <img src="../images/entry_exit_criteria_comparison.png" alt="Entry vs Exit Criteria" style="float: right; max-width: 45%; height: auto; margin-left: 10px; margin-right: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+
+    <div>
+        <h2 id="Exit Criteria" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+            Exit Criteria
+        </h2>
+
+        <p style="font-family: 'Roboto', sans-serif; font-size: 16px; line-height: 1.8; color: #555;">
+            To consider the testing phase complete for the context of a course project, the following conditions must be met:
+        </p>
+
+        <ul style="font-family: 'Roboto', sans-serif; font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px;">
+            <li style="margin-bottom: 15px;"><strong>All Planned Test Cases Executed</strong>: All test scenarios outlined in the test plan must be fully executed and documented.</li>
+            <li style="margin-bottom: 15px;"><strong>All Found Defects Documented</strong>: Every discovered defect, regardless of severity, must be thoroughly documented, including the steps to reproduce and the expected behavior.</li>
+            <li style="margin-bottom: 15px;"><strong>Reported Test Coverage</strong>: The extent of test coverage must be clearly reported, specifying which functionalities have been covered and what percentage of core scenarios have been tested.</li>
+            <li style="margin-bottom: 15px;"><strong>Automation Scripts Executed and Results Documented</strong>: Even if some scripts do not pass successfully, the results of automated testing must be presented, along with explanations for any failures.</li>
+            <li style="margin-bottom: 15px;"><strong>Performance Tests Conducted and Analyzed</strong>: Performance testing must be carried out, and the results analyzed. Any weaknesses or bottlenecks observed should be documented and included in the analysis.</li>
+        </ul>
+    </div>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Roles and Responsibilities" style="font-family: 'Roboto', sans-serif; font-size: 26px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Roles and Responsibilities
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 15px; width: 100%;">
+        The testing team consists of <strong>Ivan Velchev</strong>, <strong>Armine Stoykova</strong>, and <strong>Gabriel Georgiev</strong>. Each member will share equal responsibilities, with tasks distributed to ensure that every tester gains experience and familiarity with all functionalities of the application. The work will be organized into three sprints in <strong>Jira</strong>, with an emphasis on flexibility and comprehensive understanding. The division of responsibilities is as follows:
+    </p>
+
+
+    <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Sprint and Task Management in Jira</strong>: Tasks will be planned and managed over three sprints in <strong>Jira</strong>. The goal is for each team member to work on a variety of tasks and functionalities, ensuring thorough coverage of the application. Every tester will be responsible for reporting and documenting any bugs found, providing clear and detailed information in Jira, including steps to reproduce, screenshots, and other relevant details. This approach ensures that all testers are well-rounded and prepared for future projects.
+
+        </li>
+    <div style="margin: 30px 0;">
+        <img src="/images/testing_process_diagram.png" alt="Testing Process Timeline" style="float: right; max-width: 45%; height: auto; margin-right: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);" />
+    </div>
+
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Manual Testing</strong>:Each tester will participate in testing all core functionalities, including user registration, login, post creation, comments, and profile management. Tasks will be rotated among team members to ensure everyone develops a strong understanding of each part of the application and can effectively identify issues in any area.
+        </li>
+        <div style="height: 10px;"></div>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #36a2eb;">&#9679;</span>
+            <strong>API Testing</strong>: API testing responsibilities using <strong>Postman</strong> will be shared equally among the team. Every tester will have the opportunity to validate various CRUD operations (Create, Read, Update, Delete) for both users and posts. This approach will ensure that all team members build skills in API testing and are prepared to handle different testing scenarios.
+        </li>
+        <div style="height: 10px;"></div>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #FFCE56;">&#9679;</span>
+            <strong>Automation</strong>: Automation tasks will be divided so that each member works on automating different scenarios, such as user registration, login, and post creation, using <strong>Selenium WebDriver and Java</strong>. This distribution will provide exposure to a range of automated tests and enhance each tester’s proficiency in automation.
+        </li>
+        <div style="height: 10px;"></div>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #9C27B0;">&#9679;</span>
+            <strong>Cross-browser Testing</strong>: All testers will be responsible for testing the application across multiple browsers, including <strong>Google Chrome</strong>, <strong>Mozilla Firefox</strong>, and <strong>Safari</strong>. This ensures that each member is familiar with cross-browser testing and can detect compatibility issues in different environments.
+        </li>
+
+
+
+    </ul>
+</section>
+
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Test Environment" style="font-family: 'Roboto', sans-serif; font-size: 28px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        Test Environment
+    </h2>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px;">
+        <div style="flex: 1; min-width: 300px; max-width: 48%; background-color: #fff; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <p style="font-size: 16px; line-height: 1.8; color: #555;">The test environment is crucial for ensuring the expected behavior of the application under various conditions. Our testing will be conducted in the following environment:</p>
+
+            <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+                <li style="margin-bottom: 15px;">
+                    <strong>Operating Systems:</strong><br> Testing will be performed on the latest versions of macOS (on two machines) and Windows (on one machine) to ensure compatibility across different platforms.
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>Browsers:</strong><br> We will conduct cross-browser testing on the latest versions of Google Chrome, Mozilla Firefox, and Safari to validate the consistency of the user interface and functionality.
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>Containerization:</strong><br> Docker Desktop will be used to create isolated containers for the application, ensuring consistency in the test environment across different machines.
+                </li>
+                <li style="margin-bottom: 15px;">
+                    <strong>Testing Tools:</strong><br> We will use Postman for API testing, Selenium WebDriver for automated UI testing, and JMeter for performance testing.
+                </li>
+            </ul>
+        </div>
+
+        <div style="flex: 1; min-width: 300px; max-width: 48%; display: flex; gap: 20px; flex-wrap: wrap; justify-content: space-between;">
+
+            <div style="background-color: #eef5f9; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 32%;">
+                <h4 style="font-size: 18px; color: #333;">Machine 1: macOS Sonoma</h4>
+                <p><strong>OS</strong>: macOS Sonoma</p>
+                <p><strong>Processor</strong>: Apple M3 Pro</p>
+                <p><strong>RAM</strong>: 18GB</p>
+                <p><strong>Storage</strong>: N/A</p>
+                <p><strong>Browsers</strong>: Chrome, Safari</p>
+            </div>
+
+            <div style="background-color: #eef5f9; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 32%;">
+                <h4 style="font-size: 18px; color: #333;">Machine 2: macOS</h4>
+                <p><strong>OS</strong>: macOS</p>
+                <p><strong>Processor</strong>: Apple M..</p>
+                <p><strong>RAM</strong>: 32GB DDR5</p>
+                <p><strong>Storage</strong>: Up to 3TB SSD</p>
+                <p><strong>Browsers</strong>: Firefox, Chrome</p>
+            </div>
+
+            <div style="background-color: #eef5f9; border-radius: 10px; padding: 20px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 32%;">
+                <h4 style="font-size: 18px; color: #333;">Machine 3: Windows</h4>
+                <p><strong>OS</strong>: Windows 10/11</p>
+                <p><strong>Processor</strong>: Intel i7</p>
+                <p><strong>RAM</strong>: 16GB</p>
+                <p><strong>Storage</strong>: N/A</p>
+                <p><strong>Browsers</strong>: Chrome, Firefox</p>
+            </div>
+
+        </div>
+    </div>
+
+    <p style="font-size: 16px; color: #555; margin-top: 20px;">
+        This test environment is designed to provide maximum compatibility and facilitate extensive testing to ensure the stability and quality of the application.
+    </p>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    <h2 id="Tools" style="font-family: 'Roboto', sans-serif; font-size: 28px; color: #333; border-bottom: 1px solid #4CAF50; padding-bottom: 10px; margin-bottom: 20px;">
+        Tools and Technologies </h2>
+
+    <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8; color: #555;">
+        <li style="margin-bottom: 15px;">
+            <a href="https://www.postman.com/" target="_blank" style="text-decoration: none;">
+                <img src="https://voyager.postman.com/logo/postman-logo-icon-orange.svg" alt="Postman" width="32" height="32" style="vertical-align: middle; margin-right: 5px;">
+                <strong>Postman</strong>
+            </a>: A powerful tool for <strong>API testing</strong> that allows us to validate RESTful services. Postman provides an easy-to-use interface for creating API requests, analyzing responses, and automating workflows for efficient testing.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.oracle.com/java/" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/en/thumb/3/30/Java_programming_language_logo.svg/121px-Java_programming_language_logo.svg.png" alt="Java Logo" width="32" height="32" style="vertical-align: middle; margin-right: 5px;">
+                <strong>Java</strong>
+            </a>: The primary programming language used for <strong>writing automation scripts</strong> with Selenium WebDriver. Java is highly compatible with Selenium and offers a robust environment for creating maintainable and efficient automated tests.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.jetbrains.com/idea/" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9c/IntelliJ_IDEA_Icon.svg/64px-IntelliJ_IDEA_Icon.svg.png" alt="IntelliJ IDEA Logo" width="32" height="32" style="vertical-align: middle; margin-right: 5px;">
+                <strong>IntelliJ IDEA</strong>
+            </a>: An integrated development environment (IDE) used for <strong>developing and running Java-based automation scripts</strong>. IntelliJ provides powerful features like code completion, debugging tools, and seamless integration with testing frameworks, enhancing productivity and efficiency.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.selenium.dev/" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/d/d5/Selenium_Logo.png" alt="Selenium Logo" style="max-width: 32px; width: 32px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Selenium WebDriver with Java</strong>
+            </a>: A robust framework for <strong>automated user interface testing</strong>. Selenium WebDriver is widely used for automating browser actions and verifying web application behavior across different browsers.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.selenium.dev/selenium-ide/" target="_blank" style="text-decoration: none;">
+                <img src="https://selenium.dev/selenium-ide/img/selenium-ide128.png" alt="Selenium IDE" style="max-width: 32px; width: 32px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Selenium IDE</strong>
+            </a>: An easy-to-use tool for <strong>recording and playing back browser interactions</strong>. It is useful for creating initial scripts that can be exported to Selenium WebDriver for more complex automation.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://jmeter.apache.org/" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/22/Apache_JMeter.png" alt="Apache JMeter" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>JMeter</strong>
+            </a>: A tool for <strong>performance and load testing</strong>. JMeter simulates real-world traffic scenarios, assesses system performance under load, and identifies potential bottlenecks to ensure stability.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.docker.com/products/docker-desktop" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/7/70/Docker_logo.png" alt="Docker Logo" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Docker Desktop</strong>
+            </a>: Used to set up and run the <strong>API locally</strong> in isolated containers. Docker Desktop ensures a consistent setup across different machines, simplifying the deployment and testing of services.
+
+        <li style="margin-bottom: 15px;">
+
+            <a href="https://www.atlassian.com/software/jira" target="_blank" style="text-decoration: none;">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/800px-Jira_Logo.svg.png" alt="Jira Logo" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+                <strong>Jira/Trello</strong>
+            </a>: Tools for <strong>bug tracking and task management</strong>. Jira is ideal for project management in Agile environments, while Trello provides a visual approach for organizing tasks and enhancing team collaboration.
+          </ul>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif;">
+    <h2 id="Manual Testing Scenarios" style="font-size: 28px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-129" target="_blank" style="text-decoration: none; color: #007BFF;">Manual Testing Scenarios</a>
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.8; color: #555;">
+        The test environment is crucial for ensuring the expected behavior of the application under various conditions. Our testing will be conducted using the following scenarios:
+    </p>
+
+    <ul style="list-style: none; padding: 0; font-size: 16px; line-height: 1.8; color: #555;">
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">User Registration:</strong>
+            <br><img src="../images/demoT.png" alt="Testing Process Flowchart" style="float: right; max-width: 45%; height: auto; margin-left: 20px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+            <span style="padding-left: 20px;">- Validate registration with valid username, password, and email.</span><br>
+            <span style="padding-left: 20px;">- Check for error messages when the username length is incorrect or email format is invalid.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">User Login:</strong>
+            <br><span style="padding-left: 20px;">- Test successful login with valid credentials.</span><br>
+            <span style="padding-left: 20px;">- Ensure error messages appear for incorrect email or password entries.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Post Creation:</strong>
+            <br><span style="padding-left: 20px;">- Create a valid post with text and a photo to verify it appears in the feed.</span><br>
+            <span style="padding-left: 20px;">- Confirm if posts without photos are accepted.</span><br>
+            <span style="padding-left: 20px;">- Verify visibility settings.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Anonymous Users:</strong>
+            <br><span style="padding-left: 20px;">- Examine the visibility of public menus and posts for anonymous users.</span><br>
+            <span style="padding-left: 20px;">- Verify restrictions for liking content.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Authorized Users:</strong>
+            <br><span style="padding-left: 20px;">- Ensure authorized users can interact with posts, like, comment, and search profiles.</span><br>
+            <span style="padding-left: 20px;">- Assess personalized news feeds.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Search Function:</strong>
+            <br><span style="padding-left: 20px;">- Test search functionality by name and email.</span><br>
+            <span style="padding-left: 20px;">- Review results for both authorized and unauthorized users.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Profile Management:</strong>
+            <br><span style="padding-left: 20px;">- Check if users can update personal information, change passwords, and manage visibility settings.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Interactions:</strong>
+            <br><span style="padding-left: 20px;">- Test sending/removing connection requests and ensure proper handling of disconnections.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Administrator Rights:</strong>
+            <br><span style="padding-left: 20px;">- Verify administrators can edit/delete posts and modify user information.</span>
+        </li>
+        <li style="margin-bottom: 20px; position: relative; padding-left: 20px;">
+            <strong style="color: #36A2EB;">Optional Features:</strong>
+            <br><span style="padding-left: 20px;">- Confirm that login is restricted for users who have not verified their email.</span><br>
+            <span style="padding-left: 20px;">- Test the ID verification process and whether access to certain features is restricted until admin approval.</span>
+        </li>
+    </ul>
+
+    <div style="text-align: center; margin-top: 20px;">
+        <img src="../images/output100.png" alt="Number of Test Scenarios by Category" style="max-width: 50%; height: auto; border-radius: 8px; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);">
+    </div>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif;">
+    <h2 id="REST API" style="font-size: 28px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-128"
+           target="_blank"
+           style="text-decoration: none; color: #007BFF;">
+            API Functionality Overview
+        </a>
+    </h2>
+
+    <ul style="padding-left: 20px; line-height: 1.8; font-size: 16px; color: #555; list-style: none;">
+        <li style="margin-bottom: 20px;">
+            <h3 style="font-size: 22px; color: #FF6F00; margin-bottom: 10px;">Users</h3>
+            <span style="padding-left: 20px;">- Basic operations for managing user accounts, such as registration, profile updates, and account deletion.</span><br>
+            <span style="padding-left: 20px;">- Friend-related actions, including sending and approving friend requests.</span><br>
+            <span style="padding-left: 20px;">- Retrieving personalized content like user-specific news feeds.</span>
+        </li>
+
+        <li>
+            <h3 style="font-size: 22px; color: #FF6F00; margin-bottom: 10px;">Posts</h3>
+            <span style="padding-left: 20px;">- Creating, editing, and deleting user-generated posts.</span><br>
+            <span style="padding-left: 20px;">- Comment functionality to add or view interactions on posts.</span><br>
+            <span style="padding-left: 20px;">- Features to like or unlike posts and comments, supporting user engagement.</span>
+        </li>
+    </ul>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif;">
+    <h2 id="Exception Handling" style="font-size: 28px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        <a href="https://github.com/A61-QA-Team-I/Social-Network-Project/blob/main/Demo-Social-Network-Project-main-3/Test%20Cases.md#exception-handling-and-propagation"
+           target="_blank"
+           style="text-decoration: none; color: #007BFF;">
+            Exception Handling and Propagation
+        </a>
+    </h2>
+
+    <p style="font-size: 16px; line-height: 1.8; color: #555; margin-bottom: 20px;">
+        To maintain the reliability of the API, it is essential to handle errors gracefully and ensure meaningful feedback is provided to users. The following outlines the areas of focus for testing exception handling:
+    </p>
+
+    <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #007BFF;">&#9679;</span>
+            <strong>Validation Errors:</strong><br> Ensure the API returns clear error messages when input data fails validation checks, such as missing or improperly formatted fields.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #007BFF;">&#9679;</span>
+            <strong>Resource Not Found:</strong><br> Verify that the API handles requests for non-existent resources appropriately, returning a suitable "not found" response.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #007BFF;">&#9679;</span>
+            <strong>Unauthorized Access:</strong><br> Check that access to protected endpoints is restricted without valid authentication and returns an appropriate error message.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #007BFF;">&#9679;</span>
+            <strong>Forbidden Action:</strong><br> Confirm that users are prevented from performing unauthorized actions, and the system responds with an appropriate "forbidden" message.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #007BFF;">&#9679;</span>
+            <strong>Internal Server Errors:</strong><br> Simulate unexpected system errors to ensure the API handles them gracefully and provides a general error response without exposing sensitive information.
+        </li>
+    </ul>
+</section>
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif;">
+    <h2 id="REST ASSURED" style="font-size: 28px; color: #333; border-bottom: 1px solid #4CAF50; padding-bottom: 10px; margin-bottom: 20px;">
+        <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-109"
+           target="_blank"
+           style="text-decoration: none; color: #007BFF;">
+            REST ASSURED Functionality Overview
+        </a>
+    </h2>
+
+    <h3 style="font-size: 22px; color: #4CAF50; margin-top: 20px; margin-bottom: 10px;">Users</h3>
+    <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>CRUD Operations:</strong> Create, retrieve, update, and delete user accounts.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Friend Management:</strong> Send and approve friend requests.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>News Feed:</strong> Get the latest posts from connections.
+        </li>
+    </ul>
+
+    <h3 style="font-size: 22px; color: #4CAF50; margin-top: 20px; margin-bottom: 10px;">Posts</h3>
+    <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>CRUD Operations:</strong> Create, view, update, and delete posts.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Comments:</strong> Add and view comments on posts.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Like/Unlike:</strong> Like or unlike posts and comments.
+        </li>
+    </ul>
+</section>
+
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background-color: #f9f9f9; box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif;">
+    <h2 id="Selenium WebDriver" style="font-size: 28px; color: #333; border-bottom: 1px solid #007BFF; padding-bottom: 10px; margin-bottom: 20px;">
+        <a href="https://a61-qa-team-1.atlassian.net/jira/software/c/projects/IAG/list?selectedIssue=IAG-131"
+           target="_blank"
+           style="text-decoration: none; color: #007BFF;">
+            Selenium WebDriver Functionality Overview
+        </a>
+    </h2>
+
+    <ul style="font-size: 16px; line-height: 1.8; color: #555; padding-left: 20px; list-style: none;">
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>User Flows:</strong><br>
+            Automate key scenarios like user registration, login, and post creation.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Cross-Browser Testing:</strong><br>
+            Verify functionality across multiple browsers, including Chrome, Firefox, and Safari.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>UI Interactions:</strong><br>
+            Simulate user actions such as clicking buttons, liking posts, submitting forms, and navigating pages.
+        </li>
+        <li style="margin-bottom: 15px; position: relative; padding-left: 25px;">
+            <span style="position: absolute; left: 0; color: #4CAF50;">&#9679;</span>
+            <strong>Data-Driven Testing:</strong><br>
+            Execute tests using different sets of input data to ensure system reliability under various conditions.
+        </li>
+    </ul>
+</section>
+
+
+
+<section style="margin: 40px 0; padding: 30px; border-radius: 10px; background: linear-gradient(135deg, #f5f5f5, #e6e6e6); box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); font-family: 'Roboto', sans-serif; position: relative;">
+    <h2 id="Success Criteria" style="font-size: 28px; color: #4CAF50; border-bottom: 2px solid #4CAF50; padding-bottom: 10px; margin-bottom: 20px; text-align: center;">
+        Success Criteria
+    </h2>
+
+    <div style="text-align: center; margin-bottom: 30px;">
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Success Icon" style="width: 80px; margin-bottom: 10px;">
+        <p style="font-size: 16px; color: #333; max-width: 700px; margin: 0 auto;">
+            A complete and successful testing process ensures quality, reliability, and user satisfaction for the social network application. Here's how we define success:
+        </p>
+    </div>
+
+    <div style="display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; margin-top: 30px;">
+        <!-- Manual Tests -->
+        <div style="flex: 1; min-width: 280px; max-width: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h3 style="font-size: 20px; color: #007BFF; margin-bottom: 15px;">Manual Tests</h3>
+            <ul style="font-size: 14px; line-height: 1.8; color: #555; list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;">
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>Complete Test Execution:</strong> Upon successful coverage of all planned manual test cases, we will ensure a thorough validation of the application's key functionalities. These functionalities include user registration, login, post creation, user interactions, and profile management. Each test case will be meticulously documented, providing a clear reference and foundation for subsequent evaluation.
+                </li>
+                <li>
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>Accurate Reporting:</strong> All discovered bugs, defects, and issues encountered during manual testing will be documented in detail. Reports will include clear and structured steps to reproduce each issue, comparisons between observed and expected outcomes, and classification of the severity of problems. Additionally, each report will be enriched with relevant screenshots or logs to facilitate understanding and resolution of issues.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Automated Tests -->
+        <div style="flex: 1; min-width: 280px; max-width: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h3 style="font-size: 20px; color: #007BFF; margin-bottom: 15px;">Automated Tests</h3>
+            <ul style="font-size: 14px; line-height: 1.8; color: #555; list-style: none; padding-left: 0;">
+                <li style="margin-bottom: 10px;">
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>API Validation:</strong> During the stringent verification of all API endpoints, we will ensure that they respond accurately and securely, providing the appropriate status codes (e.g., 200 for success, 401 for unauthorized access). Each API test result will be thoroughly documented, with emphasis on any discrepancies or performance issues to ensure the reliability of data flow between the frontend and backend.
+                </li>
+                <li style="margin-bottom: 10px;">
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>Automation Success:</strong> Automated tests executed with Selenium WebDriver will run without errors, covering critical user scenarios such as registration, login, and post creation. The results and efficiency of these automated tests will be reported, noting any cases that require script maintenance or adjustments.
+                </li>
+                <li>
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>Performance Assessment:</strong> Conducting performance testing using JMeter will allow us to simulate high traffic conditions and evaluate the application's behavior under stress. We will meticulously document the system's stability, response times, and identify any potential issues or areas that require improvement to ensure the application can handle peak usage effectively.
+                </li>
+            </ul>
+        </div>
+
+        <!-- Documentation -->
+        <div style="flex: 1; min-width: 280px; max-width: 30%; background-color: #fff; padding: 20px; border-radius: 10px; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);">
+            <h3 style="font-size: 20px; color: #007BFF; margin-bottom: 15px;">Documentation</h3>
+            <ul style="font-size: 14px; line-height: 1.8; color: #555; list-style: none; padding-left: 0;">
+                <li>
+                    <span style="color: #4CAF50;">&#9679;</span> <strong>Testing Documentation:</strong> Upon completion of the entire testing strategy, we will provide a detailed overview of the testing approach, tools utilized, and test findings. This documentation will summarize the scope of testing and offer clarity and accountability for all identified and reported issues, facilitating transparency and continuous improvement of the testing process.
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <div style="text-align: center; margin-top: 40px;">
+        <h3 style="font-size: 24px; color: #FF5722; margin-bottom: 10px;">Achieving Excellence Together</h3>
+        <p style="font-size: 16px; color: #333;">This marks the culmination of our testing journey, where every challenge was met with determination, ensuring a robust and reliable application.</p>
+        <img src="https://cdn-icons-png.flaticon.com/512/190/190411.png" alt="Achievement Icon" style="width: 60px;">
+    </div>
+</section>
+
+
+<section>
+
+    <h2 id="Test Reporting"><a href="testReporting/baseTestReportingPage.html" style="text-decoration:none; color:blue;">Test Reporting</a></h2>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <canvas id="progressChart" width="400" height="200"></canvas>
+    <script>
+        const ctx = document.getElementById('progressChart').getContext('2d');
+        new Chart(ctx, {
+            type: 'doughnut',
+            data: {
+                labels: ['Manual Testing', 'API Testing', 'Automation', 'Performance Testing', 'Security Testing'],
+                datasets: [{
+                    data: [20, 15, 25, 30, 10],
+                    backgroundColor: ['#ff6384', '#36a2eb', '#ffce56', '#4caf50', '#9c27b0']
+                }]
+            },
+            options: {
+                responsive: false,
+                plugins: {
+                    legend: {
+                        position: 'right'
+                    }
+                }
+            }
+        });
+    </script>
+
+</section>
+
+
+<footer>
+    <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+    <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+        <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+    </a>
+</footer>
+</body>
+</html>
