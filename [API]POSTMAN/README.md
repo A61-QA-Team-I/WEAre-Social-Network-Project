@@ -18,8 +18,8 @@ The report is based on tests executed using the following files:
 
 **Special Notes**:
 - Tests named `Log` are used for cookie generation and session setup. They are included in the collection but are **excluded** from the final reporting as they are not part of the pass/fail statistics.
----
-============== Postman Report Generator ============
+
+============== Postman Report Generator ==============
 =
 
 1. **Navigate to the Directory**:
