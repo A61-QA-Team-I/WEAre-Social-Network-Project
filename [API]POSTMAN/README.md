@@ -80,5 +80,5 @@ The report is based on tests executed using the following files:
 9. **Modifying the Script**:
    - To customize the output format, styles, or handling of specific tests, you can edit the `convert_to_html.py` script directly.
 
-========== END OF README ===========
+=============== END OF README ================
 =
