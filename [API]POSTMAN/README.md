@@ -1,4 +1,4 @@
-======== Postman Automation Testing Suite =========
+========== Postman Automation Testing Suite ===========
 =
 
 ### Introduction:
