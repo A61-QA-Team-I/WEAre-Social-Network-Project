@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="bg">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Test Reporting for WEAre Social Network Application</title>
+  <style>
+    body {
+      background-image: url('https://cdn.pixabay.com/photo/2017/05/19/06/22/desk-2325627_1280.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      font-family: Arial, sans-serif;
+      line-height: 1.6;
+      background-color: #f4f4f4;
+      color: #333;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1, h2, h3 {
+      color: #333;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    section {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .task-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .task-table th, .task-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .task-table th {
+      background-color: #f4f4f4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+    .container {
+      display: flex;
+      justify-content: flex-start;
+      gap: 10px;
+      flex-wrap: wrap;
+
+    }
+
+    .circle-link {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .square-container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 150px;
+      padding: 10px;
+      border-radius: 10px;
+      background-color: #eaeaea;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    .small-square {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 10px;
+    }
+
+    .square-text {
+      font-size: 14px;
+      color: #333;
+    }
+
+    section {
+      margin-bottom: 20px;
+      padding: 20px;
+      background-color: white;
+      border-radius: 5px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    ul {
+      list-style-type: disc;
+      padding-left: 20px;
+    }
+
+    .task-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+    }
+
+    .task-table th, .task-table td {
+      border: 1px solid #ccc;
+      padding: 10px;
+      text-align: left;
+    }
+
+    .task-table th {
+      background-color: #f4f4f4;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 20px;
+      padding: 10px;
+      background-color: #333;
+      color: white;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    .footer {
+      position: fixed;
+      bottom: 0;
+      right: 0;
+      width: 10%;
+      background-color: rgba(255, 255, 255, 0.0);
+      text-align: center;
+      padding: 10px;
+      box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.0);
+      z-index: 1000;
+    }
+
+    .footer img {
+      max-width: 150px;
+    }
+
+    .back-to-home {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      text-align: center;
+    }
+
+    .back-button {
+      background-color: #4CAF50;
+      color: white;
+      padding: 10px 20px;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    .back-button:hover {
+      background-color: #45a049;
+    }
+
+  </style>
+</head>
+<body>
+
+
+<div class="container">
+  <a href="../Vanko3/IvanVelchev.html" class="circle-link">
+    <div class="square-container">
+      <img src="../images/Vanko.png" alt="member 1" class="small-square">
+      <div class="square-text">Ivan Velchev</div>
+    </div>
+  </a>
+
+  <a href="../Armine/Armine.html" class="circle-link">
+    <div class="square-container">
+      <img src="../images/Image.jpeg" alt="member 2" class="small-square">
+      <div class="square-text">Armine Stoykova</div>
+    </div>
+  </a>
+
+  <a href="../Gabriel/Gabriel.html" class="circle-link">
+    <div class="square-container">
+      <img src="../images/1713257987187.png" alt="member 3" class="small-square">
+      <div class="square-text">Gabriel Georgiev</div>
+    </div>
+  </a>
+</div>
+
+<h1>Test Reporting for WEAre Social Network Application</h1>
+
+<section>
+  <h2>Testing Process Overview</h2>
+  <p>The testing results of the WEAre Social Network application show that, despite covering the core functionalities, the application is not ready for client use. Some of the core features, such as registration and login, do not function according to the requirements, revealing serious issues with security and user authentication.<p>
+  <p>The application does not enforce proper password requirements – there is no minimum length or complexity, putting accounts at risk. Furthermore, the system allows users to register and log in with the same email addresses, which violates account uniqueness.<p>
+  <p>The user search functionality is not working correctly and lacks basic functionality to search for users by name, which complicates navigation within the application.<p>
+  <p>Additionally, the API has issues with incomplete documentation and missing endpoints, which hinder integration and usability.<p>
+  <p>The most serious issue is the lack of protections against unauthorized privilege escalation – regular users can become administrators, which exposes the application to significant abuse risks.<p>
+  <p>Other problems include incorrect post visibility, where posts remain public even when they shouldn’t. <p>
+  <p>These issues highlight the need for significant improvements in the security, functionality, and stability of the application.<p>
+  <p>The application is not ready for production and must undergo major fixes before it can be released to end users.</p>
+</section>
+
+
+<section>
+  <h2>Scope of Testing and Activities Performed</h2>
+  <ul>
+    <li><strong>Manual Testing:</strong> Covered main scenarios like registration, login, post creation, likes, comments, and user profile management.</li>
+    <div style="height: 6px;"></div>
+    <li><strong>API Testing with Postman:</strong> Validated CRUD operations for users and posts, authentication, and other key functions.</li>
+    <div style="height: 6px;"></div>
+    <li><strong>Automation with Selenium WebDriver:</strong> Tested critical scenarios like registration, login, and post creation.</li>
+    <div style="height: 6px;"></div>
+    <li><strong>Compatibility Testing:</strong> Conducted on Google Chrome, Mozilla Firefox, and Safari on macOS and Windows.</li>
+    <div style="height: 6px;"></div>
+    <li><strong>Performance Testing:</strong> Verified load resilience and response times using JMeter.</li>
+    <div style="height: 6px;"></div>
+    <li><strong>Security Testing:</strong> Checked essential data protection requirements and access controls.</li>
+    <div style="height: 6px;"></div>
+    <div style="height: 6px;"></div>
+
+    <a href="JiraAllIssue.html" target="_blank" style="text-decoration: none; color: blue;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8a/Jira_Logo.svg/800px-Jira_Logo.svg.png" alt="Jira Logo" style="max-width: 52px; width: 52px; height: auto; vertical-align: middle; margin-right: 5px;">
+    </a>
+    <a href="JiraAllIssue.html" style="text-decoration: none; color: blue;">report - Overall progress on WEAre application</a>
+  </ul>
+</section>
+
+
+
+
+
+<section>
+
+<h2>Results and Key Findings</h2>
+
+<ol>
+  <li><strong>Manual Test Assessment:</strong><br>
+    After thorough manual testing of all defined test scenarios, including identified bugs and missing functionalities, the testing team assesses that although the core requirements from the specifications have been tested, there are still numerous functional bugs that need to be addressed. The application is not ready for client release, as key functionalities are not working as expected and require further corrections before it can be stabilized for real-world use.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="ManualTestAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="ManualTestScr.html"><strong>Test Report</strong></a></li>
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>API Postman Assessment:</strong><br>
+    The API testing for the WEAre Social Network application successfully validated critical functions, including user management, authentication, post handling, and user interactions. Despite difficulties in finding the correct API documentation and the lack of properly defined endpoints, the team expanded their approach and found a solution for sending correct requests to the application's database. After 17 test requests, the team confirmed that the API is functioning properly but believes there is still work to be done to address the issues. Despite the successful testing, the team emphasizes that further improvements are needed, such as enhancing the documentation and ensuring proper user authentication, which will require additional work before the application is ready for real-world use.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="APIPostmanAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="../images/Postman_Test_Suite_Report_WEAre_REST_API_Dark_Fixed.html"><strong>Test Report</strong></a></li>
+    </ul>
+    <div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>REST Assured Assessment:</strong><br>
+    The team assessment for the WEAre Social Network REST API testing highlights the successful execution of all 31 test cases, including accurate database integration and reliable response times. The testing framework, utilizing TestNG, REST Assured, and Allure, provided comprehensive coverage, traceability of tests, and validated performance. However, the team notes that some functional issues remain unresolved, and additional work is required to correct the documentation and improve user authentication before the application can be considered ready for real-world use.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="RESTAssuredAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="RestScr.html"><strong>Test Report</strong></a></li>
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>Selenium IDE Assessment:</strong><br>
+    The Selenium IDE tests for the WEAre Social Network application successfully validated key functionalities and user interactions, ensuring the platform’s readiness for end-user operations. While the majority of features were stable and met the requirements, a few minor issues (e.g., dynamic element delays, insufficient error feedback) were identified and logged for future improvement.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="SeleniumIDEAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="SeleniumIDEScr.html"><strong>Test Report</strong></a></li>
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>Selenium WebDriver Assessment:</strong><br>
+    While the test scenarios and the automation framework are well-structured and comprehensive, our assessment is that the WEAre social network platform is not yet production-ready. For the platform to move closer to readiness.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="SeleniumWebDriverAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="WebDriverScr.html"><strong> Chrome Test Report</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="WebDriverFirefoxScr.html"><strong>Firefox Test Report</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="WebDriverEdgeScr.html"><strong> Edge Report</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="WebDriverSafariScr.html"><strong>Safari Test Report</strong></a></li>
+
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>Performance Assessment:</strong><br>
+    Conducting performance testing using JMeter.....
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="PerformanceAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="../images/CreateUser-Report/index.html"><strong>Test Report</strong></a></li>
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+
+  <li><strong>Security Assessment:</strong><br>
+    The security testing revealed critical vulnerabilities in the WEAre Social Network application, including the absence of brute force protection and weak password policy enforcement. These issues were logged as Severity Level: CRITICAL in the project’s Jira board for immediate resolution.
+    <ul>
+      <div style="height: 10px;"></div>
+      <li> <a href="SecurityAssessment.html"><strong>Testing Document</strong></a></li>
+      <div style="height: 10px;"></div>
+      <li> <a href="SecurityScr.html"><strong>Test Report</strong></a></li>
+    </ul>
+  </li><div style="height: 10px;"></div>
+  </li><div style="height: 10px;"></div>
+  <div style="height: 10px;"></div>
+</ol>
+
+
+</section>
+
+<section>
+  <h2>Conclusions and Risk Assessment</h2>
+  <p>The overall quality of the application is promising, but it still requires significant improvements. The risks associated with moving to production are significant at this stage. Additional work is needed on the application's stability and security to ensure that it will be safe and reliable for end users. The application is not ready for production release until these issues are resolved and the necessary stability and protection against potential vulnerabilities are ensured.</p>
+</section>
+
+<section>
+  <h2>Recommendations</h2>
+  <ul>
+    <li>Fix the issues with password requirements by enforcing a minimum length and complexity to ensure account security.</li>
+    <div style="height: 5px;"></div>
+    <li>Resolve the issue with user registration and login allowing duplicate email addresses to ensure account uniqueness.</li>
+    <div style="height: 5px;"></div>
+    <li>Restore the user search functionality by adding the ability to search for users by name, to simplify navigation within the application.</li>
+    <div style="height: 5px;"></div>
+    <li>Improve the API documentation by adding missing endpoints and enhancing the overall description to ease integration and usage.</li>
+    <div style="height: 5px;"></div>
+    <li>Implement protections against unauthorized privilege escalation to prevent regular users from becoming administrators.</li>
+    <div style="height: 5px;"></div>
+    <li>Correct the issue with private profile settings so that users who have set their profiles to private can ensure that only the information they want to be visible is accessible to others.</li>
+  </ul>
+</section>
+
+
+
+<h2 class="back-to-home"><a href="../ProjectHomePage.html" class="back-button">Back</a></h2>
+
+
+
+
+
+<footer>
+  <p>&copy; A61 QA Team I   2024 Test Plan for WEAre Social Network Application. All rights reserved.</p>
+</footer>
+<footer class="footer">
+  <a class="-pr -z1 Nav-Logo" href="https://www.telerikacademy.com/?utm_medium=search&amp;utm_source=google&amp;utm_campaign=upskill-tech-leadership-gads">
+    <img alt="telerik-academy" data-displaymode="Original" src="https://webassets.azureedge.net/images/default-source/logos/telerik-academy.svg?sfvrsn=2a51cd65_8" title="telerik-academy-alpha">
+  </a>
+</footer>
+</body>
+</html>
