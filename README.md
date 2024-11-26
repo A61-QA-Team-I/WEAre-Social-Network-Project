@@ -1,7 +1,7 @@
 ========== REPOSITORY STRUCTURE ==========
 =
 
-This repository contains components for the WEAre Social Network Project, including JMeter performance tests and Selenium WebDriver automated UI tests. Each section has its own README with detailed instructions.
+This repository contains components for the WEAre Social Network Project, including: test plan, automated API tests using Postman and REST, automated UI tests using Selenium WebDriver and Selenium IDE, Security tests and JMeter performance tests, . Each section has its own README with detailed instructions.
 
 ---
 
