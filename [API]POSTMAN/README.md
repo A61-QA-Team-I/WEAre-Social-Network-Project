@@ -1,4 +1,4 @@
-================= Postman Automation Testing Suite =================
+======== Postman Automation Testing Suite =========
 =
 
 ### Introduction:
@@ -21,7 +21,7 @@ The report is based on tests executed using the following files:
 
 =
 
-================= Postman Report Generator =================
+=========== Postman Report Generator ===========
 =
 
 1. **Navigate to the Directory**:
