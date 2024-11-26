@@ -26,9 +26,9 @@ This section includes independent Selenium WebDriver test cases and suite execut
 ### **Postman Collection for Automated API Tests**
 📂 **Directory**: `[API]POSTMAN`
 
-📄 **Instructions**: [Postman Collection README]()
+📄 **Instructions**: [Postman Collection README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/blob/main/%5BAPI%5DPOSTMAN/README.md#-postman-automation-testing-suite-)
 
-This section includes independent Selenium WebDriver test cases and suite execution details.
+This section includes Postman collections, environment variables, and globals for automated API tests, along with instructions for generating detailed HTML reports from test results logs.
 
 ---
 
