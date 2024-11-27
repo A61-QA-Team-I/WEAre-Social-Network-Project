@@ -8,27 +8,27 @@ This repository contains components for the WEAre Social Network Project, includ
 ### **REST Assured Automated API Tests**
 📂 **Directory**: `REST Assured - A61-TEAM I`
 
-📄 **Instructions**: [REST Assured README]()
+📄 **Instructions**: [REST Assured README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/REST%20Assured%20-%20A61-TEAM%20I)
 
-To do...
+Includes setup, sample tests, and instructions for running API tests.
 
 ---
 
 ### **Security Tests Automation**
 📂 **Directory**: `Security Testing-WEAre App`
 
-📄 **Instructions**: [Security Tests README]()
+📄 **Instructions**: [Security Tests README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Security%20Testing-WEAre%20App)
 
-To do...
+Covers automated security testing.
 
 ---
 
 ### **Selenium IDE Tests**
 📂 **Directory**: `Selenium IDE`
 
-📄 **Instructions**: [Selenium IDE README]()
+📄 **Instructions**: [Selenium IDE README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Selenium%20IDE)
 
-To do...
+Contains recorded test cases and instructions for execution.
 
 ---
 
@@ -71,18 +71,18 @@ This section includes Postman collections, environment variables, and globals fo
 ### **Testing Documentation**
 📂 **Directory**: `Testing Documentation`
 
-📄 **Instructions**: [Testing Documentation README]()
+📄 **Instructions**: [Testing Documentation README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Testing%20Documentation)
 
-To do...
+Includes .md files that contain test plans and test cases for each testing scenario.
 
 ---
 
 ### **Presentation**
 📂 **Directory**: `Team I-Presentation`
 
-📄 **Instructions**: [Presentation README]()
+📄 **Instructions**: [Presentation README](https://github.com/A61-QA-Team-I/WEAre-Social-Network-Project/tree/main/Team%20I-Presentation)
 
-To do...
+Contains the final project presentation slides.
 
 ---
 
