@@ -2,7 +2,7 @@
 =
 
 1. **Purpose**:  
-   This script runs REST Assured tests, manages Docker containers, and generates Allure reports dynamically.
+   This script runs automated security tests, manages Docker containers, and generates Allure reports dynamically.
 
 2. **Prerequisites**:  
    Ensure the following are installed and configured:  
@@ -11,17 +11,17 @@
    - **Allure Command-Line Tool**: To generate and view reports.
 
 3. **Dynamic Path Handling**:  
-   The script dynamically adjusts paths based on the location of the `.bat` file. Place `rest_tests.bat` in the project root for proper functionality.
+   The script dynamically adjusts paths based on the location of the `.bat` file. Place `security_tests.bat` in the project root for proper functionality.
 
 4. **Usage**:  
-   Open a terminal in the directory containing `rest_tests.bat` and run:  
+   Open a terminal in the directory containing `security_tests.bat` and run:  
    ```bash
-   rest_tests.bat
+   security_tests.bat
 
 5. **Key Actions**:  
    - Starts Docker containers using `docker-compose up`.  
    - Cleans old Allure results from `target/allure-results`.  
-   - Runs REST Assured tests defined in `main-suite.xml`.  
+   - Runs security tests using Maven.  
    - Generates and serves the Allure report in a browser.  
    - Stops Docker containers using `docker-compose down`.
 
